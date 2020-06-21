@@ -1,6 +1,6 @@
 import data.real.basic
 
--- BEGIN
+-- 1ª demostración
 example 
   (x : ℝ) 
   (h : ∀ ε > 0, x ≤ ε) : 
@@ -15,5 +15,16 @@ begin
   have : x / 2 < x,
     { apply half_lt_self hx0 },
   linarith 
+end
+
+-- 1ª demostración
+example 
+  (x : ℝ) 
+  (h : ∀ ε > 0, x ≤ ε) : 
+  x ≤ 0 :=
+begin
+  contrapose! h,
+  use x / 2,
+  split; linarith
 end
 

@@ -7,6 +7,7 @@ open_locale classical
 
 variable (f : ℝ → ℝ)
 
+-- 1ª demostración
 example 
   (h : ¬ fn_has_ub f) : 
   ∀ a, ∃ x, f x > a :=
@@ -21,4 +22,13 @@ begin
   apply h1,
   use x,
   exact h2
+end
+
+-- 2ª demostración
+example 
+  (h : ¬ fn_has_ub f) : 
+  ∀ a, ∃ x, f x > a :=
+begin
+  contrapose! h,
+  exact h
 end

@@ -431,3 +431,9 @@ en Lean:
 + [[./src/Logica/CNS_de_acotada_superiormente.lean][CNS de acotada superiormente]] (uso de push_neg y simp only)
 #+INCLUDE: "./src/Logica/CNS_de_acotada_superiormente.lean" src lean
 
++ [[./src/Logica/CN_de_no_monotona.lean][CN de no monótona]]
+#+INCLUDE: "./src/Logica/CN_de_no_monotona.lean" src lean
+
++ [[./src/Logica/Principio_de_explosion.lean][Principio de explosión]] (en latín "ex falso quodlibet")
+#+INCLUDE: "./src/Logica/Principio_de_explosion.lean" src lean
+
