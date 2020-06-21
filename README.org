@@ -255,7 +255,7 @@ en Lean:
 + [[./src/Basicos/Ejercicio_con_calc.lean][Ejercicio con calc]]
 #+INCLUDE: "./src/Basicos/Ejercicio_con_calc.lean" src lean
 
-+ [[./src/Basicos/Ejercicio_Suma_por_diferencia.lean][Ejercicio: Suma por diferencia]] (Pendiente)
++ [[./src/Basicos/Ejercicio_Suma_por_diferencia.lean][Ejercicio: Suma por diferencia]] (Ejercicio)
 #+INCLUDE: "./src/Basicos/Ejercicio_Suma_por_diferencia.lean" src lean
 
 + [[./src/Basicos/Reescritura_en_hipotesis_y_tactica_exact.lean][Reescritura en hipótesis y táctica exact]].
@@ -356,7 +356,7 @@ en Lean:
 + [[./src/Basicos/Desigualdades_con_calc.lean][Desigualdades con calc]]
 #+INCLUDE: "./src/Basicos/Desigualdades_con_calc.lean" src lean
 
-+ [[./src/Basicos/Ejercicio_desigualdades_absolutas.lean][Ejercicio desigualdades absolutas]] (Pendiente)
++ [[./src/Basicos/Ejercicio_desigualdades_absolutas.lean][Ejercicio desigualdades absolutas]] (Ejercicio)
 #+INCLUDE: "./src/Basicos/Ejercicio_desigualdades_absolutas.lean" src lean
 
 ** Más sobre orden y divisibilidad
@@ -375,10 +375,10 @@ en Lean:
 + [[./src/Basicos/Conmutatividad_del_maximo.lean][Conmutatividad del máximo]]
 #+INCLUDE: "./src/Basicos/Conmutatividad_del_maximo.lean" src lean
 
-+ [[./src/Basicos/Asociatividad_del_minimo.lean][Ejercicio: Asociatividad del mínimo]] (Pendiente)
++ [[./src/Basicos/Asociatividad_del_minimo.lean][Ejercicio: Asociatividad del mínimo]] (Ejercicio)
 #+INCLUDE: "./src/Basicos/Asociatividad_del_minimo.lean" src lean
 
-+ [[./src/Basicos/Minimo_de_suma.lean][Ejercicio: Mínimo de suma]] (Pendiente)
++ [[./src/Basicos/Minimo_de_suma.lean][Ejercicio: Mínimo de suma]] (Ejercicio)
 #+INCLUDE: "./src/Basicos/Minimo_de_suma.lean" src lean
 
 + [[./src/Basicos/abs_add.lean][Lema abs_add]]
@@ -463,7 +463,7 @@ en Lean:
 + [[./src/Logica/Lema_con_implicaciones_y_cuantificador_universal_implicitos.lean][Lema con implicaciones y cuantificador universal implícitos]]
 #+INCLUDE: "./src/Logica/Lema_con_implicaciones_y_cuantificador_universal_implicitos.lean" src lean
 
-+ [[./src/Logica/La_tactica_intros.lean][La táctica intros]] (Pendiente)
++ [[./src/Logica/La_tactica_intros.lean][La táctica intros]] (Ejercicio)
 #+INCLUDE: "./src/Logica/La_tactica_intros.lean" src lean
 
 + [[./src/Logica/Definiciones_de_cotas.lean][Definiciones de cotas]]
@@ -556,3 +556,31 @@ en Lean:
 
 + [[./src/Logica/Funcion_no_acotada_superiormente.lean][Función no acotada superiormente]]
 #+INCLUDE: "./src/Logica/Funcion_no_acotada_superiormente.lean" src lean
+
++ [[./src/Logica/Funcion_no_acotada_inferiormente.lean][Función no acotada inferiormente]]
+#+INCLUDE: "./src/Logica/Funcion_no_acotada_inferiormente.lean" src lean
+
++ [[./src/Logica/La_identidad_no_esta_acotada_superiormente.lean][La identidad no está acotada superiormente]]
+#+INCLUDE: "./src/Logica/La_identidad_no_esta_acotada_superiormente.lean" src lean
+
++ [[./src/Logica/Lemas_sobre_ordenes_y_negaciones.lean][Lemas sobre órdenes y negaciones]]
+#+INCLUDE: "./src/Logica/Lemas_sobre_ordenes_y_negaciones.lean" src lean
+
++ [[./src/Logica/Propiedades_de_funciones_monotonas.lean][Propiedades de funciones monótonas]]
+#+INCLUDE: "./src/Logica/Propiedades_de_funciones_monotonas.lean" src lean
+
++ [[./src/Logica/Contraejemplo_de_monotona.lean][Contraejemplo de monótona]] (Ejercicio)
+#+INCLUDE: "./src/Logica/Contraejemplo_de_monotona.lean" src lean
+
++ [[./src/Logica/Condicion_para_no_positivo.lean][Condición para no positivo]]
+#+INCLUDE: "./src/Logica/Condicion_para_no_positivo.lean" src lean
+
++ [[./src/Logica/Negacion_de_cuantificadores.lean][Negación de cuantificadores]]
+#+INCLUDE: "./src/Logica/Negacion_de_cuantificadores.lean" src lean
+
++ [[./src/Logica/Doble_negacion.lean][Doble negación]]
+#+INCLUDE: "./src/Logica/Doble_negacion.lean" src lean
+
++ [[./src/Logica/CN_no_acotada_superiormente.lean][CN no acotada superiormente]]
+#+INCLUDE: "./src/Logica/CN_no_acotada_superiormente.lean" src lean
+
