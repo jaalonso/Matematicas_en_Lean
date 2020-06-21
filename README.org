@@ -1,0 +1,558 @@
+#+TITLE: Matemáticas en Lean
+#+OPTIONS: ^:nil
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="./estilo.css" />
+
+* Introducción
+
+** Resumen
+
++ Apuntes de lectura de [[https://leanprover-community.github.io/mathematics_in_lean/index.html][Mathematics in Lean]] de Jeremy Avigad, Kevin Buzzard,
+  Robert Y. Lewis y Patrick Massot.
+
++ Su objetivo es presentar el uso de Lean mediante ejemplos matemáticos usando
+  tácticas y mathlib.
+
+** Creación del proyecto
+
++ Se crea con 
+  : leanproject new Matematicas_en_Lean
+
++ El resultado es
+  : estudio> leanproject new Matematicas_en_Lean
+  : > cd Matematicas_en_Lean
+  : > git init -q
+  : > git checkout -b lean-3.15.0
+  : Cambiado a nueva rama 'lean-3.15.0'
+  : configuring Matematicas_en_Lean 0.1
+  : Adding mathlib
+  : info: downloading component 'lean'
+  :  16.5 MiB /  16.5 MiB (100 %)   8.2 MiB/s ETA:   0 s                
+  : info: installing component 'lean'
+  : mathlib: cloning https://github.com/leanprover-community/mathlib to _target/deps/mathlib
+  : > git clone https://github.com/leanprover-community/mathlib _target/deps/mathlib
+  : Clonando en '_target/deps/mathlib'...
+  : remote: Enumerating objects: 77, done.        
+  : remote: Counting objects: 100% (77/77), done.        
+  : remote: Compressing objects: 100% (76/76), done.        
+  : remote: Total 51977 (delta 19), reused 8 (delta 1), pack-reused 51900        
+  : Recibiendo objetos: 100% (51977/51977), 22.61 MiB | 11.17 MiB/s, listo.
+  : Resolviendo deltas: 100% (40141/40141), listo.
+  : > git checkout --detach ade196f8b7c38d4918b55be04a55c79e5df5ec15    # in directory _target/deps/mathlib
+  : HEAD está ahora en ade196f8 chore(scripts): update nolints.txt (#3026)
+  : configuring Matematicas_en_Lean 0.1
+  : mathlib: trying to update _target/deps/mathlib to revision ade196f8b7c38d4918b55be04a55c79e5df5ec15
+  : > git checkout --detach ade196f8b7c38d4918b55be04a55c79e5df5ec15    # in directory _target/deps/mathlib
+  : HEAD está ahora en ade196f8 chore(scripts): update nolints.txt (#3026)
+  : Looking for local mathlib oleans
+  : Looking for remote mathlib oleans
+  : Trying to download https://oleanstorage.azureedge.net/mathlib/ade196f8b7c38d4918b55be04a55c79e5df5ec15.tar.xz to /home/jalonso/.mathlib/ade196f8b7c38d4918b55be04a55c79e5df5ec15.tar.xz
+  : 100% | 22.6M/22.6M [00:04<00:00, 5.55MiB/s]
+  : Found mathlib oleans at https://oleanstorage.azureedge.net/mathlib/
+
++ Crea el directorio =Matematicas_en_Lean= con la siguiente estructura 
+  : Matematicas_en_Lean> tree -d
+  : .
+  : ├── src
+  : └── _target
+  :     └── deps
+  :         └── mathlib
+  :             ├── archive
+  :             │   ├── 100-theorems-list
+  :             │   └── examples
+  :             ├── docs
+  :             │   ├── contribute
+  :             │   ├── extras
+  :             │   ├── install
+  :             │   ├── theories
+  :             │   └── tutorial
+  :             │       └── category_theory
+  :             ├── roadmap
+  :             │   └── topology
+  :             ├── scripts
+  :             ├── src
+  :             │   ├── algebra
+  :             │   │   ├── category
+  :             │   │   │   ├── CommRing
+  :             │   │   │   ├── Group
+  :             │   │   │   ├── Module
+  :             │   │   │   └── Mon
+  :             │   │   ├── continued_fractions
+  :             │   │   │   └── computation
+  :             │   │   ├── group
+  :             │   │   └── homology
+  :             │   ├── algebraic_geometry
+  :             │   ├── analysis
+  :             │   │   ├── analytic
+  :             │   │   ├── calculus
+  :             │   │   ├── complex
+  :             │   │   ├── convex
+  :             │   │   ├── normed_space
+  :             │   │   ├── ODE
+  :             │   │   └── special_functions
+  :             │   ├── category_theory
+  :             │   │   ├── abelian
+  :             │   │   ├── adjunction
+  :             │   │   ├── category
+  :             │   │   ├── concrete_category
+  :             │   │   ├── limits
+  :             │   │   │   └── shapes
+  :             │   │   │       └── constructions
+  :             │   │   ├── monad
+  :             │   │   ├── monoidal
+  :             │   │   ├── products
+  :             │   │   └── sums
+  :             │   ├── combinatorics
+  :             │   ├── computability
+  :             │   ├── control
+  :             │   │   ├── bitraversable
+  :             │   │   ├── equiv_functor
+  :             │   │   ├── monad
+  :             │   │   └── traversable
+  :             │   ├── data
+  :             │   │   ├── analysis
+  :             │   │   ├── array
+  :             │   │   ├── buffer
+  :             │   │   ├── complex
+  :             │   │   ├── dlist
+  :             │   │   ├── equiv
+  :             │   │   ├── finsupp
+  :             │   │   ├── fintype
+  :             │   │   ├── fp
+  :             │   │   ├── int
+  :             │   │   ├── list
+  :             │   │   ├── matrix
+  :             │   │   ├── nat
+  :             │   │   ├── num
+  :             │   │   ├── option
+  :             │   │   ├── padics
+  :             │   │   ├── pnat
+  :             │   │   ├── rat
+  :             │   │   ├── real
+  :             │   │   ├── seq
+  :             │   │   ├── set
+  :             │   │   │   └── intervals
+  :             │   │   ├── setoid
+  :             │   │   ├── sigma
+  :             │   │   ├── stream
+  :             │   │   ├── string
+  :             │   │   ├── zmod
+  :             │   │   └── zsqrtd
+  :             │   ├── deprecated
+  :             │   ├── dynamics
+  :             │   │   ├── circle
+  :             │   │   │   └── rotation_number
+  :             │   │   └── fixed_points
+  :             │   ├── field_theory
+  :             │   ├── geometry
+  :             │   │   └── manifold
+  :             │   ├── group_theory
+  :             │   │   └── perm
+  :             │   ├── init_
+  :             │   │   ├── algebra
+  :             │   │   └── data
+  :             │   │       ├── int
+  :             │   │       └── nat
+  :             │   ├── linear_algebra
+  :             │   ├── logic
+  :             │   │   └── function
+  :             │   ├── measure_theory
+  :             │   │   └── category
+  :             │   ├── meta
+  :             │   ├── number_theory
+  :             │   ├── order
+  :             │   │   └── filter
+  :             │   ├── representation_theory
+  :             │   ├── ring_theory
+  :             │   ├── set_theory
+  :             │   │   └── game
+  :             │   ├── tactic
+  :             │   │   ├── converter
+  :             │   │   ├── lint
+  :             │   │   ├── monotonicity
+  :             │   │   ├── nth_rewrite
+  :             │   │   ├── omega
+  :             │   │   │   ├── int
+  :             │   │   │   └── nat
+  :             │   │   └── rewrite_all
+  :             │   └── topology
+  :             │       ├── algebra
+  :             │       ├── category
+  :             │       │   └── Top
+  :             │       ├── instances
+  :             │       ├── metric_space
+  :             │       ├── sheaves
+  :             │       └── uniform_space
+  :             └── test
+  :                 ├── conv
+  :                 ├── library_search
+  :                 ├── localized
+  :                 ├── monotonicity
+  :                 └── transport
+  : 
+  : 136 directories
+
+** Importación del código del proyecto
+
++ Importación
+  : > cd ~/Descargas
+  : > leanproject get mathematics_in_lean
+
++ Resultado 
+  + Crea el directorio [[/home/jalonso/Descargas/mathematics_in_lean][mathematics_in_lean]].
+  + El código está en [[/home/jalonso/Descargas/mathematics_in_lean/examples][examples]].
+
+** Presentación panorámica de Lean
+
++ [[./src/Introduccion/Ejemplo_de_evaluacion.lean][Ejemplo de evaluación]]
+#+INCLUDE: "./src/Introduccion/Ejemplo_de_evaluacion.lean" src lean
+
++ [[./src/Introduccion/Ejemplo_de_comprobacion_con_check.lean][Ejemplo de comprobación con check]]
+#+INCLUDE: "./src/Introduccion/Ejemplo_de_comprobacion_con_check.lean" src lean
+
++ [[./src/Introduccion/Ejemplo_de_definicion_de_funciones.lean][Ejemplo de definición de funciones]]
+#+INCLUDE: "./src/Introduccion/Ejemplo_de_definicion_de_funciones.lean" src lean
+
++ [[./src/Introduccion/Ejemplo_de_proposiciones.lean][Ejemplo de proposiciones]]
+#+INCLUDE: "./src/Introduccion/Ejemplo_de_proposiciones.lean" src lean
+
++ [[./src/Introduccion/Ejemplo_de_teoremas.lean][Ejemplo de teoremas]]
+#+INCLUDE: "./src/Introduccion/Ejemplo_de_teoremas.lean" src lean
+
++ [[./src/Introduccion/Ejemplo_de_demostracion.lean][Ejemplo de demostración]]
+#+INCLUDE: "./src/Introduccion/Ejemplo_de_demostracion.lean" src lean
+
+* Aspectos básicos del razonamiento matemático en Lean
+
+En este capítulo se presentan los aspectos básicos del razonamiento matemático
+en Lean: 
++ cálculos, 
++ aplicación de lemas y teoremas y 
++ razonamiento sobre estructuras genéricas.
+
+** Cálculos
+
++ [[./src/Basicos/Asociativa_conmutativa_de_los_reales.lean][Asociativa conmutativa de los reales]]
+#+INCLUDE: "./src/Basicos/Asociativa_conmutativa_de_los_reales.lean" src lean
+
++ [[./src/Basicos/Ejercicios_sobre_aritmetica_real.lean][Ejercicios_sobre_aritmética real]]
+#+INCLUDE: "./src/Basicos/Ejercicios_sobre_aritmetica_real.lean" src lean
+
++ [[./src/Basicos/Ejemplo_de_rw_sobre_hipotesis.lean][Ejemplo de rw sobre hipótesis]]
+#+INCLUDE: "./src/Basicos/Ejemplo_de_rw_sobre_hipotesis.lean" src lean
+
++ [[./src/Basicos/Ejercicio_de_rw_sobre_hipotesis.lean][Ejercicio de rw sobre hipótesis]]
+#+INCLUDE: "./src/Basicos/Ejercicio_de_rw_sobre_hipotesis.lean" src lean
+
++ [[./src/Basicos/Reescritura_con_varios_lemas.lean][Reescritura con varios lemas]]
+#+INCLUDE: "./src/Basicos/Reescritura_con_varios_lemas.lean" src lean
+
++ [[./src/Basicos/Declaracion_de_variables_en_secciones.lean][Declaración de variables en secciones]]
+#+INCLUDE: "./src/Basicos/Declaracion_de_variables_en_secciones.lean" src lean
+
++ [[./src/Basicos/Demostracion_con_calc.lean][Demostración con calc]]
+#+INCLUDE: "./src/Basicos/Demostracion_con_calc.lean" src lean
+
++ [[./src/Basicos/Ejercicio_con_calc.lean][Ejercicio con calc]]
+#+INCLUDE: "./src/Basicos/Ejercicio_con_calc.lean" src lean
+
++ [[./src/Basicos/Ejercicio_Suma_por_diferencia.lean][Ejercicio: Suma por diferencia]] (Pendiente)
+#+INCLUDE: "./src/Basicos/Ejercicio_Suma_por_diferencia.lean" src lean
+
++ [[./src/Basicos/Reescritura_en_hipotesis_y_tactica_exact.lean][Reescritura en hipótesis y táctica exact]].
+#+INCLUDE: "./src/Basicos/Reescritura_en_hipotesis_y_tactica_exact.lean" src lean
+
++ [[./src/Basicos/Demostraciones_con_ring.lean][Demostraciones con ring]]
+#+INCLUDE: "./src/Basicos/Demostraciones_con_ring.lean" src lean
+
+** Demostraciones en estructuras algebraicas
+
+*** Demostraciones en anillos
+
++ [[./src/Basicos/Axiomas_de_anillos.lean][Axiomas de anillos]]
+#+INCLUDE: "./src/Basicos/Axiomas_de_anillos.lean" src lean
+
++ [[./src/Basicos/Propiedades_de_anillos_conmutativos.lean][Propiedades de anillos conmutativos]]
+#+INCLUDE: "./src/Basicos/Propiedades_de_anillos_conmutativos.lean" src lean
+
++ [[./src/Basicos/Propiedades_basicas_de_anillos.lean][Propiedades básicas de anillos]]
+#+INCLUDE: "./src/Basicos/Propiedades_basicas_de_anillos.lean" src lean
+
++ [[./src/Basicos/neg_add_cancel_left.lean][Lema neg_add_cancel_left]]
+#+INCLUDE: "./src/Basicos/neg_add_cancel_left.lean" src lean
+
++ [[./src/Basicos/neg_add_cancel_right.lean][Ejercicio neg_add_cancel_right]]
+#+INCLUDE: "./src/Basicos/neg_add_cancel_right.lean" src lean
+
++ [[./src/Basicos/Cancelativas_de_la_suma.lean][Ejercicio: Cancelativas de la suma]]
+#+INCLUDE: "./src/Basicos/Cancelativas_de_la_suma.lean" src lean
+
++ [[./src/Basicos/mul_zero.lean][Lema mul_zero con have]]
+#+INCLUDE: "./src/Basicos/mul_zero.lean" src lean
+
++ [[./src/Basicos/zero_mul.lean][Ejercicio zero_mul]] 
+#+INCLUDE: "./src/Basicos/zero_mul.lean" src lean
+
++ [[./src/Basicos/Ejercicios_sobre_anillos.lean][Ejercicios sobre anillos]]
+#+INCLUDE: "./src/Basicos/Ejercicios_sobre_anillos.lean" src lean
+
++ [[./src/Basicos/Subtraccion_en_anillos.lean][Subtracción en anillos]]
+#+INCLUDE: "./src/Basicos/Subtraccion_en_anillos.lean" src lean
+
++ [[./src/Basicos/self_sub.lean][Ejercicio self_sub]]
+#+INCLUDE: "./src/Basicos/self_sub.lean" src lean
+
++ [[./src/Basicos/two_mul.lean][Ejercicio two_mul]]
+#+INCLUDE: "./src/Basicos/two_mul.lean" src lean
+
+*** Demostraciones en grupos
+
++ [[./src/Basicos/Axiomas_de_grupo.lean][Axiomas de grupo]] (versión aditiva)
+#+INCLUDE: "./src/Basicos/Axiomas_de_grupo.lean" src lean
+
++ [[./src/Basicos/Axiomas_de_grupo_multiplicativo.lean][Axiomas de grupo multiplicativo]]
+#+INCLUDE: "./src/Basicos/Axiomas_de_grupo_multiplicativo.lean" src lean
+
++ [[./src/Basicos/Ejercicios_sobre_grupos.lean][Ejercicios sobre grupos]]
+#+INCLUDE: "./src/Basicos/Ejercicios_sobre_grupos.lean" src lean
+
+** Uso de lemas y teoremas
+
++ [[./src/Basicos/Propiedades_reflexiva_y_transitiva.lean][Propiedades reflexiva y transitiva]]
+#+INCLUDE: "./src/Basicos/Propiedades_reflexiva_y_transitiva.lean" src lean
+
++ [[./src/Basicos/Las_tacticas_apply_y_exact.lean][Las tácticas apply y exact]]
+#+INCLUDE: "./src/Basicos/Las_tacticas_apply_y_exact.lean" src lean
+
++ [[./src/Basicos/Propiedades_del_orden.lean][Propiedades del orden]]
+#+INCLUDE: "./src/Basicos/Propiedades_del_orden.lean" src lean
+
++ [[./src/Basicos/Ejercicio_sobre_orden.lean][Ejercicio sobre orden]]
+#+INCLUDE: "./src/Basicos/Ejercicio_sobre_orden.lean" src lean
+
++ [[./src/Basicos/Demostraciones_por_aritmetica_lineal.lean][Demostraciones por aritmética lineal]]
+#+INCLUDE: "./src/Basicos/Demostraciones_por_aritmetica_lineal.lean" src lean
+
++ [[./src/Basicos/Aritmetica_lineal_con_argumentos.lean][Aritmética lineal con argumentos]]
+#+INCLUDE: "./src/Basicos/Aritmetica_lineal_con_argumentos.lean" src lean
+
++ [[./src/Basicos/Lemas_de_desigualdades_en_R.lean][Lemas de desigualdades en R]]
+#+INCLUDE: "./src/Basicos/Lemas_de_desigualdades_en_R.lean" src lean
+
++ [[./src/Basicos/Desgualdad_de_exponenciales.lean][Desgualdad_de_exponenciales (reescritura con el bicondicional)]]
+#+INCLUDE: "./src/Basicos/Desgualdad_de_exponenciales.lean" src lean
+
++ [[./src/Basicos/Eliminacion_de_bicondicional.lean][Eliminación de bicondicional]]
+#+INCLUDE: "./src/Basicos/Eliminacion_de_bicondicional.lean" src lean
+
++ [[./src/Basicos/Ejercicio_sobre_desigualdades.lean][Ejercicio sobre desigualdades]]
+#+INCLUDE: "./src/Basicos/Ejercicio_sobre_desigualdades.lean" src lean
+
++ [[./src/Basicos/Uso_de_library_search.lean][Uso de library_search]]
+#+INCLUDE: "./src/Basicos/Uso_de_library_search.lean" src lean
+
++ [[./src/Basicos/Ejercicio_con_library_search.lean][Ejercicio con library_search]]
+#+INCLUDE: "./src/Basicos/Ejercicio_con_library_search.lean" src lean
+
++ [[./src/Basicos/Desigualdades_con_calc.lean][Desigualdades con calc]]
+#+INCLUDE: "./src/Basicos/Desigualdades_con_calc.lean" src lean
+
++ [[./src/Basicos/Ejercicio_desigualdades_absolutas.lean][Ejercicio desigualdades absolutas]] (Pendiente)
+#+INCLUDE: "./src/Basicos/Ejercicio_desigualdades_absolutas.lean" src lean
+
+** Más sobre orden y divisibilidad
+
+*** Mínimos y máximos
+
++ [[./src/Basicos/Caracterizacion_del_minimo.lean][Caracterización del mínimo]]
+#+INCLUDE: "./src/Basicos/Caracterizacion_del_minimo.lean" src lean
+
++ [[./src/Basicos/Caracterizacion_del_maximo.lean][Caracterización del máximo]]
+#+INCLUDE: "./src/Basicos/Caracterizacion_del_maximo.lean" src lean
+
++ [[./src/Basicos/Conmutatividad_del_minimo.lean][Conmutatividad del mínimo]]
+#+INCLUDE: "./src/Basicos/Conmutatividad_del_minimo.lean" src lean
+
++ [[./src/Basicos/Conmutatividad_del_maximo.lean][Conmutatividad del máximo]]
+#+INCLUDE: "./src/Basicos/Conmutatividad_del_maximo.lean" src lean
+
++ [[./src/Basicos/Asociatividad_del_minimo.lean][Ejercicio: Asociatividad del mínimo]] (Pendiente)
+#+INCLUDE: "./src/Basicos/Asociatividad_del_minimo.lean" src lean
+
++ [[./src/Basicos/Minimo_de_suma.lean][Ejercicio: Mínimo de suma]] (Pendiente)
+#+INCLUDE: "./src/Basicos/Minimo_de_suma.lean" src lean
+
++ [[./src/Basicos/abs_add.lean][Lema abs_add]]
+#+INCLUDE: "./src/Basicos/abs_add.lean" src lean
+
++ [[./src/Basicos/abs_sub.lean][Ejercicio: abs_sub]]
+#+INCLUDE: "./src/Basicos/abs_sub.lean" src lean
+
+*** Divisibilidad
+
++ [[./src/Basicos/Propiedades_de_divisibilidad.lean][Propiedades de divisibilidad]]
+#+INCLUDE: "./src/Basicos/Propiedades_de_divisibilidad.lean" src lean
+
++ [[./src/Basicos/Ejercicio_de_divisibilidad.lean][Ejercicio de divisibilidad]]
+#+INCLUDE: "./src/Basicos/Ejercicio_de_divisibilidad.lean" src lean
+
++ [[./src/Basicos/Propiedades_de_gcd_y_lcm.lean][Propiedades de gcd y lcm]]
+#+INCLUDE: "./src/Basicos/Propiedades_de_gcd_y_lcm.lean" src lean
+
++ [[./src/Basicos/Conmutatividad_del_gcd.lean][Conmutatividad del gcd]]
+#+INCLUDE: "./src/Basicos/Conmutatividad_del_gcd.lean" src lean
+
+** Demostraciones sobre estructuras algebraicas
+
+*** Órdenes
+
++ [[./src/Basicos/Ordenes_parciales.lean][Órdenes parciales]]
+#+INCLUDE: "./src/Basicos/Ordenes_parciales.lean" src lean
+
++ [[./src/Basicos/Orden_estricto.lean][Orden estricto]]
+#+INCLUDE: "./src/Basicos/Orden_estricto.lean" src lean
+
+*** Retículos
+
++ [[./src/Basicos/Reticulos.lean][Retículos]]
+#+INCLUDE: "./src/Basicos/Reticulos.lean" src lean
+
++ [[./src/Basicos/Conmutatividad_del_infimo.lean][Conmutatividad del ínfimo]]
+#+INCLUDE: "./src/Basicos/Conmutatividad_del_infimo.lean" src lean
+
++ [[./src/Basicos/Conmutatividad_del_supremo.lean][Conmutatividad del supremo]]
+#+INCLUDE: "./src/Basicos/Conmutatividad_del_supremo.lean" src lean
+
++ [[./src/Basicos/Asociatividad_del_infimo.lean][Asociatividad del ínfimo]]
+#+INCLUDE: "./src/Basicos/Asociatividad_del_infimo.lean" src lean
+
++ [[./src/Basicos/Asociatividad_del_supremo.lean][Asociatividad del supremo]]
+#+INCLUDE: "./src/Basicos/Asociatividad_del_supremo.lean" src lean
+
++ [[./src/Basicos/Leyes_de_absorcion.lean][Leyes de absorción]]
+#+INCLUDE: "./src/Basicos/Leyes_de_absorcion.lean" src lean
+
++ [[./src/Basicos/Reticulos_distributivos.lean][Retículos distributivos]]
+#+INCLUDE: "./src/Basicos/Reticulos_distributivos.lean" src lean
+
++ [[./src/Basicos/Propiedades_distributivas.lean][Propiedades distributivas]]
+#+INCLUDE: "./src/Basicos/Propiedades_distributivas.lean" src lean
+
++ [[./src/Basicos/Anillos_ordenados.lean][Anillos ordenados]]
+#+INCLUDE: "./src/Basicos/Anillos_ordenados.lean" src lean
+
+*** Anillos ordenados
+
++ [[./src/Basicos/Ejercicio_sobre_anillos_ordenados.lean][Ejercicio sobre anillos ordenados]]
+#+INCLUDE: "./src/Basicos/Ejercicio_sobre_anillos_ordenados.lean" src lean
+
+*** Espacios métricos
+
++ [[./src/Basicos/Espacios_metricos.lean][Espacios métricos]]
+#+INCLUDE: "./src/Basicos/Espacios_metricos.lean" src lean
+
++ [[./src/Basicos/Ejercicio_en_espacios_metricos.lean][Ejercicio en espacios métricos]]
+#+INCLUDE: "./src/Basicos/Ejercicio_en_espacios_metricos.lean" src lean
+
+* Lógica
+
+** Implicación y cuantificación universal
+
++ [[./src/Logica/Lema_con_implicaciones_y_cuantificador_universal.lean][Lema con implicaciones y cuantificador universal]]
+#+INCLUDE: "./src/Logica/Lema_con_implicaciones_y_cuantificador_universal.lean" src lean
+
++ [[./src/Logica/Lema_con_implicaciones_y_cuantificador_universal_implicitos.lean][Lema con implicaciones y cuantificador universal implícitos]]
+#+INCLUDE: "./src/Logica/Lema_con_implicaciones_y_cuantificador_universal_implicitos.lean" src lean
+
++ [[./src/Logica/La_tactica_intros.lean][La táctica intros]] (Pendiente)
+#+INCLUDE: "./src/Logica/La_tactica_intros.lean" src lean
+
++ [[./src/Logica/Definiciones_de_cotas.lean][Definiciones de cotas]]
+#+INCLUDE: "./src/Logica/Definiciones_de_cotas.lean" src lean
+
++ [[./src/Logica/Suma_de_cotas_superiores.lean][Suma de cotas superiores]]
+#+INCLUDE: "./src/Logica/Suma_de_cotas_superiores.lean" src lean
+
++ [[./src/Logica/Operaciones_con_cotas.lean][Operaciones con cotas]]
+#+INCLUDE: "./src/Logica/Operaciones_con_cotas.lean" src lean
+
++ [[./src/Logica/Generalizacion_a_monoides.lean][Generalización a monoides]]
+#+INCLUDE: "./src/Logica/Generalizacion_a_monoides.lean" src lean
+
++ [[./src/Logica/Funcion_monotona.lean][Función monótona]]
+#+INCLUDE: "./src/Logica/Funcion_monotona.lean" src lean
+
++ [[./src/Logica/Suma_de_funciones_monotonas.lean][Suma de funciones monótonas]]
+#+INCLUDE: "./src/Logica/Suma_de_funciones_monotonas.lean" src lean
+
++ [[./src/Logica/Producto_de_un_positivo_por_una_funcion_monotona.lean][Producto de un positivo por una función monótona]]
+#+INCLUDE: "./src/Logica/Producto_de_un_positivo_por_una_funcion_monotona.lean" src lean
+
++ [[./src/Logica/Composicion_de_funciones_monotonas.lean][Composición de funciones monótonas]]
+#+INCLUDE: "./src/Logica/Composicion_de_funciones_monotonas.lean" src lean
+
++ [[./src/Logica/Funciones_pares_e_impares.lean][Funciones pares e impares]]
+#+INCLUDE: "./src/Logica/Funciones_pares_e_impares.lean" src lean
+
++ [[./src/Logica/Propiedad_reflexiva_del_subconjunto.lean][Propiedad reflexiva del subconjunto]]
+#+INCLUDE: "./src/Logica/Propiedad_reflexiva_del_subconjunto.lean" src lean
+
++ [[./src/Logica/Propiedad_transitiva_del_subconjunto.lean][Propiedad transitiva del subconjunto]]
+#+INCLUDE: "./src/Logica/Propiedad_transitiva_del_subconjunto.lean" src lean
+
++ [[./src/Logica/Cotas_superiores_de_conjuntos.lean][Cotas superiores de conjuntos]]
+#+INCLUDE: "./src/Logica/Cotas_superiores_de_conjuntos.lean" src lean
+
++ [[./src/Logica/Funciones_inyectivas.lean][Funciones inyectivas]]
+#+INCLUDE: "./src/Logica/Funciones_inyectivas.lean" src lean
+
++ [[./src/Logica/Composicion_de_funciones_inyectivas.lean][Composición de funciones inyectivas]]
+#+INCLUDE: "./src/Logica/Composicion_de_funciones_inyectivas.lean" src lean
+
+** El cuantificador existencial
+
++ [[./src/Logica/Existencia_de_valor_intermedio.lean][Existencia de valor intermedio]]
+#+INCLUDE: "./src/Logica/Existencia_de_valor_intermedio.lean" src lean
+
++ [[./src/Logica/Definicion_de_funciones_acotadas.lean][Definición de funciones acotadas]]
+#+INCLUDE: "./src/Logica/Definicion_de_funciones_acotadas.lean" src lean
+
++ [[./src/Logica/Suma_de_funciones_acotadas.lean][Suma de funciones acotadas]]
+#+INCLUDE: "./src/Logica/Suma_de_funciones_acotadas.lean" src lean
+
++ [[./src/Logica/Suma_de_funciones_acotadas_inferiormente.lean][Suma de funciones acotadas inferiormente]]
+#+INCLUDE: "./src/Logica/Suma_de_funciones_acotadas_inferiormente.lean" src lean
+
++ [[./src/Logica/Producto_por_funcion_acotada_superiormente.lean][Producto por función acotada superiormente]]
+#+INCLUDE: "./src/Logica/Producto_por_funcion_acotada_superiormente.lean" src lean
+
++ [[./src/Logica/Sumas_de_cotas_superiores_con_rcases_y_rintros.lean][Sumas de cotas superiores con rcases y rintros]]
+#+INCLUDE: "./src/Logica/Sumas_de_cotas_superiores_con_rcases_y_rintros.lean" src lean
+
++ [[./src/Logica/Producto_de_suma_de_cuadrados.lean][Producto_de_suma_de_cuadrados]]
+#+INCLUDE: "./src/Logica/Producto_de_suma_de_cuadrados.lean" src lean
+
++ [[./src/Logica/Transitividad_de_la_divisibilidad.lean][Transitividad de la divisibilidad]]
+#+INCLUDE: "./src/Logica/Transitividad_de_la_divisibilidad.lean" src lean
+
++ [[./src/Logica/Suma_divisible.lean][Suma divisible]]
+#+INCLUDE: "./src/Logica/Suma_divisible.lean" src lean
+
++ [[./src/Logica/Suma_constante_es_suprayectiva.lean][Suma constante es suprayectiva]]
+#+INCLUDE: "./src/Logica/Suma_constante_es_suprayectiva.lean" src lean
+
++ [[./src/Logica/Producto_por_no_nula_es_suprayectiva.lean][Producto por no nula es suprayectiva]]
+#+INCLUDE: "./src/Logica/Producto_por_no_nula_es_suprayectiva.lean" src lean
+
++ [[./src/Logica/Propiedad_de_suprayectivas.lean][Propiedad de suprayectivas]]
+#+INCLUDE: "./src/Logica/Propiedad_de_suprayectivas.lean" src lean
+
++ [[./src/Logica/Composicion_de_suprayectivas.lean][Composición de suprayectivas]]
+#+INCLUDE: "./src/Logica/Composicion_de_suprayectivas.lean" src lean
+
+** La negación
+
++ [[./src/Logica/Asimetrica_implica_irreflexiva.lean][Asimétrica implica irreflexiva]]
+#+INCLUDE: "./src/Logica/Asimetrica_implica_irreflexiva.lean" src lean
+
++ [[./src/Logica/Funcion_no_acotada_superiormente.lean][Función no acotada superiormente]]
+#+INCLUDE: "./src/Logica/Funcion_no_acotada_superiormente.lean" src lean
