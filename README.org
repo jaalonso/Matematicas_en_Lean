@@ -12,14 +12,14 @@
 + Su objetivo es presentar el uso de Lean mediante ejemplos matemáticos usando
   tácticas y mathlib.
 
-** Creación del proyecto
-
-+ Se crea con 
-  : leanproject new Matematicas_en_Lean
-
-+ Crea el directorio =Matematicas_en_Lean= cuya estructura se ve con
-  : tree -d
- 
+# ** Creación del proyecto
+# 
+# + Se crea con 
+#   : leanproject new Matematicas_en_Lean
+# 
+# + Crea el directorio =Matematicas_en_Lean= cuya estructura se ve con
+#   : tree -d
+#  
 # ** Importación del código del proyecto
 # 
 # + Importación
