@@ -2,6 +2,21 @@
 #+OPTIONS: ^:nil
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="./estilo.css" />
 
+* Contenido                                                             :TOC:
+- [[#introducción][Introducción]]
+  - [[#resumen][Resumen]]
+  - [[#presentación-panorámica-de-lean][Presentación panorámica de Lean]]
+- [[#aspectos-básicos-del-razonamiento-matemático-en-lean][Aspectos básicos del razonamiento matemático en Lean]]
+  - [[#cálculos][Cálculos]]
+  - [[#demostraciones-en-estructuras-algebraicas][Demostraciones en estructuras algebraicas]]
+  - [[#uso-de-lemas-y-teoremas][Uso de lemas y teoremas]]
+  - [[#más-sobre-orden-y-divisibilidad][Más sobre orden y divisibilidad]]
+  - [[#demostraciones-sobre-estructuras-algebraicas][Demostraciones sobre estructuras algebraicas]]
+- [[#lógica][Lógica]]
+  - [[#implicación-y-cuantificación-universal][Implicación y cuantificación universal]]
+  - [[#el-cuantificador-existencial][El cuantificador existencial]]
+  - [[#la-negación][La negación]]
+
 * Introducción
 
 ** Resumen
