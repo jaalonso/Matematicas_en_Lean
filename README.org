@@ -17,189 +17,18 @@
 + Se crea con 
   : leanproject new Matematicas_en_Lean
 
-+ El resultado es
-  : estudio> leanproject new Matematicas_en_Lean
-  : > cd Matematicas_en_Lean
-  : > git init -q
-  : > git checkout -b lean-3.15.0
-  : Cambiado a nueva rama 'lean-3.15.0'
-  : configuring Matematicas_en_Lean 0.1
-  : Adding mathlib
-  : info: downloading component 'lean'
-  :  16.5 MiB /  16.5 MiB (100 %)   8.2 MiB/s ETA:   0 s                
-  : info: installing component 'lean'
-  : mathlib: cloning https://github.com/leanprover-community/mathlib to _target/deps/mathlib
-  : > git clone https://github.com/leanprover-community/mathlib _target/deps/mathlib
-  : Clonando en '_target/deps/mathlib'...
-  : remote: Enumerating objects: 77, done.        
-  : remote: Counting objects: 100% (77/77), done.        
-  : remote: Compressing objects: 100% (76/76), done.        
-  : remote: Total 51977 (delta 19), reused 8 (delta 1), pack-reused 51900        
-  : Recibiendo objetos: 100% (51977/51977), 22.61 MiB | 11.17 MiB/s, listo.
-  : Resolviendo deltas: 100% (40141/40141), listo.
-  : > git checkout --detach ade196f8b7c38d4918b55be04a55c79e5df5ec15    # in directory _target/deps/mathlib
-  : HEAD está ahora en ade196f8 chore(scripts): update nolints.txt (#3026)
-  : configuring Matematicas_en_Lean 0.1
-  : mathlib: trying to update _target/deps/mathlib to revision ade196f8b7c38d4918b55be04a55c79e5df5ec15
-  : > git checkout --detach ade196f8b7c38d4918b55be04a55c79e5df5ec15    # in directory _target/deps/mathlib
-  : HEAD está ahora en ade196f8 chore(scripts): update nolints.txt (#3026)
-  : Looking for local mathlib oleans
-  : Looking for remote mathlib oleans
-  : Trying to download https://oleanstorage.azureedge.net/mathlib/ade196f8b7c38d4918b55be04a55c79e5df5ec15.tar.xz to /home/jalonso/.mathlib/ade196f8b7c38d4918b55be04a55c79e5df5ec15.tar.xz
-  : 100% | 22.6M/22.6M [00:04<00:00, 5.55MiB/s]
-  : Found mathlib oleans at https://oleanstorage.azureedge.net/mathlib/
-
-+ Crea el directorio =Matematicas_en_Lean= con la siguiente estructura 
-  : Matematicas_en_Lean> tree -d
-  : .
-  : ├── src
-  : └── _target
-  :     └── deps
-  :         └── mathlib
-  :             ├── archive
-  :             │   ├── 100-theorems-list
-  :             │   └── examples
-  :             ├── docs
-  :             │   ├── contribute
-  :             │   ├── extras
-  :             │   ├── install
-  :             │   ├── theories
-  :             │   └── tutorial
-  :             │       └── category_theory
-  :             ├── roadmap
-  :             │   └── topology
-  :             ├── scripts
-  :             ├── src
-  :             │   ├── algebra
-  :             │   │   ├── category
-  :             │   │   │   ├── CommRing
-  :             │   │   │   ├── Group
-  :             │   │   │   ├── Module
-  :             │   │   │   └── Mon
-  :             │   │   ├── continued_fractions
-  :             │   │   │   └── computation
-  :             │   │   ├── group
-  :             │   │   └── homology
-  :             │   ├── algebraic_geometry
-  :             │   ├── analysis
-  :             │   │   ├── analytic
-  :             │   │   ├── calculus
-  :             │   │   ├── complex
-  :             │   │   ├── convex
-  :             │   │   ├── normed_space
-  :             │   │   ├── ODE
-  :             │   │   └── special_functions
-  :             │   ├── category_theory
-  :             │   │   ├── abelian
-  :             │   │   ├── adjunction
-  :             │   │   ├── category
-  :             │   │   ├── concrete_category
-  :             │   │   ├── limits
-  :             │   │   │   └── shapes
-  :             │   │   │       └── constructions
-  :             │   │   ├── monad
-  :             │   │   ├── monoidal
-  :             │   │   ├── products
-  :             │   │   └── sums
-  :             │   ├── combinatorics
-  :             │   ├── computability
-  :             │   ├── control
-  :             │   │   ├── bitraversable
-  :             │   │   ├── equiv_functor
-  :             │   │   ├── monad
-  :             │   │   └── traversable
-  :             │   ├── data
-  :             │   │   ├── analysis
-  :             │   │   ├── array
-  :             │   │   ├── buffer
-  :             │   │   ├── complex
-  :             │   │   ├── dlist
-  :             │   │   ├── equiv
-  :             │   │   ├── finsupp
-  :             │   │   ├── fintype
-  :             │   │   ├── fp
-  :             │   │   ├── int
-  :             │   │   ├── list
-  :             │   │   ├── matrix
-  :             │   │   ├── nat
-  :             │   │   ├── num
-  :             │   │   ├── option
-  :             │   │   ├── padics
-  :             │   │   ├── pnat
-  :             │   │   ├── rat
-  :             │   │   ├── real
-  :             │   │   ├── seq
-  :             │   │   ├── set
-  :             │   │   │   └── intervals
-  :             │   │   ├── setoid
-  :             │   │   ├── sigma
-  :             │   │   ├── stream
-  :             │   │   ├── string
-  :             │   │   ├── zmod
-  :             │   │   └── zsqrtd
-  :             │   ├── deprecated
-  :             │   ├── dynamics
-  :             │   │   ├── circle
-  :             │   │   │   └── rotation_number
-  :             │   │   └── fixed_points
-  :             │   ├── field_theory
-  :             │   ├── geometry
-  :             │   │   └── manifold
-  :             │   ├── group_theory
-  :             │   │   └── perm
-  :             │   ├── init_
-  :             │   │   ├── algebra
-  :             │   │   └── data
-  :             │   │       ├── int
-  :             │   │       └── nat
-  :             │   ├── linear_algebra
-  :             │   ├── logic
-  :             │   │   └── function
-  :             │   ├── measure_theory
-  :             │   │   └── category
-  :             │   ├── meta
-  :             │   ├── number_theory
-  :             │   ├── order
-  :             │   │   └── filter
-  :             │   ├── representation_theory
-  :             │   ├── ring_theory
-  :             │   ├── set_theory
-  :             │   │   └── game
-  :             │   ├── tactic
-  :             │   │   ├── converter
-  :             │   │   ├── lint
-  :             │   │   ├── monotonicity
-  :             │   │   ├── nth_rewrite
-  :             │   │   ├── omega
-  :             │   │   │   ├── int
-  :             │   │   │   └── nat
-  :             │   │   └── rewrite_all
-  :             │   └── topology
-  :             │       ├── algebra
-  :             │       ├── category
-  :             │       │   └── Top
-  :             │       ├── instances
-  :             │       ├── metric_space
-  :             │       ├── sheaves
-  :             │       └── uniform_space
-  :             └── test
-  :                 ├── conv
-  :                 ├── library_search
-  :                 ├── localized
-  :                 ├── monotonicity
-  :                 └── transport
-  : 
-  : 136 directories
-
-** Importación del código del proyecto
-
-+ Importación
-  : > cd ~/Descargas
-  : > leanproject get mathematics_in_lean
-
-+ Resultado 
-  + Crea el directorio [[/home/jalonso/Descargas/mathematics_in_lean][mathematics_in_lean]].
-  + El código está en [[/home/jalonso/Descargas/mathematics_in_lean/examples][examples]].
++ Crea el directorio =Matematicas_en_Lean= cuya estructura se ve con
+  : tree -d
+ 
+# ** Importación del código del proyecto
+# 
+# + Importación
+#   : > cd ~/Descargas
+#   : > leanproject get mathematics_in_lean
+# 
+# + Resultado 
+#   + Crea el directorio [[/home/jalonso/Descargas/mathematics_in_lean][mathematics_in_lean]].
+#   + El código está en [[/home/jalonso/Descargas/mathematics_in_lean/examples][examples]].
 
 ** Presentación panorámica de Lean
 
@@ -583,4 +412,7 @@ en Lean:
 
 + [[./src/Logica/CN_no_acotada_superiormente.lean][CN no acotada superiormente]]
 #+INCLUDE: "./src/Logica/CN_no_acotada_superiormente.lean" src lean
+
++ [[./src/Logica/CNS_de_acotada_superiormente.lean][CNS de acotada superiormente]] (uso de push_neg y simp only)
+#+INCLUDE: "./src/Logica/CNS_de_acotada_superiormente.lean" src lean
 
