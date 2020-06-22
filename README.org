@@ -17,6 +17,7 @@
   - [[#el-cuantificador-existencial][El cuantificador existencial]]
   - [[#la-negación][La negación]]
   - [[#conjunción-y-bicondicional][Conjunción y bicondicional]]
+  - [[#disyunción][Disyunción]]
 - [[#misceláneas][Misceláneas]]
   - [[#aritmética-modular][Aritmética modular]]
   - [[#sumatorios][Sumatorios]]
@@ -472,6 +473,16 @@ en Lean:
 
 + [[./src/Logica/Irreflexiva_y_transitiva_de_menor_en_preordenes.lean][Irreflexiva y transitiva de menor en preórdenes]]
 #+INCLUDE: "./src/Logica/Irreflexiva_y_transitiva_de_menor_en_preordenes.lean" src lean
+
+** Disyunción
+
++ [[./src/Logica/Introduccion_de_la_disyuncion.lean][Introducción de la disyunción]] (Tácticas [[https://bit.ly/3enkT3d][left / right]] y términos or.inl y or.inr)
+#+INCLUDE: "./src/Logica/Introduccion_de_la_disyuncion.lean" src lean
+
++ [[./src/Logica/Eliminacion_de_la_disyuncion.lean][Eliminación de la disyunción]] (Táctica [[https://bit.ly/3dowIEO][cases]])
+#+INCLUDE: "./src/Logica/Eliminacion_de_la_disyuncion.lean" src lean
+
+
 
 * Misceláneas
 
