@@ -17,6 +17,9 @@
   - [[#el-cuantificador-existencial][El cuantificador existencial]]
   - [[#la-negación][La negación]]
   - [[#conjunción-y-bicondicional][Conjunción y bicondicional]]
+- [[#misceláneas][Misceláneas]]
+  - [[#aritmética-modular][Aritmética modular]]
+  - [[#sumatorios][Sumatorios]]
 
 * Introducción
 
@@ -451,3 +454,33 @@ en Lean:
 
 + [[./src/Logica/Existenciales_y_conjunciones_anidadas.lean][Existenciales y conjunciones anidadas]]
 #+INCLUDE: "./src/Logica/Existenciales_y_conjunciones_anidadas.lean" src lean
+
++ [[./src/Logica/Suma_nula_de_dos_cuadrados.lean][Suma nula de dos cuadrados]]
+#+INCLUDE: "./src/Logica/Suma_nula_de_dos_cuadrados.lean" src lean
+
++ [[./src/Logica/Acotacion_del_valor_absoluto.lean][Acotación del valor absoluto]]
+#+INCLUDE: "./src/Logica/Acotacion_del_valor_absoluto.lean" src lean
+
++ [[./src/Logica/Divisor_del_mcd.lean][Divisor del mcd]]
+#+INCLUDE: "./src/Logica/Divisor_del_mcd.lean" src lean
+
++ [[./src/Logica/Funciones_no_monotonas.lean][Funciones no monótonas]]
+#+INCLUDE: "./src/Logica/Funciones_no_monotonas.lean" src lean
+
++ [[./src/Logica/Caracterizacion_de_menor_en_ordenes_parciales.lean][Caracterización de menor en órdenes parciales]]
+#+INCLUDE: "./src/Logica/Caracterizacion_de_menor_en_ordenes_parciales.lean" src lean
+
++ [[./src/Logica/Irreflexiva_y_transitiva_de_menor_en_preordenes.lean][Irreflexiva y transitiva de menor en preórdenes]]
+#+INCLUDE: "./src/Logica/Irreflexiva_y_transitiva_de_menor_en_preordenes.lean" src lean
+
+* Misceláneas
+
+** Aritmética modular
+
++ [[./src/Miscelaneas/Tactica_de_aritmetica_modular.lean][Táctica de aritmética modular]]
+#+INCLUDE: "./src/Miscelaneas/Tactica_de_aritmetica_modular.lean" src lean
+
+** Sumatorios
+
++ [[./src/Miscelaneas/Diferencia_de_sumatorios.lean][Diferencia de sumatorios]]
+#+INCLUDE: "./src/Miscelaneas/Diferencia_de_sumatorios.lean" src lean
