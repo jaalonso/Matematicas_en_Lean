@@ -21,6 +21,8 @@
 - [[#misceláneas][Misceláneas]]
   - [[#aritmética-modular][Aritmética modular]]
   - [[#sumatorios][Sumatorios]]
+  - [[#tácticas][Tácticas]]
+- [[#bibliografía][Bibliografía]]
 
 * Introducción
 
@@ -482,6 +484,9 @@ en Lean:
 + [[./src/Logica/Eliminacion_de_la_disyuncion.lean][Eliminación de la disyunción]] (Táctica [[https://bit.ly/3dowIEO][cases]])
 #+INCLUDE: "./src/Logica/Eliminacion_de_la_disyuncion.lean" src lean
 
++ [[./src/Logica/Desigualdad_triangular_para_valor_absoluto.lean][Desigualdad triangular para valor absoluto]]
+#+INCLUDE: "./src/Logica/Desigualdad_triangular_para_valor_absoluto.lean" src lean
+
 
 
 * Misceláneas
@@ -495,3 +500,24 @@ en Lean:
 
 + [[./src/Miscelaneas/Diferencia_de_sumatorios.lean][Diferencia de sumatorios]]
 #+INCLUDE: "./src/Miscelaneas/Diferencia_de_sumatorios.lean" src lean
+
+** Tácticas
+
++ [[./src/Logica/La_tactica_suggest.lean][La táctica suggest]]
+#+INCLUDE: "./src/MiscelaneasLogica/La_tactica_suggest.lean" src lean
+
++ [[./src/Logica/La_tactica_hint.lean][La táctica hint]]
+#+INCLUDE: "./src/Miscelaneas/La_tactica_hint.lean" src lean
+
++ [[./src/Logica/La_tactica_libray_search.lean][La táctica libray_search]]
+#+INCLUDE: "./src/Miscelaneas/La_tactica_libray_search.lean" src lean
+
+
+* Bibliografía
+
++ [[https://gist.github.com/utensil/dc635f2991255f76d8da797efdabbf15][Basic guide to tactics]] de Kevin Buzzard.
++ [[https://leanprover-community.github.io/mathlib_docs/][Lean mathlib documentation]].
++ [[https://leanprover-community.github.io/mathematics_in_lean/index.html][Mathematics in Lean]] de Jeremy Avigad, Kevin Buzzard, Robert Y. Lewis y Patrick
+  Massot.
++ [[https://github.com/kbuzzard/xena/tree/master/Maths_Challenges][Maths challenges for the Lean curious]] de Kevin Buzzard. 
++ [[https://leanprover.github.io/reference/index.html][The Lean reference manual]] de Jeremy Avigad, Gabriel Ebner y Sebastian Ullrich.
