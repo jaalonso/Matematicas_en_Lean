@@ -19,9 +19,11 @@
   - [[#conjunción-y-bicondicional][Conjunción y bicondicional]]
   - [[#disyunción][Disyunción]]
 - [[#misceláneas][Misceláneas]]
+  - [[#tácticas][Tácticas]]
   - [[#aritmética-modular][Aritmética modular]]
   - [[#sumatorios][Sumatorios]]
-  - [[#tácticas][Tácticas]]
+  - [[#retículos][Retículos]]
+  - [[#análisis][Análisis]]
 - [[#bibliografía][Bibliografía]]
 
 * Introducción
@@ -487,10 +489,28 @@ en Lean:
 + [[./src/Logica/Desigualdad_triangular_para_valor_absoluto.lean][Desigualdad triangular para valor absoluto]]
 #+INCLUDE: "./src/Logica/Desigualdad_triangular_para_valor_absoluto.lean" src lean
 
++ [[./src/Logica/Cotas_del_valor_absoluto.lean][Cotas del valor absoluto]]
+#+INCLUDE: "./src/Logica/Cotas_del_valor_absoluto.lean" src lean
+
++ [[./src/Logica/Eliminacion_de_la_disyuncion_con_rcases.lean][Eliminación de la disyunción con rcases]]
+#+INCLUDE: "./src/Logica/Eliminacion_de_la_disyuncion_con_rcases.lean" src lean
+
++ [[./src/Logica/CS_de_divisibilidad_del_producto.lean][CS de divisibilidad del producto]]
+#+INCLUDE: "./src/Logica/CS_de_divisibilidad_del_producto.lean" src lean
 
 
 * Misceláneas
 
+** Tácticas
+
++ [[./src/Miscelaneas/La_tactica_suggest.lean][La táctica suggest]]
+#+INCLUDE: "./src/Miscelaneas/La_tactica_suggest.lean" src lean
+
++ [[./src/Miscelaneas/La_tactica_hint.lean][La táctica hint]]
+#+INCLUDE: "./src/Miscelaneas/La_tactica_hint.lean" src lean
+
++ [[./src/Miscelaneas/La_tactica_libray_search.lean][La táctica libray_search]]
+#+INCLUDE: "./src/Miscelaneas/La_tactica_libray_search.lean" src lean
 ** Aritmética modular
 
 + [[./src/Miscelaneas/Tactica_de_aritmetica_modular.lean][Táctica de aritmética modular]]
@@ -501,17 +521,18 @@ en Lean:
 + [[./src/Miscelaneas/Diferencia_de_sumatorios.lean][Diferencia de sumatorios]]
 #+INCLUDE: "./src/Miscelaneas/Diferencia_de_sumatorios.lean" src lean
 
-** Tácticas
+** Retículos
 
-+ [[./src/Logica/La_tactica_suggest.lean][La táctica suggest]]
-#+INCLUDE: "./src/MiscelaneasLogica/La_tactica_suggest.lean" src lean
++ [[./src/Miscelaneas/Descomposicion_del_supremos.lean][Descomposición del supremos]]
+#+INCLUDE: "./src/Miscelaneas/Descomposicion_del_supremos.lean" src lean
 
-+ [[./src/Logica/La_tactica_hint.lean][La táctica hint]]
-#+INCLUDE: "./src/Miscelaneas/La_tactica_hint.lean" src lean
+** Análisis
 
-+ [[./src/Logica/La_tactica_libray_search.lean][La táctica libray_search]]
-#+INCLUDE: "./src/Miscelaneas/La_tactica_libray_search.lean" src lean
++ [[./src/Miscelaneas/Lema_del_emparedado.lean][Lema del emparedado]]
+#+INCLUDE: "./src/Miscelaneas/Lema_del_emparedado.lean" src lean
 
++ [[./src/Miscelaneas/No_decreciente_involutiva_es_identidad.lean][No decreciente involutiva es identidad]]
+#+INCLUDE: "./src/Miscelaneas/No_decreciente_involutiva_es_identidad.lean" src lean
 
 * Bibliografía
 
