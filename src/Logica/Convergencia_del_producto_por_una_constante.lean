@@ -3,7 +3,9 @@ import data.real.basic
 def converges_to (s : ℕ → ℝ) (a : ℝ) :=
 ∀ ε > 0, ∃ N, ∀ n ≥ N, abs (s n - a) < ε
 
-theorem converges_to_const (a : ℝ) : converges_to (λ x : ℕ, a) a :=
+lemma converges_to_const 
+  (a : ℝ) 
+  : converges_to (λ x : ℕ, a) a :=
 begin
   intros ε εpos, 
   dsimp,
@@ -16,13 +18,16 @@ end
 
 variables {s : ℕ → ℝ} {a : ℝ}
 
-example 
-  (c ε : ℝ)
-  (acpos : 0 < abs c)
-  (εpos : ε > 0)
-  : 0 < ε / abs c :=
-by exact div_pos εpos acpos
-
+lemma converges_to_mul_const_l1
+  {c ε : ℝ}
+  (h : 0 < c)
+  : c * (ε / c) = ε :=
+begin
+  rw mul_comm,
+  have h1 : c ≠ 0,
+    by exact ne_of_gt h,
+  exact div_mul_cancel ε h1,
+end
 
 theorem converges_to_mul_const
   {c : ℝ} 
@@ -47,24 +52,5 @@ begin
            = abs (c * (s n - a))   : by { congr, ring }
        ... = abs c * abs (s n - a) : by apply abs_mul
        ... < abs c * (ε / abs c)   : by exact mul_lt_mul_of_pos_left hs acpos 
-       ... = ε                     : by apply mul_div_self
-end
-
-example 
-  (c ε : ℝ)
-  (h : abs c > 0)
-  : abs c * (ε / abs c) = ε :=
-sorry
-
-example 
-  (a b : ℝ)
-  (h : b > 0)
-  : b * (a / b) = a :=
-calc
-  b * (a / b)
-      = b * (a * b⁻¹) : by exact rfl
-  ... = b * (b⁻¹ * a) : by rw mul_comm a b⁻¹
-  ... = (b * b⁻¹) * a : by rw ← mul_assoc
-  ... = 1 * a         : by rw mul_inv_self 
-  ... = a             : by rw one_mul
+       ... = ε                     : by apply converges_to_mul_const_l1 acpos
 end
