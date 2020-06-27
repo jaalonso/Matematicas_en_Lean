@@ -113,7 +113,7 @@ en Lean:
 + [[./src/Basicos/Ejercicio_con_calc.lean][Ejercicio con calc]]
 #+INCLUDE: "./src/Basicos/Ejercicio_con_calc.lean" src lean
 
-+ [[./src/Basicos/Ejercicio_Suma_por_diferencia.lean][Ejercicio: Suma por diferencia]] (Ejercicio)
++ [[./src/Basicos/Ejercicio_Suma_por_diferencia.lean][Ejercicio: Suma por diferencia]] 
 #+INCLUDE: "./src/Basicos/Ejercicio_Suma_por_diferencia.lean" src lean
 
 + [[./src/Basicos/Reescritura_en_hipotesis_y_tactica_exact.lean][Reescritura en hipótesis y táctica exact]].
@@ -552,7 +552,6 @@ en Lean:
 
 + [[./src/Logica/Unicidad_del_limite.lean][Unicidad del límite]]
 #+INCLUDE: "./src/Logica/Unicidad_del_limite.lean" src lean
-
 
 * Misceláneas
 
