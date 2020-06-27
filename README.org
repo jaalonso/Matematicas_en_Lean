@@ -18,6 +18,7 @@
   - [[#la-negación][La negación]]
   - [[#conjunción-y-bicondicional][Conjunción y bicondicional]]
   - [[#disyunción][Disyunción]]
+  - [[#sucesiones-y-convergencia][Sucesiones y convergencia]]
 - [[#misceláneas][Misceláneas]]
   - [[#tácticas][Tácticas]]
   - [[#aritmética-modular][Aritmética modular]]
@@ -497,6 +498,44 @@ en Lean:
 
 + [[./src/Logica/CS_de_divisibilidad_del_producto.lean][CS de divisibilidad del producto]]
 #+INCLUDE: "./src/Logica/CS_de_divisibilidad_del_producto.lean" src lean
+
++ [[./src/Logica/Desigualdad_con_rcases.lean][Desigualdad con rcases]]
+#+INCLUDE: "./src/Logica/Desigualdad_con_rcases.lean" src lean
+
++ [[./src/Logica/Igualdad_de_cuadrados.lean][Igualdad de cuadrados]]
+#+INCLUDE: "./src/Logica/Igualdad_de_cuadrados.lean" src lean
+
++ [[./src/Logica/Igualdad_de_cuadrados_en_dominios_de_integridad.lean][Igualdad de cuadrados en dominios de integridad]]
+#+INCLUDE: "./src/Logica/Igualdad_de_cuadrados_en_dominios_de_integridad.lean" src lean
+
++ [[./src/Logica/Eliminacion_de_la_doble_negacion.lean][Eliminación de la doble negación]] (Tácticas "cases em" y "by_cases")
+#+INCLUDE: "./src/Logica/Eliminacion_de_la_doble_negacion.lean" src lean
+
++ [[./src/Logica/Implicacion_mediante_disyuncion_y_negacion.lean][Implicación mediante disyunción y negación]]
+#+INCLUDE: "./src/Logica/Implicacion_mediante_disyuncion_y_negacion.lean" src lean
+
+** Sucesiones y convergencia
+
++ [[./src/Logica/Definicion_de_convergencia.lean][Definicion de convergencia]]
+#+INCLUDE: "./src/Logica/Definicion_de_convergencia.lean" src lean
+
++ [[./src/Logica/Demostracion_por_extensionalidad.lean][Demostración por extensionalidad]] (La táctica [[https://bit.ly/3i5kiW9][ext]])
+#+INCLUDE: "./src/Logica/Demostracion_por_extensionalidad.lean" src lean
+
++ [[./src/Logica/Demostracion_por_congruencia.lean][Demostración por congruencia]] (La táctica [[https://bit.ly/2BfOZqV][congr]])
+#+INCLUDE: "./src/Logica/Demostracion_por_congruencia.lean" src lean
+
++ [[./src/Logica/Demostracion_por_conversion.lean][Demostración por conversión]] (La táctica [[https://bit.ly/2Bgujiu][convert]])
+#+INCLUDE: "./src/Logica/Demostracion_por_conversion.lean" src lean
+
++ [[./src/Logica/Convergencia_de_la_funcion_constante.lean][Convergencia de la función constante]]
+#+INCLUDE: "./src/Logica/Convergencia_de_la_funcion_constante.lean" src lean
+
++ [[./src/Logica/Convergencia_de_la_suma.lean][Convergencia de la suma]]
+#+INCLUDE: "./src/Logica/Convergencia_de_la_suma.lean" src lean
+
++ [[./src/Logica/Convergencia_del_producto_por_una_constante.lean][Convergencia del producto por una constante]]
+#+INCLUDE: "./src/Logica/Convergencia_del_producto_por_una_constante.lean" src lean
 
 
 * Misceláneas
