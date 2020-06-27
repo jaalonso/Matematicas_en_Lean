@@ -546,6 +546,9 @@ en Lean:
 + [[./src/Logica/Convergencia_del_producto.lean][Convergencia del producto]]
 #+INCLUDE: "./src/Logica/Convergencia_del_producto.lean" src lean
 
++ [[./src/Logica/Unicidad_del_limite.lean][Unicidad del límite]]
+#+INCLUDE: "./src/Logica/Unicidad_del_limite.lean" src lean
+
 
 * Misceláneas
 
