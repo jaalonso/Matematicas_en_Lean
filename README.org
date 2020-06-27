@@ -540,6 +540,9 @@ en Lean:
 + [[./src/Logica/Acotacion_de_convergentes.lean][Acotación de convergentes]]
 #+INCLUDE: "./src/Logica/Acotacion_de_convergentes.lean" src lean
 
++ [[./src/Logica/Producto_por_sucesion_convergente_a_cero.lean][Producto por sucesión convergente a cero]]
+#+INCLUDE: "./src/Logica/Producto_por_sucesion_convergente_a_cero.lean" src lean
+
 
 * Misceláneas
 
