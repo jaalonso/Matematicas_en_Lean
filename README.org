@@ -37,6 +37,10 @@
 + Su objetivo es presentar el uso de Lean mediante ejemplos matemáticos usando
   tácticas y mathlib.
 
++ Los apuntes se presentan en dos formas:
+  + Como un [[https://www.cs.us.es/~jalonso/apuntes/Matematicas_en_Lean/README.html][documento con todas las demostraciones]].
+  + Como un [[https://github.com/jaalonso/Matematicas_en_Lean][proyecto en GitHub]].  
+
 # ** Creación del proyecto
 # 
 # + Se crea con 
