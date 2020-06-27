@@ -537,6 +537,9 @@ en Lean:
 + [[./src/Logica/Convergencia_del_producto_por_una_constante.lean][Convergencia del producto por una constante]]
 #+INCLUDE: "./src/Logica/Convergencia_del_producto_por_una_constante.lean" src lean
 
++ [[./src/Logica/Acotacion_de_convergentes.lean][Acotación de convergentes]]
+#+INCLUDE: "./src/Logica/Acotacion_de_convergentes.lean" src lean
+
 
 * Misceláneas
 
