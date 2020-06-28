@@ -322,7 +322,7 @@ en Lean:
 + [[./src/Logica/Lema_con_implicaciones_y_cuantificador_universal_implicitos.lean][Lema con implicaciones y cuantificador universal implícitos]]
 #+INCLUDE: "./src/Logica/Lema_con_implicaciones_y_cuantificador_universal_implicitos.lean" src lean
 
-+ [[./src/Logica/La_tactica_intros.lean][La táctica intros]] (Ejercicio)
++ [[./src/Logica/La_tactica_intros.lean][La táctica intros]]
 #+INCLUDE: "./src/Logica/La_tactica_intros.lean" src lean
 
 + [[./src/Logica/Definiciones_de_cotas.lean][Definiciones de cotas]]
