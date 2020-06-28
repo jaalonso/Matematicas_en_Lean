@@ -234,7 +234,7 @@ en Lean:
 + [[./src/Basicos/Conmutatividad_del_maximo.lean][Conmutatividad del máximo]]
 #+INCLUDE: "./src/Basicos/Conmutatividad_del_maximo.lean" src lean
 
-+ [[./src/Basicos/Asociatividad_del_minimo.lean][Ejercicio: Asociatividad del mínimo]] (Ejercicio)
++ [[./src/Basicos/Asociatividad_del_minimo.lean][Ejercicio: Asociatividad del mínimo]]
 #+INCLUDE: "./src/Basicos/Asociatividad_del_minimo.lean" src lean
 
 + [[./src/Basicos/Minimo_de_suma.lean][Ejercicio: Mínimo de suma]] (Ejercicio)
