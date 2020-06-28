@@ -21,6 +21,7 @@
   - [[#sucesiones-y-convergencia][Sucesiones y convergencia]]
 - [[#misceláneas][Misceláneas]]
   - [[#tácticas][Tácticas]]
+  - [[#números-naturales][Números naturales]]
   - [[#aritmética-modular][Aritmética modular]]
   - [[#sumatorios][Sumatorios]]
   - [[#retículos][Retículos]]
@@ -565,6 +566,12 @@ en Lean:
 
 + [[./src/Miscelaneas/La_tactica_libray_search.lean][La táctica libray_search]]
 #+INCLUDE: "./src/Miscelaneas/La_tactica_libray_search.lean" src lean
+** Números naturales
+
++ [[./src/Miscelaneas/Mayores_de_no_nulo_son_no_nulos.lean][Mayores de no nulo son no nulos]]
+#+INCLUDE: "./src/Miscelaneas/Mayores_de_no_nulo_son_no_nulos.lean" src lean
+
+
 ** Aritmética modular
 
 + [[./src/Miscelaneas/Tactica_de_aritmetica_modular.lean][Táctica de aritmética modular]]
