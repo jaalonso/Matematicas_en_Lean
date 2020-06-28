@@ -582,6 +582,10 @@ en Lean:
 + [[./src/Miscelaneas/Diferencia_de_sumatorios.lean][Diferencia de sumatorios]]
 #+INCLUDE: "./src/Miscelaneas/Diferencia_de_sumatorios.lean" src lean
 
++ [[./src/Miscelaneas/Propiedad_del_sumatorio.lean][Propiedad del sumatorio]]
+#+INCLUDE: "./src/Miscelaneas/Propiedad_del_sumatorio.lean" src lean
+
+
 ** Retículos
 
 + [[./src/Miscelaneas/Descomposicion_del_supremos.lean][Descomposición del supremos]]
