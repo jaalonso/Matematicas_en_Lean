@@ -215,7 +215,7 @@ en Lean:
 + [[./src/Basicos/Desigualdades_con_calc.lean][Desigualdades con calc]]
 #+INCLUDE: "./src/Basicos/Desigualdades_con_calc.lean" src lean
 
-+ [[./src/Basicos/Ejercicio_desigualdades_absolutas.lean][Ejercicio desigualdades absolutas]] (Ejercicio)
++ [[./src/Basicos/Ejercicio_desigualdades_absolutas.lean][Ejercicio desigualdades absolutas]] 
 #+INCLUDE: "./src/Basicos/Ejercicio_desigualdades_absolutas.lean" src lean
 
 ** Más sobre orden y divisibilidad
@@ -584,7 +584,6 @@ en Lean:
 
 + [[./src/Miscelaneas/Propiedad_del_sumatorio.lean][Propiedad del sumatorio]]
 #+INCLUDE: "./src/Miscelaneas/Propiedad_del_sumatorio.lean" src lean
-
 
 ** Retículos
 
