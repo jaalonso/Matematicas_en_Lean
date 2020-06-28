@@ -2,32 +2,17 @@ import data.real.basic
 
 variables a b c : ℝ
 
-lemma aux1 : min a b + c ≤ min (a + c) (b + c) :=
-begin
-  apply le_min,
-  { show min a b + c ≤ a + c,
-    { apply add_le_add,
-      { apply min_le_left },
-      apply le_refl 
-    }, 
-  },
-  { show min a b + c ≤ b + c,
-    { apply add_le_add,
-      { apply min_le_right },
-      apply le_refl 
-    }, 
-  }
-end
-
-lemma aux2 : min (a + c) (b + c) ≤ min a b + c :=
-sorry
-
-#check add_neg_cancel_right
-
 example : min a b + c = min (a + c) (b + c) :=
 begin
-  apply le_antisymm,
-    apply aux1,
-  apply aux2,
+  by_cases (a ≤ b),
+  { have h1 : a + c ≤ b + c,
+      apply add_le_add_right h, 
+    calc min a b + c = a + c               : by simp [min_eq_left h] 
+                 ... = min (a + c) (b + c) : by simp [min_eq_left h1]},
+  { have h2: b ≤ a,
+      linarith,
+    have h3 : b + c ≤ a + c,
+      { exact add_le_add_right h2 c },
+    calc min a b + c = b + c               : by simp [min_eq_right h2]
+                 ... = min (a + c) (b + c) : by simp [min_eq_right h3]},
 end
-

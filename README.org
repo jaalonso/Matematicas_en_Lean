@@ -237,7 +237,7 @@ en Lean:
 + [[./src/Basicos/Asociatividad_del_minimo.lean][Ejercicio: Asociatividad del mínimo]]
 #+INCLUDE: "./src/Basicos/Asociatividad_del_minimo.lean" src lean
 
-+ [[./src/Basicos/Minimo_de_suma.lean][Ejercicio: Mínimo de suma]] (Ejercicio)
++ [[./src/Basicos/Minimo_de_suma.lean][Ejercicio: Mínimo de suma]]
 #+INCLUDE: "./src/Basicos/Minimo_de_suma.lean" src lean
 
 + [[./src/Basicos/abs_add.lean][Lema abs_add]]
