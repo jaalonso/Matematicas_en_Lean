@@ -20,6 +20,7 @@
   - [[#disyunción][Disyunción]]
   - [[#sucesiones-y-convergencia][Sucesiones y convergencia]]
 - [[#misceláneas][Misceláneas]]
+  - [[#comandos][Comandos]]
   - [[#tácticas][Tácticas]]
   - [[#números-naturales][Números naturales]]
   - [[#aritmética-modular][Aritmética modular]]
@@ -556,6 +557,12 @@ en Lean:
 
 * Misceláneas
 
+** Comandos
+
++ [[./src/Miscelaneas/El_comando_explore.lean][El comando explore]]
+#+INCLUDE: "./src/Miscelaneas/El_comando_explore.lean" src lean
+
+
 ** Tácticas
 
 + [[./src/Miscelaneas/La_tactica_suggest.lean][La táctica suggest]]
@@ -570,7 +577,6 @@ en Lean:
 
 + [[./src/Miscelaneas/Mayores_de_no_nulo_son_no_nulos.lean][Mayores de no nulo son no nulos]]
 #+INCLUDE: "./src/Miscelaneas/Mayores_de_no_nulo_son_no_nulos.lean" src lean
-
 
 ** Aritmética modular
 
