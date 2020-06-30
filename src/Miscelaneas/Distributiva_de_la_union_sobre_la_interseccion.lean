@@ -48,3 +48,14 @@ example
   {U V S A B : set α} 
   : (U ∩ S ∩ A) ∪ (V ∩ S ∩ B) = ((U ∩ A) ∪ (V ∩ B)) ∩ S :=
 by { ext, simp, tauto! }
+
+-- 6ª demostración
+-- ===============
+
+meta def set_theory := `[ext; simp; tauto!]
+
+example
+  {α : Type*} 
+  {U V S A B : set α} 
+  : (U ∩ S ∩ A) ∪ (V ∩ S ∩ B) = ((U ∩ A) ∪ (V ∩ B)) ∩ S :=
+by set_theory
