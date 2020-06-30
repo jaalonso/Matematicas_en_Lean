@@ -23,6 +23,7 @@
   - [[#comandos][Comandos]]
   - [[#tácticas][Tácticas]]
   - [[#teoría-de-conjuntos][Teoría de conjuntos]]
+  - [[#teoría-de-grupos][Teoría de grupos]]
   - [[#números-naturales][Números naturales]]
   - [[#aritmética-modular][Aritmética modular]]
   - [[#sumatorios][Sumatorios]]
@@ -574,6 +575,12 @@ en Lean:
 
 + [[./src/Miscelaneas/Distributiva_de_la_union_sobre_la_interseccion.lean][Distributiva de la unión sobre la intersección]]
 #+INCLUDE: "./src/Miscelaneas/Distributiva_de_la_union_sobre_la_interseccion.lean" src lean
+
+
+** Teoría de grupos
+
++ [[./src/Miscelaneas/Inversa_del_producto.lean][Inversa del producto]]
+#+INCLUDE: "./src/Miscelaneas/Inversa_del_producto.lean" src lean
 
 ** Números naturales
 
