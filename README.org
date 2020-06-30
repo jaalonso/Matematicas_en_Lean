@@ -586,6 +586,11 @@ en Lean:
 + [[./src/Miscelaneas/Mayores_de_no_nulo_son_no_nulos.lean][Mayores de no nulo son no nulos]]
 #+INCLUDE: "./src/Miscelaneas/Mayores_de_no_nulo_son_no_nulos.lean" src lean
 
+*** Dígitos
+
++ [[./src/Miscelaneas/Los_digitos_son_menores_que_la_base.lean][Los dígitos son menores que la base]]
+#+INCLUDE: "./src/Miscelaneas/Los_digitos_son_menores_que_la_base.lean" src lean
+
 ** Aritmética modular
 
 + [[./src/Miscelaneas/Tactica_de_aritmetica_modular.lean][Táctica de aritmética modular]]
