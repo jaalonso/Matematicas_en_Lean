@@ -591,6 +591,9 @@ en Lean:
 + [[./src/Miscelaneas/No_decreciente_involutiva_es_identidad.lean][No decreciente involutiva es identidad]]
 #+INCLUDE: "./src/Miscelaneas/No_decreciente_involutiva_es_identidad.lean" src lean
 
++ [[./src/Miscelaneas/Monotonia_de_la_exponencial.lean][Monotonía de la exponencial]]
+#+INCLUDE: "./src/Miscelaneas/Monotonia_de_la_exponencial.lean" src lean
+
 * Bibliografía
 
 + [[https://gist.github.com/utensil/dc635f2991255f76d8da797efdabbf15][Basic guide to tactics]] de Kevin Buzzard.
