@@ -6,9 +6,7 @@
 /src/Logica/zzz.lean
 /Licencia
 /Makefile
-/Matematicas_en_Lean.tex
 /Matematicas_en_Lean.pdf
-/definiciones.tex
 /_minted-Matematicas_en_Lean/
 *.aux
 *.log
