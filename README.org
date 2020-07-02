@@ -73,10 +73,10 @@ en Lean:
 + [[./src/Basicos/Ejercicios_sobre_aritmetica_real.lean][Ejercicios_sobre_aritmética real]]
 #+INCLUDE: "./src/Basicos/Ejercicios_sobre_aritmetica_real.lean" src lean
 
-+ [[./src/Basicos/Ejemplo_de_rw_sobre_hipotesis.lean][Ejemplo de rw sobre hipótesis]]
++ [[./src/Basicos/Ejemplo_de_rw_sobre_hipotesis.lean][Ejemplo de rw con hipótesis]]
 #+INCLUDE: "./src/Basicos/Ejemplo_de_rw_sobre_hipotesis.lean" src lean
 
-+ [[./src/Basicos/Ejercicio_de_rw_sobre_hipotesis.lean][Ejercicio de rw sobre hipótesis]]
++ [[./src/Basicos/Ejercicio_de_rw_sobre_hipotesis.lean][Ejercicio de rw con hipótesis]]
 #+INCLUDE: "./src/Basicos/Ejercicio_de_rw_sobre_hipotesis.lean" src lean
 
 + [[./src/Basicos/Reescritura_con_varios_lemas.lean][Reescritura con varios lemas]]
