@@ -1,3 +1,8 @@
-#eval "Hola a todos"
+-- ---------------------------------------------------------------------
+-- Ejercicio. Calcular el valor de 2+3.
+-- ---------------------------------------------------------------------
 
--- Al poner el cursor sobre eval se escribe el resultado en el minibuffer.
+#eval 2 + 3
+
+-- Comentario: Al poner el cursor sobre eval se escribe el resultado en el
+-- minibuffer. 

@@ -10,3 +10,7 @@
 /Matematicas_en_Lean.pdf
 /definiciones.tex
 /_minted-Matematicas_en_Lean/
+*.aux
+*.log
+*.toc
+*.tex

@@ -1,49 +1,23 @@
 #+TITLE: Matemáticas en Lean
 #+OPTIONS: ^:nil
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="./estilo.css" />
+#+LATEX_CLASS: book-noparts
+#+LATEX_CLASS_OPTIONS: [a4paper,12pt,twoside]
 
-* Contenido                                                             :TOC:
-- [[#introducción][Introducción]]
-  - [[#resumen][Resumen]]
-  - [[#presentación-panorámica-de-lean][Presentación panorámica de Lean]]
-- [[#aspectos-básicos-del-razonamiento-matemático-en-lean][Aspectos básicos del razonamiento matemático en Lean]]
-  - [[#cálculos][Cálculos]]
-  - [[#demostraciones-en-estructuras-algebraicas][Demostraciones en estructuras algebraicas]]
-  - [[#uso-de-lemas-y-teoremas][Uso de lemas y teoremas]]
-  - [[#más-sobre-orden-y-divisibilidad][Más sobre orden y divisibilidad]]
-  - [[#demostraciones-sobre-estructuras-algebraicas][Demostraciones sobre estructuras algebraicas]]
-- [[#lógica][Lógica]]
-  - [[#implicación-y-cuantificación-universal][Implicación y cuantificación universal]]
-  - [[#el-cuantificador-existencial][El cuantificador existencial]]
-  - [[#la-negación][La negación]]
-  - [[#conjunción-y-bicondicional][Conjunción y bicondicional]]
-  - [[#disyunción][Disyunción]]
-  - [[#sucesiones-y-convergencia][Sucesiones y convergencia]]
-- [[#misceláneas][Misceláneas]]
-  - [[#comandos][Comandos]]
-  - [[#tácticas][Tácticas]]
-  - [[#teoría-de-conjuntos][Teoría de conjuntos]]
-  - [[#teoría-de-grupos][Teoría de grupos]]
-  - [[#números-naturales][Números naturales]]
-  - [[#aritmética-modular][Aritmética modular]]
-  - [[#sumatorios][Sumatorios]]
-  - [[#retículos][Retículos]]
-  - [[#análisis][Análisis]]
-- [[#bibliografía][Bibliografía]]
+# * Contenido                                                             :TOC:
 
 * Introducción
 
 ** Resumen
 
-+ Apuntes de lectura de [[https://leanprover-community.github.io/mathematics_in_lean/index.html][Mathematics in Lean]] de Jeremy Avigad, Kevin Buzzard,
-  Robert Y. Lewis y Patrick Massot.
-
-+ Su objetivo es presentar el uso de Lean mediante ejemplos matemáticos usando
-  tácticas y mathlib.
-
-+ Los apuntes se presentan en dos formas:
-  + Como un [[https://www.cs.us.es/~jalonso/apuntes/Matematicas_en_Lean/README.html][documento con todas las demostraciones]].
-  + Como un [[https://github.com/jaalonso/Matematicas_en_Lean][proyecto en GitHub]].  
+El objetivo de este trabajo es presentar el uso de Lean mediante ejemplos
+matemáticos usando. Está basado en el libro [[https://leanprover-community.github.io/mathematics_in_lean/index.html][Mathematics in Lean]] de Jeremy
+Avigad, Kevin Buzzard, Robert Y. Lewis y Patrick Massot.
+ 
+El trabajo se presenta en  formas:
++ Como un [[https://www.cs.us.es/~jalonso/apuntes/Matematicas_en_Lean/Matematicas_en_Lean.pdf][libro en PDF]]
++ Como una [[https://www.cs.us.es/~jalonso/apuntes/Matematicas_en_Lean/README.html][página HTML]].
++ Como un [[https://github.com/jaalonso/Matematicas_en_Lean][proyecto en GitHub]].  
 
 # ** Creación del proyecto
 # 

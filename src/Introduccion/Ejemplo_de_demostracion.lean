@@ -1,4 +1,10 @@
+-- ---------------------------------------------------------------------
+-- Ejercicio. Demostrar que los procutos de los números naturales por
+-- números pares son pares.
+-- ---------------------------------------------------------------------
+
 import data.nat.parity tactic
+
 open nat
 
 -- 1ª demostración
@@ -29,9 +35,10 @@ example : ∀ m n, even n → even (m * n) :=
 example : ∀ m n, even n → even (m * n) :=
   by intros; simp * with parity_simps
 
--- Notas:
--- + Al poner el curso en la línea 1 sobre data.nat.parity y pulsar M-. 
---   se abre la teoría correspondiente.
--- + Se activa el *Lean Goal* pulsando C-c C-g
--- + Al mover el cursor sobre la prueba se actualiza el *Lean Goal*.
+-- Comentarios:
+-- 1. Al poner el curso en la línea 1 sobre data.nat.parity y pulsar M-. 
+--    se abre la teoría correspondiente.
+-- 2. Se activa la ventana de objetivos (*Lean Goal*) pulsando C-c C-g
+-- 3. Al mover el cursor sobre las pruebas se actualiza la ventana de
+--    objetivos. 
 
