@@ -596,6 +596,7 @@ en Lean:
 
 * Bibliografía
 
++ [[https://github.com/mavam/abstract-algebra-cheatsheet][Abstract algebra cheatsheet]]. de Matthias Vallentin.
 + [[https://gist.github.com/utensil/dc635f2991255f76d8da797efdabbf15][Basic guide to tactics]] de Kevin Buzzard.
 + [[https://leanprover-community.github.io/mathlib_docs/][Lean mathlib documentation]].
 + [[https://leanprover-community.github.io/mathematics_in_lean/index.html][Mathematics in Lean]] de Jeremy Avigad, Kevin Buzzard, Robert Y. Lewis y Patrick
