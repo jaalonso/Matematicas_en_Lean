@@ -70,7 +70,7 @@ en Lean:
 + [[./src/Basicos/Asociativa_conmutativa_de_los_reales.lean][Asociativa conmutativa de los reales]]
 #+INCLUDE: "./src/Basicos/Asociativa_conmutativa_de_los_reales.lean" src lean
 
-+ [[./src/Basicos/Ejercicios_sobre_aritmetica_real.lean][Ejercicios_sobre_aritmética real]]
++ [[./src/Basicos/Ejercicios_sobre_aritmetica_real.lean][Ejercicios sobre aritmética real]]
 #+INCLUDE: "./src/Basicos/Ejercicios_sobre_aritmetica_real.lean" src lean
 
 + [[./src/Basicos/Ejemplo_de_rw_sobre_hipotesis.lean][Ejemplo de rw con hipótesis]]
