@@ -555,6 +555,9 @@ en Lean:
 + [[./src/Miscelaneas/Inversa_del_producto.lean][Inversa del producto]]
 #+INCLUDE: "./src/Miscelaneas/Inversa_del_producto.lean" src lean
 
++ [[./src/Miscelaneas/Producto_de_elementos_por_sus_inversos.lean][Producto de elementos por sus inversos]]
+#+INCLUDE: "./src/Miscelaneas/Producto_de_elementos_por_sus_inversos.lean" src lean
+
 ** Números naturales
 
 + [[./src/Miscelaneas/Mayores_de_no_nulo_son_no_nulos.lean][Mayores de no nulo son no nulos]]

@@ -1,5 +1,5 @@
 -- ---------------------------------------------------------------------
--- Ejercicio 1. Importar la libería básica de los números reales.
+-- Ejercicio 1. Importar la librería básica de los números reales.
 -- ---------------------------------------------------------------------
 
 import data.real.basic

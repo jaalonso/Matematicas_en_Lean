@@ -1,18 +1,11 @@
-import data.real.basic
+import data.real.basic tactic
 
-noncomputable def star : ℝ → ℝ → ℝ
-| x y := x + y - ⌊ x + y ⌋
+variables a b : ℝ
 
-lemma star_closed {a b : ℝ}
-  (ha : a ∈ set.Ico (0:ℝ) 1) (hb : b ∈ set.Ico (0:ℝ) 1) :
-  (star a b) ∈ set.Ico (0:ℝ) 1 :=
+example : abs (a*b) ≤ (a^2 + b^2) / 2 :=
 begin
-  unfold star,
-  split,
-  { -- try { library_search }, -- library_search fails
-    suggest, -- but suggest works: Try this: exact fract_nonneg (a + b)
-    sorry },
-  { try { library_search },
-    suggest,
-    sorry },
+  have h3: 0 ≤ (a+b)^2, {exact pow_two_nonneg (a + b)},
+  have h5: (0:ℝ) < 2, {exact two_pos},
+  have h4: (a+b)^2/2 ≥ 0, {exact div_nonneg h3 h5},
+  sorry
 end
