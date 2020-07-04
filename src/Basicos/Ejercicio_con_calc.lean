@@ -1,23 +1,57 @@
+-- ---------------------------------------------------------------------
+-- Ejercicio. Demostrar que si a, b, c y d son números reales, entonces
+--    (a + b) * (c + d) = a * c + a * d + b * c + b * d
+-- ---------------------------------------------------------------------
+
 import data.real.basic
 
 variables a b c d : ℝ
 
--- 1ª demostración (con rw)
-example : (a + b) * (c + d) = a * c + a * d + b * c + b * d :=
+-- 1ª demostración
+-- ===============
+
+example 
+  : (a + b) * (c + d) = a * c + a * d + b * c + b * d :=
 begin
    rw add_mul,
    rw mul_add,
    rw mul_add,
+   rw ← add_assoc,
 end
 
--- 2ª demostración (con calc)
-example : (a + b) * (c + d) = a * c + a * d + b * c + b * d :=
+-- El desarrollo de la prueba es
+--
+--    a b c d : ℝ
+--    ⊢ (a + b) * (c + d) = a * c + a * d + b * c + b * d
+-- rw add_mul,
+--    ⊢ a * (c + d) + b * (c + d) = a * c + a * d + b * c + b * d
+-- rw mul_add,
+--    ⊢ a * c + a * d + b * (c + d) = a * c + a * d + b * c + b * d
+-- rw mul_add,
+--    ⊢ a * c + a * d + (b * c + b * d) = a * c + a * d + b * c + b * d
+-- rw ← add_assoc,
+--    no goals
+
+-- 2ª demostración
+-- ===============
+
+example 
+  : (a + b) * (c + d) = a * c + a * d + b * c + b * d :=
 calc 
   (a + b) * (c + d) 
-      = a * (c + d) + b * (c + d)     : by rw add_mul
-  ... = a * c + a * d + b * (c + d)   : by rw mul_add
-  ... = a * c + a * d + b * c + b * d : by rw mul_add
+      = a * (c + d) + b * (c + d)       : by rw add_mul
+  ... = a * c + a * d + b * (c + d)     : by rw mul_add
+  ... = a * c + a * d + (b * c + b * d) : by rw mul_add
+  ... = a * c + a * d + b * c + b * d   : by rw ←add_assoc
 
 -- 3ª demostración 
+-- ===============
+
 example : (a + b) * (c + d) = a * c + a * d + b * c + b * d :=
-by rw [add_mul, mul_add, mul_add]
+by rw [add_mul, mul_add, mul_add, ←add_assoc]
+
+-- 4ª demostración 
+-- ===============
+
+example : (a + b) * (c + d) = a * c + a * d + b * c + b * d :=
+by ring

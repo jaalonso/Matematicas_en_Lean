@@ -1,5 +1,5 @@
 -- ---------------------------------------------------------------------
--- Ejercicio. Demostrar que si son números reales, entonces
+-- Ejercicio. Demostrar que si a y b son números reales, entonces
 --    (a + b) * (a + b) = a * a + 2 * (a * b) + b * b
 -- ---------------------------------------------------------------------
 
