@@ -583,6 +583,9 @@ en Lean:
 
 ** Retículos
 
++ [[./src/Miscelaneas/Conmutatividad_del_minimo.lean][Conmutatividad del mínimo]]
+#+INCLUDE: "./src/Miscelaneas/Conmutatividad_del_minimo.lean" src lean
+
 + [[./src/Miscelaneas/Descomposicion_del_supremos.lean][Descomposición del supremos]]
 #+INCLUDE: "./src/Miscelaneas/Descomposicion_del_supremos.lean" src lean
 
