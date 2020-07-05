@@ -19,7 +19,7 @@ end
 -- 1. Al colocar el cursor sobre el nombre de un lema se ve su enunciado. 
 -- 2. Para completar el nombre de un lema basta escribir parte de su
 --    nombre y completar con S-SPC (es decir, simultáneamente las teclas
---    de mayúscula y la de espacio.
+--    de mayúscula y la de espacio).
 -- 3. los lemas usados son
 --    + mul_com   : (∀ a b : G),   a * b = b * a
 --    + mul_assoc : (∀ a b c : G), (a * b) * c = a * (b * c)

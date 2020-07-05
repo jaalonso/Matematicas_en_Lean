@@ -121,7 +121,7 @@ en Lean:
 + [[./src/Basicos/Ejercicio_Suma_por_diferencia.lean][Ejercicio: Suma por diferencia]] 
 #+INCLUDE: "./src/Basicos/Ejercicio_Suma_por_diferencia.lean" src lean
 
-+ [[./src/Basicos/Reescritura_en_hipotesis_y_tactica_exact.lean][Reescritura en hipótesis y táctica exact]].
++ [[./src/Basicos/Reescritura_en_hipotesis_y_tactica_exact.lean][Reescritura en hipótesis y táctica exact]]
 #+INCLUDE: "./src/Basicos/Reescritura_en_hipotesis_y_tactica_exact.lean" src lean
 
 + [[./src/Basicos/Demostraciones_con_ring.lean][Demostraciones con ring]]

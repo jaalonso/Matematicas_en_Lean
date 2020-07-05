@@ -133,7 +133,7 @@ example
   : c = 2 * a * d :=
 by rw [h1, h2]; ring
 
--- 3ª demostración
+-- 7ª demostración
 -- ===============
 
 example 
