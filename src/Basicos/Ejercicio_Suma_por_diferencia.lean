@@ -1,5 +1,5 @@
 -- ---------------------------------------------------------------------
--- Ejercicio. Demostrar que si a b d son números reales, entonces
+-- Ejercicio. Demostrar que si a y b son números reales, entonces
 --    (a + b) * (a - b) = a^2 - b^2 
 -- ---------------------------------------------------------------------
 
