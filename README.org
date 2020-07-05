@@ -550,6 +550,10 @@ en Lean:
 + [[./src/Miscelaneas/Distributiva_de_la_union_sobre_la_interseccion.lean][Distributiva de la unión sobre la intersección]]
 #+INCLUDE: "./src/Miscelaneas/Distributiva_de_la_union_sobre_la_interseccion.lean" src lean
 
++ [[./src/Miscelaneas/Finitud_del_dominio_de_las_funciones_inyectivas_con_codominio_finito.lean][Finitud del dominio de las funciones inyectivas con codominio finito]]
+#+INCLUDE: "./src/Miscelaneas/Finitud_del_dominio_de_las_funciones_inyectivas_con_codominio_finito.lean" src lean
+
+
 ** Teoría de grupos
 
 + [[./src/Miscelaneas/Inversa_del_producto.lean][Inversa del producto]]
