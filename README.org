@@ -558,6 +558,9 @@ en Lean:
 + [[./src/Miscelaneas/Producto_de_elementos_por_sus_inversos.lean][Producto de elementos por sus inversos]]
 #+INCLUDE: "./src/Miscelaneas/Producto_de_elementos_por_sus_inversos.lean" src lean
 
++ [[./src/Miscelaneas/Propiedad_cancelativa_de_pertenencia_a_subgrupo.lean][Propiedad cancelativa de pertenencia a subgrupo]]
+#+INCLUDE: "./src/Miscelaneas/Propiedad_cancelativa_de_pertenencia_a_subgrupo.lean" src lean
+
 ** Números naturales
 
 + [[./src/Miscelaneas/Mayores_de_no_nulo_son_no_nulos.lean][Mayores de no nulo son no nulos]]
