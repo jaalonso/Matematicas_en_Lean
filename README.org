@@ -4,7 +4,34 @@
 #+LATEX_CLASS: book-noparts
 #+LATEX_CLASS_OPTIONS: [a4paper,12pt,twoside]
 
-# * Contenido                                                             :TOC:
+* Contenido                                                             :TOC:
+- [[#introducción][Introducción]]
+  - [[#resumen][Resumen]]
+  - [[#presentación-panorámica-de-lean][Presentación panorámica de Lean]]
+- [[#aspectos-básicos-del-razonamiento-matemático-en-lean][Aspectos básicos del razonamiento matemático en Lean]]
+  - [[#cálculos][Cálculos]]
+  - [[#demostraciones-en-estructuras-algebraicas][Demostraciones en estructuras algebraicas]]
+  - [[#uso-de-lemas-y-teoremas][Uso de lemas y teoremas]]
+  - [[#más-sobre-orden-y-divisibilidad][Más sobre orden y divisibilidad]]
+  - [[#demostraciones-sobre-estructuras-algebraicas][Demostraciones sobre estructuras algebraicas]]
+- [[#lógica][Lógica]]
+  - [[#implicación-y-cuantificación-universal][Implicación y cuantificación universal]]
+  - [[#el-cuantificador-existencial][El cuantificador existencial]]
+  - [[#la-negación][La negación]]
+  - [[#conjunción-y-bicondicional][Conjunción y bicondicional]]
+  - [[#disyunción][Disyunción]]
+  - [[#sucesiones-y-convergencia][Sucesiones y convergencia]]
+- [[#misceláneas][Misceláneas]]
+  - [[#comandos][Comandos]]
+  - [[#tácticas][Tácticas]]
+  - [[#teoría-de-conjuntos][Teoría de conjuntos]]
+  - [[#teoría-de-grupos][Teoría de grupos]]
+  - [[#números-naturales][Números naturales]]
+  - [[#aritmética-modular][Aritmética modular]]
+  - [[#sumatorios][Sumatorios]]
+  - [[#retículos][Retículos]]
+  - [[#análisis][Análisis]]
+- [[#bibliografía][Bibliografía]]
 
 * Introducción
 
@@ -552,7 +579,6 @@ en Lean:
 
 + [[./src/Miscelaneas/Finitud_del_dominio_de_las_funciones_inyectivas_con_codominio_finito.lean][Finitud del dominio de las funciones inyectivas con codominio finito]]
 #+INCLUDE: "./src/Miscelaneas/Finitud_del_dominio_de_las_funciones_inyectivas_con_codominio_finito.lean" src lean
-
 
 ** Teoría de grupos
 
