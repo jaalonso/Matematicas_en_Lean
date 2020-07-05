@@ -1,3 +1,16 @@
+-- ---------------------------------------------------------------------
+-- Ejercicio. Sean a, b, c y dnúmeros reales. Demostrar, con la táctica
+-- ring, que 
+--    (c * b) * a = b * (a * c) 
+--    (a + b) * (a + b) = a * a + 2 * (a * b) + b * b
+--    (a + b) * (a - b) = a^2 - b^2
+-- Además, si
+--    c = d * a + b
+--    b = a * d
+-- entonces
+--    c = 2 * a * d
+-- ---------------------------------------------------------------------
+
 import data.real.basic
 
 variables a b c d : ℝ
@@ -11,15 +24,12 @@ by ring
 example : (a + b) * (a - b) = a^2 - b^2 :=
 by ring
 
-example (hyp : c = d * a + b) (hyp' : b = a * d) :
-  c = 2 * a * d :=
+example 
+  (h1 : c = d * a + b) 
+  (h2 : b = a * d) 
+  : c = 2 * a * d :=
 begin
-  rw [hyp, hyp'],
+  rw [h1, h2],
   ring
 end
 
--- Notas:
--- + Nota 1: La táctica ring se importa automáticamente con
---      import data.real.basic. 
--- + Nota 2: La táctica ring se importa con
---      import tactic
