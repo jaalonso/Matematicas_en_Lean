@@ -1,3 +1,17 @@
+-- ---------------------------------------------------------------------
+-- Ejercicio. Calcular el tipo de los siguientes lemas
+--    exp_le_exp 
+--    exp_lt_exp 
+--    log_le_log 
+--    log_lt_log 
+--    add_le_add 
+--    add_lt_add_of_le_of_lt 
+--    add_nonneg 
+--    add_pos 
+--    add_pos_of_pos_of_nonneg 
+--    exp_pos 
+-- ----------------------------------------------------------------------
+
 import analysis.special_functions.exp_log
 
 open real
