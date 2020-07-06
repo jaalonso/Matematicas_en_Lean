@@ -1,11 +1,40 @@
-import analysis.special_functions.exp_log
+-- ---------------------------------------------------------------------
+-- Ejercicio 1. Realizar las siguientes acciones
+--    1. Inportar la teoría de exponeciales y logaritmos.
+--    2. Abrir la teoría de los reales
+--    3. Declarar como varables sobre los reales.
+-- ----------------------------------------------------------------------
 
-open real
+import analysis.special_functions.exp_log   -- 1
+open real                                   -- 2
+variables (a b : ℝ)                         -- 3
 
-#check (exp_le_exp : exp a ≤ exp b ↔ a ≤ b)
+-- ---------------------------------------------------------------------
+-- Ejercicio 2. Calcular el tipo del lema exp_le_exp
+-- ----------------------------------------------------------------------
 
-example (a b : ℝ) (h : a ≤ b) : exp a ≤ exp b :=
+#check @exp_le_exp a b
+
+-- Comentario: Al colocar el cursor sobre check se obtiene
+--    exp_le_exp : a.exp ≤ b.exp ↔ a ≤ b
+
+-- ---------------------------------------------------------------------
+-- Ejercicio 3. Demostrar que si
+--    a ≤ b 
+--    exp a ≤ exp b 
+-- ----------------------------------------------------------------------
+
+-- 1ª demostración
+example  
+  (h : a ≤ b) 
+  : exp a ≤ exp b :=
 begin
   rw exp_le_exp,
   exact h
 end
+
+-- 2ª demostración
+example  
+  (h : a ≤ b) 
+  : exp a ≤ exp b :=
+exp_le_exp.mpr h
