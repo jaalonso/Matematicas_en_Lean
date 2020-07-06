@@ -2,7 +2,7 @@
 -- Ejercicio 1. Realizar las siguientes acciones
 --    1. Inportar la teoría de exponeciales y logaritmos.
 --    2. Abrir la teoría de los reales
---    3. Declarar como varables sobre los reales.
+--    3. Declarar a y b como variables sobre los reales.
 -- ----------------------------------------------------------------------
 
 import analysis.special_functions.exp_log   -- 1
