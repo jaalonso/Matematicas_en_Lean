@@ -38,3 +38,6 @@ example
   (h : a ≤ b) 
   : exp a ≤ exp b :=
 exp_le_exp.mpr h
+
+-- Nota: Con mpr se indica en modus pones inverso. Por ejemplo, si
+-- h: A ↔ B, entonces h.mpr es B → A y h.mp es A → B

@@ -201,8 +201,8 @@ en Lean:
 + [[./src/Basicos/Lemas_de_desigualdades_en_R.lean][Lemas de desigualdades en R]]
 #+INCLUDE: "./src/Basicos/Lemas_de_desigualdades_en_R.lean" src lean
 
-+ [[./src/Basicos/Desgualdad_de_exponenciales.lean][Desgualdad_de_exponenciales (reescritura con el bicondicional)]]
-#+INCLUDE: "./src/Basicos/Desgualdad_de_exponenciales.lean" src lean
++ [[./src/Basicos/Desigualdad_de_exponenciales.lean][Desigualdad_de_exponenciales (reescritura con el bicondicional)]]
+#+INCLUDE: "./src/Basicos/Desigualdad_de_exponenciales.lean" src lean
 
 + [[./src/Basicos/Eliminacion_de_bicondicional.lean][Eliminación de bicondicional]]
 #+INCLUDE: "./src/Basicos/Eliminacion_de_bicondicional.lean" src lean
