@@ -1,7 +1,6 @@
 -- ---------------------------------------------------------------------
--- Ejercicio 1. Imprtar la librería de grupos 
+-- Ejercicio 1. Importar la librería de grupos 
 -- ----------------------------------------------------------------------
-
 
 import algebra.group
 
