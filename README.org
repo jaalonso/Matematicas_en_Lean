@@ -622,6 +622,9 @@ en Lean:
 + [[./src/Miscelaneas/Asociatividad_del_minimo.lean][Asociatividad del mínimo]]
 #+INCLUDE: "./src/Miscelaneas/Asociatividad_del_minimo.lean" src lean
 
++ [[./src/Miscelaneas/Tactica_para_reticulos.lean][Táctica para retículos]]
+#+INCLUDE: "./src/Miscelaneas/Tactica_para_reticulos.lean" src lean
+
 + [[./src/Miscelaneas/Descomposicion_del_supremos.lean][Descomposición del supremos]]
 #+INCLUDE: "./src/Miscelaneas/Descomposicion_del_supremos.lean" src lean
 
