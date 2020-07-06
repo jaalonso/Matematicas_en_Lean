@@ -1,6 +1,6 @@
 -- ---------------------------------------------------------------------
 -- Ejercicio 1. Realizar las siguientes acciones
---    1. Inportar la teoría de exponeciales y logaritmos.
+--    1. Importar la teoría de exponeciales y logaritmos.
 --    2. Abrir la teoría de los reales
 --    3. Declarar a y b como variables sobre los reales.
 -- ----------------------------------------------------------------------
