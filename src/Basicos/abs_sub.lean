@@ -1,6 +1,11 @@
+-- ---------------------------------------------------------------------
+-- Ejercicio. Sean a y b números reales. Demostrar que
+--    abs a - abs b ≤ abs (a - b)
+-- ----------------------------------------------------------------------
+
 import data.real.basic
 
-variables a b c : ℝ
+variables a b : ℝ
 
 example : abs a - abs b ≤ abs (a - b) :=
 begin

@@ -1,6 +1,11 @@
+-- ---------------------------------------------------------------------
+-- Ejercicio. Sean a y b números reales. Demostrar que
+--    max a b = max b a
+-- ----------------------------------------------------------------------
+
 import data.real.basic
 
-variables a b c : ℝ
+variables a b : ℝ
 
 -- 1ª demostración
 -- ===============

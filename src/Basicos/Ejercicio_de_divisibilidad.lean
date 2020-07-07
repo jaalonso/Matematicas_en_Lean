@@ -1,8 +1,17 @@
+-- ---------------------------------------------------------------------
+-- Ejercicio. Demostrar que si
+--    x ∣ w
+-- entonces
+--    x ∣ y * (x * z) + x^2 + w^2 
+-- ----------------------------------------------------------------------
+
 import data.nat.gcd
 
 variables w x y z : ℕ
 
-example (h : x ∣ w): x ∣ y * (x * z) + x^2 + w^2 :=
+example 
+  (h : x ∣ w)
+  : x ∣ y * (x * z) + x^2 + w^2 :=
 begin
   apply dvd_add,
     apply dvd_add,
@@ -13,6 +22,26 @@ begin
   rw nat.pow_two,
   apply dvd_mul_of_dvd_left h,  
 end
+
+-- Su desarrollo es
+--
+-- ⊢ x ∣ y * (x * z) + x ^ 2 + w ^ 2
+--    apply dvd_add,
+-- ⊢ x ∣ y * (x * z) + x ^ 2
+-- |    apply dvd_add,
+-- | ⊢ x ∣ y * (x * z)
+-- | |    apply dvd_mul_of_dvd_right,
+-- | | ⊢ x ∣ x * z
+-- | |    apply dvd_mul_right,
+-- | ⊢ x ∣ x ^ 2
+-- | |    rw nat.pow_two,
+-- | | ⊢ x ∣ x * x
+-- | |    apply dvd_mul_right,
+-- ⊢ x ∣ w ^ 2
+-- |    rw nat.pow_two,
+-- | ⊢ x ∣ w * w
+-- |    apply dvd_mul_of_dvd_left h,  
+-- no goals
 
 -- Lemas usados
 -- ============

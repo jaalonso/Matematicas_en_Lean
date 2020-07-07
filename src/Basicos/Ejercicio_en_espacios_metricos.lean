@@ -1,3 +1,8 @@
+-- ---------------------------------------------------------------------
+-- Ejercicio. Demostrar que en los espacios métricos
+--    0 ≤ dist x y 
+-- ----------------------------------------------------------------------
+
 import topology.metric_space.basic
 
 variables {X : Type*} [metric_space X]
@@ -18,5 +23,5 @@ example : 0 ≤ dist x y :=
 example : 0 ≤ dist x y := 
 dist_nonneg
 
-#check nonneg_of_mul_nonneg_left
+
 

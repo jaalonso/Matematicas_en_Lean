@@ -1,7 +1,13 @@
+-- ---------------------------------------------------------------------
+-- Ejercicio. Sean a, b y c números reales. Demostrar que
+--    min (min a b) c = min a (min b c) 
+-- ----------------------------------------------------------------------
+
 import data.real.basic tactic
 
 variables a b c : ℝ
 
+-- Se usará el siguiente lema auxilar.
 lemma aux1 : min (min a b) c ≤ min a (min b c) :=
 begin
   apply le_min,

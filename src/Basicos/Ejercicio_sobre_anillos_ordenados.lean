@@ -1,7 +1,18 @@
-import algebra.ordered_ring
+-- ---------------------------------------------------------------------
+-- Ejercicio 1. Realizar las siguientes acciones
+--    1. Importar la teoría de los anillos ordenados.
+--    2. Declarar R como un tipo sobre los anillos ordenados.
+--    3. Declarar a, b y c como variables sobre R. 
+-- ----------------------------------------------------------------------
 
-variables {R : Type*} [ordered_ring R]
-variables a b c : R
+import algebra.ordered_ring              -- 1 
+variables {R : Type*} [ordered_ring R]   -- 2
+variables a b c: R                       -- 3
+
+-- ---------------------------------------------------------------------
+-- Ejercicio 2. Demostrar que
+--    a ≤ b → 0 ≤ b - a
+-- ----------------------------------------------------------------------
 
 example : a ≤ b → 0 ≤ b - a := 
 begin
@@ -10,6 +21,11 @@ begin
     0   = a - a : by rw sub_self
     ... ≤ b - a : @add_le_add_right R _ a b h (-a)  
 end
+
+-- ---------------------------------------------------------------------
+-- Ejercicio 3. Demostrar que
+--    0 ≤ b - a → a ≤ b
+-- ----------------------------------------------------------------------
 
 example : 0 ≤ b - a → a ≤ b := 
 begin
@@ -20,14 +36,52 @@ begin
     ... = b           : by simp
 end
 
+-- ---------------------------------------------------------------------
+-- Ejercicio 4. Demostrar que
+--    a ≤ b
+--    0 ≤ c
+-- entonces
+--    a * c ≤ b * c 
+-- ----------------------------------------------------------------------
+
 -- 1ª demostración
-example (h₁ : a ≤ b) (h₂ : 0 ≤ c) : a * c ≤ b * c := 
+-- ===============
+
+open_locale classical
+
+example 
+  (h₁ : a ≤ b) 
+  (h₂ : 0 ≤ c) 
+  : a * c ≤ b * c := 
 begin
-  cases classical.em (b ≤ a), { simp [le_antisymm h h₁] },
-  cases classical.em (c ≤ 0), { simp [le_antisymm h_1 h₂] },
-  exact (le_not_le_of_lt (ordered_semiring.mul_lt_mul_of_pos_right a b c (lt_of_le_not_le h₁ h) (lt_of_le_not_le h₂ h_1))).left,
+  by_cases h₃ : b ≤ a,
+  { have : a = b,
+      { apply le_antisymm h₁ h₃},
+    rw this },
+  { by_cases h₄ : c = 0,
+    { calc a * c = a * 0 : by rw h₄
+             ... = 0     : by rw mul_zero
+             ... ≤ 0     : by exact le_refl 0
+             ... = b * 0 : by rw mul_zero
+             ... = b * c : by {congr; rw h₄}}, 
+    { apply le_of_lt,
+      apply mul_lt_mul_of_pos_right,
+      { exact lt_of_le_not_le h₁ h₃ },
+      { exact lt_of_le_of_ne h₂ (ne.symm h₄) }}},
 end
 
+
 -- 2ª demostración
-example (h : a ≤ b) (h' : 0 ≤ c) : a * c ≤ b * c := 
-mul_le_mul_of_nonneg_right h h'
+example 
+  (h₁ : a ≤ b) 
+  (h₂ : 0 ≤ c) 
+  : a * c ≤ b * c := 
+by exact mul_le_mul_of_nonneg_right h₁ h₂
+
+-- 3ª demostración
+example 
+  (h₁ : a ≤ b) 
+  (h₂ : 0 ≤ c) 
+  : a * c ≤ b * c := 
+mul_le_mul_of_nonneg_right h₁ h₂
+

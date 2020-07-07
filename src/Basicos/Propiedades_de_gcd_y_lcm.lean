@@ -1,3 +1,11 @@
+-- ---------------------------------------------------------------------
+-- Ejercicio. Calcular el tipo de los siguientes lemas 
+--    gcd_zero_right
+--    gcd_zero_left 
+--    lcm_zero_right 
+--    lcm_zero_left 
+-- ----------------------------------------------------------------------
+
 import data.nat.gcd
 
 open nat

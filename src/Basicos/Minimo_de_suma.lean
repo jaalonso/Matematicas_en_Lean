@@ -1,3 +1,8 @@
+-- ---------------------------------------------------------------------
+-- Ejercicio. Sean a, b y c números reales. Demostrar que
+--    min a b + c = min (a + c) (b + c)
+-- ----------------------------------------------------------------------
+
 import data.real.basic
 
 variables a b c : ℝ
