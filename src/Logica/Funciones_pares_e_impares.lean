@@ -1,11 +1,37 @@
-import data.real.basic
+-- ---------------------------------------------------------------------
+-- Ejercicio 1. Realizar las siguientes acciones:
+-- 1. Importar la teoría de los números reales.
+-- 2. Declarar f y g como variables sobre funciones de ℝ en ℝ. 
+-- ----------------------------------------------------------------------
 
-variables (f g : ℝ → ℝ)
+import data.real.basic                                               -- 1
+
+variables (f g : ℝ → ℝ)                                              -- 2
+
+-- ---------------------------------------------------------------------
+-- Ejercicio 2. Definir la función
+--    even (ℝ → ℝ) → Prop
+-- tal que (even f) afirma que f es par. 
+-- ----------------------------------------------------------------------
 
 def even (f : ℝ → ℝ) : Prop := ∀ x, f x = f (-x)
+
+-- ---------------------------------------------------------------------
+-- Ejercicio 3. Definir la función
+--    odd (ℝ → ℝ) → Prop
+-- tal que (odd f) afirma que f es impar. 
+-- ----------------------------------------------------------------------
+
 def odd  (f : ℝ → ℝ) : Prop := ∀ x, f x = - f (-x)
 
-example (ef : even f) (eg : even g) : even (λ x, f x + g x) :=
+-- ---------------------------------------------------------------------
+-- Ejercicio 4. Demostrar que la suma de dos funciones pares es par.
+-- ----------------------------------------------------------------------
+
+example 
+  (ef : even f) 
+  (eg : even g) 
+  : even (λ x, f x + g x) :=
 begin
   intro x,
   calc
@@ -13,7 +39,14 @@ begin
                    ... = f (-x) + g (-x) : by rw [ef, eg]
 end
 
-example (of : odd f) (og : odd g) : even (λ x, f x * g x) :=
+-- ---------------------------------------------------------------------
+-- Ejercicio 5. Demostrar que la suma de dos funciones impares es par.
+-- ----------------------------------------------------------------------
+
+example 
+  (of : odd f) 
+  (og : odd g) 
+  : even (λ x, f x * g x) :=
 begin
   intro x,
   calc
@@ -24,7 +57,15 @@ begin
     ... = ((λ x, f x * g x) (-x)) : rfl
 end
 
-example (ef : even f) (og : odd g) : odd (λ x, f x * g x) :=
+-- ---------------------------------------------------------------------
+-- Ejercicio 6. Demostrar que el producto de una función par por una
+-- impar es impar.
+-- ----------------------------------------------------------------------
+
+example 
+  (ef : even f) 
+  (og : odd g) 
+  : odd (λ x, f x * g x) :=
 begin
   intro x,
   calc
@@ -35,7 +76,15 @@ begin
     ... = -((λ x, f x * g x) (-x)) : rfl
 end
 
-example (ef : even f) (og : odd g) : even (λ x, f (g x)) :=
+-- ---------------------------------------------------------------------
+-- Ejercicio 7. Demostrar que si f es par y g es impar, entonces f ∘ g
+-- es par.
+-- ----------------------------------------------------------------------
+
+example 
+  (ef : even f) 
+  (og : odd g) 
+  : even (λ x, f (g x)) :=
 begin
   intro x,
   calc
