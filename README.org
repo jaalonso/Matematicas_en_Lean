@@ -21,6 +21,7 @@
   - [[#conjunción-y-bicondicional][Conjunción y bicondicional]]
   - [[#disyunción][Disyunción]]
   - [[#sucesiones-y-convergencia][Sucesiones y convergencia]]
+- [[#conjuntos-y-funciones][Conjuntos y funciones]]
 - [[#misceláneas][Misceláneas]]
   - [[#comandos][Comandos]]
   - [[#tácticas][Tácticas]]
@@ -555,6 +556,11 @@ en Lean:
 + [[./src/Logica/Unicidad_del_limite.lean][Unicidad del límite]]
 #+INCLUDE: "./src/Logica/Unicidad_del_limite.lean" src lean
 
+
+* Conjuntos y funciones
+
++ Pendiente de añadir.
+
 * Misceláneas
 
 ** Comandos
@@ -646,6 +652,6 @@ en Lean:
 + [[https://gist.github.com/utensil/dc635f2991255f76d8da797efdabbf15][Basic guide to tactics]] de Kevin Buzzard.
 + [[https://leanprover-community.github.io/mathlib_docs/][Lean mathlib documentation]].
 + [[https://leanprover-community.github.io/mathematics_in_lean/index.html][Mathematics in Lean]] de Jeremy Avigad, Kevin Buzzard, Robert Y. Lewis y Patrick
-  Massot.
+  Massot. 
 + [[https://github.com/kbuzzard/xena/tree/master/Maths_Challenges][Maths challenges for the Lean curious]] de Kevin Buzzard. 
 + [[https://leanprover.github.io/reference/index.html][The Lean reference manual]] de Jeremy Avigad, Gabriel Ebner y Sebastian Ullrich.

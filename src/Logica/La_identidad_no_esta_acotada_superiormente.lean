@@ -1,25 +1,29 @@
-import data.real.basic
+-- ---------------------------------------------------------------------
+-- Ejercicio. Demostrar que la función identidad no está acotada
+-- superiormente. 
+-- ----------------------------------------------------------------------
 
-def fn_ub (f : ℝ → ℝ) (a : ℝ) : Prop := ∀ x, f x ≤ a
 
-def fn_has_ub (f : ℝ → ℝ) := ∃ a, fn_ub f a
-
-variable f : ℝ → ℝ
-
-lemma aux (h : ∀ a, ∃ x, f x > a) : ¬ fn_has_ub f :=
-begin
-  intros fnub,
-  cases fnub with a fnuba,
-  cases h a with x hx,
-  have : f x ≤ a,
-    from fnuba x,
-  linarith
-end
+import .Funcion_no_acotada_superiormente
 
 example : ¬ fn_has_ub (λ x, x) :=
 begin
-  apply aux,
+  apply no_has_ub,
   intro a,
   use a + 1,
-  linarith
+  linarith,
 end
+
+-- Prueba
+-- ------
+
+-- ⊢ ¬fn_has_ub (λ (x : ℝ), x)
+--    >> apply no_has_ub,
+-- ⊢ ∀ (a : ℝ), ∃ (x : ℝ), x > a
+--    >> intro a,
+-- a : ℝ
+-- ⊢ ∃ (x : ℝ), x > a
+--    >> use a + 1,
+-- ⊢ a + 1 > a
+--    >> linarith,
+-- no goals
