@@ -451,7 +451,7 @@ en Lean:
 + [[./src/Logica/CN_de_no_monotona.lean][CN de no monótona]]
 #+INCLUDE: "./src/Logica/CN_de_no_monotona.lean" src lean
 
-+ [[./src/Logica/Principio_de_explosion.lean][Principio de explosión]] (en latín "ex falso quodlibet")
++ [[./src/Logica/Principio_de_explosion.lean][Principio de explosión]]
 #+INCLUDE: "./src/Logica/Principio_de_explosion.lean" src lean
 
 ** Conjunción y bicondicional
@@ -488,7 +488,7 @@ en Lean:
 
 ** Disyunción
 
-+ [[./src/Logica/Introduccion_de_la_disyuncion.lean][Introducción de la disyunción]] (Tácticas [[https://bit.ly/3enkT3d][left / right]] y términos or.inl y or.inr)
++ [[./src/Logica/Introduccion_de_la_disyuncion.lean][Introducción de la disyunción]] (Tácticas [[https://bit.ly/3enkT3d][left / right]] y lemas or.inl y or.inr)
 #+INCLUDE: "./src/Logica/Introduccion_de_la_disyuncion.lean" src lean
 
 + [[./src/Logica/Eliminacion_de_la_disyuncion.lean][Eliminación de la disyunción]] (Táctica [[https://bit.ly/3dowIEO][cases]])
