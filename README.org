@@ -579,6 +579,12 @@ en Lean:
 + [[./src/Miscelaneas/La_tactica_libray_search.lean][La táctica libray_search]]
 #+INCLUDE: "./src/Miscelaneas/La_tactica_libray_search.lean" src lean
 
++ [[./src/Miscelaneas/La_tactica_symmetry.lean][La táctica symmetry]]
+#+INCLUDE: "./src/Miscelaneas/La_tactica_symmetry.lean" src lean
+
++ [[./src/Miscelaneas/La_tactica_omega.lean][La táctica omega]]
+#+INCLUDE: "./src/Miscelaneas/La_tactica_omega.lean" src lean
+
 ** Teoría de conjuntos
 
 + [[./src/Miscelaneas/Distributiva_de_la_union_sobre_la_interseccion.lean][Distributiva de la unión sobre la intersección]]
@@ -602,6 +608,9 @@ en Lean:
 
 + [[./src/Miscelaneas/Mayores_de_no_nulo_son_no_nulos.lean][Mayores de no nulo son no nulos]]
 #+INCLUDE: "./src/Miscelaneas/Mayores_de_no_nulo_son_no_nulos.lean" src lean
+
++ [[./src/Miscelaneas/Infinitud_de_los_primos.lean][Infinitud de los primos]]
+#+INCLUDE: "./src/Miscelaneas/Infinitud_de_los_primos.lean" src lean
 
 *** Dígitos
 
