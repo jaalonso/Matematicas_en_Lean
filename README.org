@@ -339,6 +339,9 @@ en Lean:
 + [[./src/Logica/Operaciones_con_cotas.lean][Operaciones con cotas]]
 #+INCLUDE: "./src/Logica/Operaciones_con_cotas.lean" src lean
 
++ [[./src/Logica/Cota_doble.lean][Cota_doble]]
+#+INCLUDE: "./src/Logica/Cota_doble.lean" src lean
+
 + [[./src/Logica/Generalizacion_a_monoides.lean][Generalización a monoides]]
 #+INCLUDE: "./src/Logica/Generalizacion_a_monoides.lean" src lean
 
