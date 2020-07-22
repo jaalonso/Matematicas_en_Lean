@@ -157,6 +157,108 @@ end
 -- 2ª demostración
 -- ===============
 
+example 
+  (hfa : fn_ub f a)     
+  (hfb : fn_ub g b)
+  (nng : fn_lb g 0) 
+  (nna : 0 ≤ a) 
+  : fn_ub (λ x, f x * g x) (a * b) :=
+begin
+  dunfold fn_ub fn_lb at *,
+  intro x,
+  have h1:= hfa x,
+  have h2:= hfb x,
+  have h3:= nng x,
+  exact mul_le_mul h1 h2 h3 nna,
+end
+
+-- Prueba
+-- ======
+
+/-
+f g : ℝ → ℝ,
+a b : ℝ,
+hfa : fn_ub f a,
+hfb : fn_ub g b,
+nng : fn_lb g 0,
+nna : 0 ≤ a
+⊢ fn_ub (λ (x : ℝ), f x * g x) (a * b)
+  >> dunfold fn_ub fn_lb at *,
+hfa : ∀ (x : ℝ), f x ≤ a,
+hfb : ∀ (x : ℝ), g x ≤ b,
+nng : ∀ (x : ℝ), 0 ≤ g x,
+nna : 0 ≤ a
+⊢ ∀ (x : ℝ), f x * g x ≤ a * b
+  >> intro x,
+x : ℝ
+⊢ f x * g x ≤ a * b
+  >> have h1:= hfa x,
+h1 : f x ≤ a
+⊢ f x * g x ≤ a * b
+  >> have h2:= hfb x,
+h2 : g x ≤ b
+⊢ f x * g x ≤ a * b
+  >> have h3:= nng x,
+h3 : 0 ≤ g x
+⊢ f x * g x ≤ a * b
+  >> exact mul_le_mul h1 h2 h3 nna,
+no goals
+-/
+
+-- 3ª demostración
+-- ===============
+
+example 
+  (hfa : fn_ub f a) 
+  (hfb : fn_ub g b)
+  (nng : fn_lb g 0) 
+  (nna : 0 ≤ a) 
+  : fn_ub (λ x, f x * g x) (a * b) :=
+begin
+  dunfold fn_ub fn_lb at *,
+  intro x,
+  specialize hfa x,
+  specialize hfb x,
+  specialize nng x,
+  exact mul_le_mul hfa hfb nng nna,
+end
+
+-- Prueba
+-- ======
+
+/-
+f g : ℝ → ℝ,
+a b : ℝ,
+hfa : fn_ub f a,
+hfb : fn_ub g b,
+nng : fn_lb g 0,
+nna : 0 ≤ a
+⊢ fn_ub (λ (x : ℝ), f x * g x) (a * b)
+  >> dunfold fn_ub fn_lb at *,
+hfa : ∀ (x : ℝ), f x ≤ a,
+hfb : ∀ (x : ℝ), g x ≤ b,
+nng : ∀ (x : ℝ), 0 ≤ g x,
+nna : 0 ≤ a
+⊢ ∀ (x : ℝ), f x * g x ≤ a * b
+  >> intro x,
+x : ℝ
+⊢ f x * g x ≤ a * b
+  >> specialize hfa x,
+hfa : f x ≤ a
+⊢ f x * g x ≤ a * b
+  >> specialize hfb x,
+hfb : g x ≤ b
+⊢ f x * g x ≤ a * b
+  >> specialize nng x,
+nng : 0 ≤ g x
+⊢ f x * g x ≤ a * b
+  >> exact mul_le_mul hfa hfb nng nna,
+no goals
+-/
+
+-- 4ª demostración
+-- ===============
+
 example
   (hfa : fn_ub f a) 
   (hfb : fn_ub g b)

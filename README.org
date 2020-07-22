@@ -559,7 +559,6 @@ en Lean:
 + [[./src/Logica/Unicidad_del_limite.lean][Unicidad del límite]]
 #+INCLUDE: "./src/Logica/Unicidad_del_limite.lean" src lean
 
-
 * Conjuntos y funciones
 
 + Pendiente de añadir.
