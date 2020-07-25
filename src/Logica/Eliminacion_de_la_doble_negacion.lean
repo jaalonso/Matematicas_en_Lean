@@ -1,4 +1,13 @@
+-- ---------------------------------------------------------------------
+-- Ejercicio. Importar la librería de tácticas 
+-- ----------------------------------------------------------------------
+
 import tactic
+
+-- ---------------------------------------------------------------------
+-- Ejercicio. Demostrar que
+--    ¬ ¬ P → P
+-- ----------------------------------------------------------------------
 
 -- 1ª demostración
 -- ===============
@@ -10,6 +19,25 @@ begin
   { assumption },
   { contradiction },
 end
+
+-- Prueba
+-- ======
+
+/-
+P : Prop
+⊢ ¬¬P → P
+  >> intro h,
+h : ¬¬P
+⊢ P
+  >> cases classical.em P,
+| h : ¬¬P
+| ⊢ P
+|   >> { assumption },
+h_1 : ¬P
+⊢ P
+  >> { contradiction },
+no goals
+-/
 
 -- 2ª demostración
 -- ===============
@@ -24,7 +52,7 @@ begin
   { contradiction },
 end
 
--- 2ª demostración
+-- 3ª demostración
 -- ===============
 
 open_locale classical
@@ -34,5 +62,28 @@ begin
   intro h,
   by_cases h' : P,
   { assumption },
-  { contradiction }
+  { contradiction },
 end
+
+-- Prueba
+-- ======
+
+/-
+P : Prop
+⊢ ¬¬P → P
+  >> intro h,
+h : ¬¬P
+⊢ P
+  >> by_cases h' : P,
+| 2 goals
+| P : Prop,
+| h : ¬¬P,
+| h' : P
+| ⊢ P
+|   >> { assumption },
+h' : ¬P
+⊢ P
+  >> { contradiction },
+no goals
+-/
+

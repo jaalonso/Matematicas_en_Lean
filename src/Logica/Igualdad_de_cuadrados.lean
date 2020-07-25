@@ -72,7 +72,12 @@ no goals
 #check (@sub_eq_zero ℝ _ x y)
 #check (@eq_neg_of_add_eq_zero ℝ _ x y)
 
-
+-- ---------------------------------------------------------------------
+-- Ejercicio. Demostrar si 
+--    x^2 = y^2
+-- entonces
+--    x = y ∨ x = -y 
+-- ----------------------------------------------------------------------
 
 example 
   (h : x^2 = y^2) 
@@ -91,4 +96,8 @@ begin
     exact eq_neg_of_add_eq_zero h2 },
 end
 
+-- Comentario: Se han usado los siguientes lemas
+-- + eq_zero_or_eq_zero_of_mul_eq_zero : x * y = 0 → x = 0 ∨ y = 0 
+-- + sub_eq_zero : x - y = 0 ↔ x = y 
+-- + eq_neg_of_add_eq_zero : x + y = 0 → x = -y 
 

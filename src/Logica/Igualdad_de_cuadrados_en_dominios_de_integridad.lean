@@ -1,8 +1,30 @@
-import algebra.group_power tactic
+-- ---------------------------------------------------------------------
+-- Ejercicio. Importar las teorías: 
+-- + algebra.group_power de potencias en grupos
+-- + tactic de tácticas
+-- ----------------------------------------------------------------------
+
+import algebra.group_power 
+import tactic
+
+-- ---------------------------------------------------------------------
+-- Ejercicio. Declara R como una variable sobre dominios de integridad. 
+-- ----------------------------------------------------------------------
 
 variables {R : Type*} [integral_domain R]
 
+-- ---------------------------------------------------------------------
+-- Ejercicio. Declarar x e y como variables sobre R. 
+-- ----------------------------------------------------------------------
+
 variables (x y : R)
+
+-- ---------------------------------------------------------------------
+-- Ejercicio. Demostrar si
+--    x^2 = 1
+-- entonces
+--    x = 1 ∨ x = -1 
+-- ----------------------------------------------------------------------
 
 example 
   (h : x^2 = 1) 
@@ -20,6 +42,13 @@ begin
   { right,
     exact eq_neg_of_add_eq_zero h2 },
 end
+
+-- ---------------------------------------------------------------------
+-- Ejercicio. Demostrar si
+--    x^2 = y^2
+-- entonces
+--    x = y ∨ x = -y 
+-- ----------------------------------------------------------------------
 
 example 
   (h : x^2 = y^2) 
