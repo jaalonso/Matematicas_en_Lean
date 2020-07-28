@@ -4,35 +4,7 @@
 #+LATEX_CLASS: book-noparts
 #+LATEX_CLASS_OPTIONS: [a4paper,12pt,twoside]
 
-* Contenido                                                             :TOC:
-- [[#introducción][Introducción]]
-  - [[#resumen][Resumen]]
-  - [[#presentación-panorámica-de-lean][Presentación panorámica de Lean]]
-- [[#aspectos-básicos-del-razonamiento-matemático-en-lean][Aspectos básicos del razonamiento matemático en Lean]]
-  - [[#cálculos][Cálculos]]
-  - [[#demostraciones-en-estructuras-algebraicas][Demostraciones en estructuras algebraicas]]
-  - [[#uso-de-lemas-y-teoremas][Uso de lemas y teoremas]]
-  - [[#más-sobre-orden-y-divisibilidad][Más sobre orden y divisibilidad]]
-  - [[#demostraciones-sobre-estructuras-algebraicas][Demostraciones sobre estructuras algebraicas]]
-- [[#lógica][Lógica]]
-  - [[#implicación-y-cuantificación-universal][Implicación y cuantificación universal]]
-  - [[#el-cuantificador-existencial][El cuantificador existencial]]
-  - [[#la-negación][La negación]]
-  - [[#conjunción-y-bicondicional][Conjunción y bicondicional]]
-  - [[#disyunción][Disyunción]]
-  - [[#sucesiones-y-convergencia][Sucesiones y convergencia]]
-- [[#conjuntos-y-funciones][Conjuntos y funciones]]
-- [[#misceláneas][Misceláneas]]
-  - [[#comandos][Comandos]]
-  - [[#tácticas][Tácticas]]
-  - [[#teoría-de-conjuntos][Teoría de conjuntos]]
-  - [[#teoría-de-grupos][Teoría de grupos]]
-  - [[#números-naturales][Números naturales]]
-  - [[#aritmética-modular][Aritmética modular]]
-  - [[#sumatorios][Sumatorios]]
-  - [[#retículos][Retículos]]
-  - [[#análisis][Análisis]]
-- [[#bibliografía][Bibliografía]]
+# * Contenido                                                             :TOC:
 
 * Introducción
 
@@ -561,7 +533,23 @@ en Lean:
 
 * Conjuntos y funciones
 
-+ Pendiente de añadir.
+** Conjuntos
+
++ [[./src/Conjuntos/Monotonia_de_la_interseccion.lean][Monotonía de la intersección]]
+#+INCLUDE: "./src/Conjuntos/Monotonia_de_la_interseccion.lean" src lean
+
++ [[./src/Conjuntos/Distributiva_de_la_interseccion.lean][Distributiva de la intersección]]
+#+INCLUDE: "./src/Conjuntos/Distributiva_de_la_interseccion.lean" src lean
+
++ [[./src/Conjuntos/Diferencia_de_diferencia.lean][Diferencia de diferencia]]
+#+INCLUDE: "./src/Conjuntos/Diferencia_de_diferencia.lean" src lean
+
++ [[./src/Conjuntos/Conmutativa_de_la_interseccion.lean][Conmutativa de la intersección]]
+#+INCLUDE: "./src/Conjuntos/Conmutativa_de_la_interseccion.lean" src lean
+
++ [[./src/Conjuntos/Identidades_conjuntistas.lean][Identidades conjuntistas]]
+#+INCLUDE: "./src/Conjuntos/Identidades_conjuntistas.lean" src lean
+
 
 * Misceláneas
 
@@ -572,8 +560,8 @@ en Lean:
 
 ** Tácticas
 
-+ [[./src/Miscelaneas/La_tactica_suggest.lean][La táctica suggest]]
 #+INCLUDE: "./src/Miscelaneas/La_tactica_suggest.lean" src lean
++ [[./src/Miscelaneas/La_tactica_suggest.lean][La táctica suggest]]
 
 + [[./src/Miscelaneas/La_tactica_hint.lean][La táctica hint]]
 #+INCLUDE: "./src/Miscelaneas/La_tactica_hint.lean" src lean
