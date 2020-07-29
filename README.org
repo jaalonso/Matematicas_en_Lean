@@ -636,6 +636,9 @@ en Lean:
 
 ** Análisis
 
++ [[./src/Miscelaneas/Diferencia_de_intervalos.lean][Diferencia de intervalos]]
+#+INCLUDE: "./src/Miscelaneas/Diferencia_de_intervalos.lean" src lean
+
 + [[./src/Miscelaneas/Lema_del_emparedado.lean][Lema del emparedado]]
 #+INCLUDE: "./src/Miscelaneas/Lema_del_emparedado.lean" src lean
 
