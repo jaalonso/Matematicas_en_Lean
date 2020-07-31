@@ -4,7 +4,38 @@
 #+LATEX_CLASS: book-noparts
 #+LATEX_CLASS_OPTIONS: [a4paper,12pt,twoside]
 
-# * Contenido                                                             :TOC:
+* Contenido                                                             :TOC:
+- [[#introducción][Introducción]]
+  - [[#resumen][Resumen]]
+  - [[#presentación-panorámica-de-lean][Presentación panorámica de Lean]]
+- [[#aspectos-básicos-del-razonamiento-matemático-en-lean][Aspectos básicos del razonamiento matemático en Lean]]
+  - [[#cálculos][Cálculos]]
+  - [[#demostraciones-en-estructuras-algebraicas][Demostraciones en estructuras algebraicas]]
+  - [[#uso-de-lemas-y-teoremas][Uso de lemas y teoremas]]
+  - [[#más-sobre-orden-y-divisibilidad][Más sobre orden y divisibilidad]]
+  - [[#demostraciones-sobre-estructuras-algebraicas][Demostraciones sobre estructuras algebraicas]]
+- [[#lógica][Lógica]]
+  - [[#implicación-y-cuantificación-universal][Implicación y cuantificación universal]]
+  - [[#el-cuantificador-existencial][El cuantificador existencial]]
+  - [[#la-negación][La negación]]
+  - [[#conjunción-y-bicondicional][Conjunción y bicondicional]]
+  - [[#disyunción][Disyunción]]
+  - [[#sucesiones-y-convergencia][Sucesiones y convergencia]]
+- [[#conjuntos-y-funciones][Conjuntos y funciones]]
+  - [[#conjuntos][Conjuntos]]
+  - [[#funciones][Funciones]]
+- [[#misceláneas][Misceláneas]]
+  - [[#comandos][Comandos]]
+  - [[#tácticas][Tácticas]]
+  - [[#teoría-de-conjuntos][Teoría de conjuntos]]
+  - [[#teoría-de-grupos][Teoría de grupos]]
+  - [[#números-naturales][Números naturales]]
+  - [[#aritmética][Aritmética]]
+  - [[#aritmética-modular][Aritmética modular]]
+  - [[#sumatorios][Sumatorios]]
+  - [[#retículos][Retículos]]
+  - [[#análisis][Análisis]]
+- [[#bibliografía][Bibliografía]]
 
 * Introducción
 
@@ -550,6 +581,34 @@ en Lean:
 + [[./src/Conjuntos/Identidades_conjuntistas.lean][Identidades conjuntistas]]
 #+INCLUDE: "./src/Conjuntos/Identidades_conjuntistas.lean" src lean
 
++ [[./src/Conjuntos/Union_de_pares_e_impares.lean][Unión de pares e impares]]
+#+INCLUDE: "./src/Conjuntos/Union_de_pares_e_impares.lean" src lean
+
++ [[./src/Conjuntos/Pertenencia_al_vacio_y_al_universal.lean][Pertenencia al vacío y al universal]]
+#+INCLUDE: "./src/Conjuntos/Pertenencia_al_vacio_y_al_universal.lean" src lean
+
++ [[./src/Conjuntos/Primos_mayores_que_dos.lean][Primos mayores que dos]]
+#+INCLUDE: "./src/Conjuntos/Primos_mayores_que_dos.lean" src lean
+
++ [[./src/Conjuntos/Ejemplos_con_cuantificadores_acotados.lean][Ejemplos con cuantificadores acotados]]
+#+INCLUDE: "./src/Conjuntos/Ejemplos_con_cuantificadores_acotados.lean" src lean
+
++ [[./src/Conjuntos/Ejercicios_con_cuantificadores_acotados.lean][Ejercicios con cuantificadores acotados]]
+#+INCLUDE: "./src/Conjuntos/Ejercicios_con_cuantificadores_acotados.lean" src lean
+
++ [[./src/Conjuntos/Ejemplos_de_uniones_e_intersecciones_generales.lean][Ejemplos de uniones e intersecciones generales]]
+#+INCLUDE: "./src/Conjuntos/Ejemplos_e_uniones_de_intersecciones_generales.lean" src lean
+
++ [[./src/Conjuntos/Ejercicios_de_uniones_e_intersecciones_generales.lean][Ejercicios de uniones e intersecciones generales]]
+#+INCLUDE: "./src/Conjuntos/Ejercicios_e_uniones_de_intersecciones_generales.lean" src lean
+
++ [[./src/Conjuntos/Ejemplos_de_uniones_e_intersecciones_generales_2.lean][Ejemplos de uniones e intersecciones generales (2)]]
+#+INCLUDE: "./src/Conjuntos/Ejemplos_e_uniones_de_intersecciones_generales_2.lean" src lean
+
++ [[./src/Conjuntos/Ejemplos_de_uniones_e_intersecciones_generales_3.lean][Ejemplos de uniones e intersecciones generales (3)]]
+#+INCLUDE: "./src/Conjuntos/Ejemplos_e_uniones_de_intersecciones_generales_3.lean" src lean
+
+** Funciones
 
 * Misceláneas
 
@@ -606,6 +665,11 @@ en Lean:
 
 + [[./src/Miscelaneas/Los_digitos_son_menores_que_la_base.lean][Los dígitos son menores que la base]]
 #+INCLUDE: "./src/Miscelaneas/Los_digitos_son_menores_que_la_base.lean" src lean
+
+** Aritmética
+
++ [[./src/Miscelaneas/Multiplica_y_divide.lean][Multiplica y divide]]
+#+INCLUDE: "./src/Miscelaneas/Multiplica_y_divide.lean" src lean
 
 ** Aritmética modular
 
