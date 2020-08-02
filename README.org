@@ -622,7 +622,7 @@ conjuntistas y sobre las funciones.
 + [[./src/Conjuntos/Ejercicios_de_imagenes_y_preimagenes.lean][Ejercicios de imágenes y preimágenes]] (Pdte)
 #+INCLUDE: "./src/Conjuntos/Ejercicios_de_imagenes_y_preimagenes.lean" src lean
 
-+ [[./src/Conjuntos/Ejercicios_de_imagenes_y_uniones.lean][Ejercicios de imágenes y uniones]] ([[https://bit.ly/3flQuSB][interactivo]]).
++ [[./src/Conjuntos/Ejercicios_de_imagenes_y_uniones.lean][Ejercicios de imágenes y uniones]]
 #+INCLUDE: "./src/Conjuntos/Ejercicios_de_imagenes_y_uniones.lean" src lean
 
 + [[./src/Conjuntos/Definicion_de_inyectiva.lean][Definición de inyectiva]]
