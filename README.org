@@ -619,14 +619,41 @@ conjuntistas y sobre las funciones.
 + [[./src/Conjuntos/Inclusion_de_la_imagen.lean][Inclusión de la imagen]]
 #+INCLUDE: "./src/Conjuntos/Inclusion_de_la_imagen.lean" src lean
 
-+ [[./src/Conjuntos/Ejercicios_de_imagenes_y_preimagenes.lean][Ejercicios de imágenes y preimágenes]] (Pdte)
-#+INCLUDE: "./src/Conjuntos/Ejercicios_de_imagenes_y_preimagenes.lean" src lean
-
 + [[./src/Conjuntos/Ejercicios_de_imagenes_y_uniones.lean][Ejercicios de imágenes y uniones]]
 #+INCLUDE: "./src/Conjuntos/Ejercicios_de_imagenes_y_uniones.lean" src lean
 
 + [[./src/Conjuntos/Definicion_de_inyectiva.lean][Definición de inyectiva]]
 #+INCLUDE: "./src/Conjuntos/Definicion_de_inyectiva.lean" src lean
+
++ [[./src/Conjuntos/Inyectividad_del_logaritmo.lean][Inyectividad del logaritmo]]
+#+INCLUDE: "./src/Conjuntos/Inyectividad_del_logaritmo.lean" src lean
+
++ [[./src/Conjuntos/Rango_de_la_exponencial.lean][Rango de la exponencial]]
+#+INCLUDE: "./src/Conjuntos/Rango_de_la_exponencial.lean" src lean
+
++ [[./src/Conjuntos/Inyectividad_del_cuadrado.lean][Inyectividad del cuadrado]]
+#+INCLUDE: "./src/Conjuntos/Inyectividad_del_cuadrado.lean" src lean
+
++ [[./src/Conjuntos/Rango_del_cuadrado.lean][Rango del cuadrado]]
+#+INCLUDE: "./src/Conjuntos/Rango_del_cuadrado.lean" src lean
+
++ [[./src/Conjuntos/Ejercicios_de_imagenes_y_preimagenes.lean][Ejercicios de imágenes y preimágenes]] 
+#+INCLUDE: "./src/Conjuntos/Ejercicios_de_imagenes_y_preimagenes.lean" src lean
+
++ [[./src/Conjuntos/Valor_por_defecto_y_eleccion_de_valores.lean][Valor por defecto y elección de valores]]
+#+INCLUDE: "./src/Conjuntos/Valor_por_defecto_y_eleccion_de_valores.lean" src lean
+
++ [[./src/Conjuntos/Funcion_inversa.lean][Función inversa]]
+#+INCLUDE: "./src/Conjuntos/Funcion_inversa.lean" src lean
+
++ [[./src/Conjuntos/Caracterizacion_de_las_funciones_inyectivas_mediante_la_inversa_por_la_izquierda.lean][Caracterización de las funciones inyectivas mediante la inversa por la izquierda]]
+#+INCLUDE: "./src/Conjuntos/Caracterizacion_de_las_funciones_inyectivas_mediante_la_inversa_por_la_izquierda.lean" src lean
+
++ [[./src/Conjuntos/Caracterizacion_de_las_funciones_suprayectivas_mediante_la_inversa_por_la_derecha.lean][Caracterización de las funciones suprayectivas mediante la inversa por la derecha]]
+#+INCLUDE: "./src/Conjuntos/Caracterizacion_de_las_funciones_suprayectivas_mediante_la_inversa_por_la_derecha.lean" src lean
+
++ [[./src/Conjuntos/Teorema_de_Cantor.lean][Teorema de Cantor]]
+#+INCLUDE: "./src/Conjuntos/Teorema_de_Cantor.lean" src lean
 
 # * Misceláneas
 # #+INCLUDE: ./Miscelaneas.org
