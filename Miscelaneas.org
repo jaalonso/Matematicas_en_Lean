@@ -22,6 +22,11 @@
 + [[./src/Miscelaneas/La_tactica_omega.lean][La táctica omega]]
 #+INCLUDE: "./src/Miscelaneas/La_tactica_omega.lean" src lean
 
+** Lógica
+
++ [[./src/Miscelaneas/La_paradoja_del_barbero.lean][La paradoja del barbero]] 
+#+INCLUDE: "./src/Miscelaneas/La_paradoja_del_barbero.lean" src lean
+
 ** Teoría de conjuntos
 
 + [[./src/Miscelaneas/Distributiva_de_la_union_sobre_la_interseccion.lean][Distributiva de la unión sobre la intersección]]
@@ -29,6 +34,9 @@
 
 + [[./src/Miscelaneas/Finitud_del_dominio_de_las_funciones_inyectivas_con_codominio_finito.lean][Finitud del dominio de las funciones inyectivas con codominio finito]]
 #+INCLUDE: "./src/Miscelaneas/Finitud_del_dominio_de_las_funciones_inyectivas_con_codominio_finito.lean" src lean
+
++ [[./src/Miscelaneas/Inclusion_de_segmentos_iniciales_de_naturales.lean][Inclusión de segmentos iniciales de naturales]] 
+#+INCLUDE: "./src/Miscelaneas/Inclusion_de_segmentos_iniciales_de_naturales.lean" src lean
 
 ** Teoría de grupos
 
@@ -99,4 +107,7 @@
 
 + [[./src/Miscelaneas/Monotonia_de_la_exponencial.lean][Monotonía de la exponencial]]
 #+INCLUDE: "./src/Miscelaneas/Monotonia_de_la_exponencial.lean" src lean
+
++ [[./src/Miscelaneas/Problema de Olimpiada (IMO 1972 B2).lean][Problema de Olimpiada (IMO 1972 B2)]] 
+#+INCLUDE: "./src/Miscelaneas/Problema_de_Olimpiada_(IMO_1972_B2).lean" src lean
 

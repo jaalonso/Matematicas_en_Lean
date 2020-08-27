@@ -31,10 +31,10 @@
 ** Resumen
 
 El objetivo de este trabajo es presentar el uso de Lean mediante ejemplos
-matemáticos usando. Está basado en el libro [[https://leanprover-community.github.io/mathematics_in_lean/index.html][Mathematics in Lean]] de Jeremy
+matemáticos usando Lean. Está basado en el libro [[https://leanprover-community.github.io/mathematics_in_lean/index.html][Mathematics in Lean]] de Jeremy
 Avigad, Kevin Buzzard, Robert Y. Lewis y Patrick Massot.
  
-El trabajo se presenta en  formas:
+El trabajo se presenta en 3 formas:
 + Como un [[https://www.cs.us.es/~jalonso/apuntes/Matematicas_en_Lean/Matematicas_en_Lean.pdf][libro en PDF]]
 + Como una [[https://www.cs.us.es/~jalonso/apuntes/Matematicas_en_Lean/README.html][página HTML]].
 + Como un [[https://github.com/jaalonso/Matematicas_en_Lean][proyecto en GitHub]].  
@@ -667,3 +667,5 @@ conjuntistas y sobre las funciones.
   Massot. 
 + [[https://github.com/kbuzzard/xena/tree/master/Maths_Challenges][Maths challenges for the Lean curious]] de Kevin Buzzard. 
 + [[https://leanprover.github.io/reference/index.html][The Lean reference manual]] de Jeremy Avigad, Gabriel Ebner y Sebastian Ullrich.
++ [[https://leanprover-community.github.io/undergrad.html][Undergraduate mathematics in mathlib]] y 
+  [[https://leanprover-community.github.io/undergrad_todo.html][Missing undergraduate mathematics in mathlib]].
