@@ -108,6 +108,3 @@
 + [[./src/Miscelaneas/Monotonia_de_la_exponencial.lean][Monotonía de la exponencial]]
 #+INCLUDE: "./src/Miscelaneas/Monotonia_de_la_exponencial.lean" src lean
 
-+ [[./src/Miscelaneas/Problema de Olimpiada (IMO 1972 B2).lean][Problema de Olimpiada (IMO 1972 B2)]] 
-#+INCLUDE: "./src/Miscelaneas/Problema_de_Olimpiada_(IMO_1972_B2).lean" src lean
-
