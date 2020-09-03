@@ -24,6 +24,9 @@
 
 ** Lógica
 
++ [[./src/Miscelaneas/Formula_proposicional.lean][Fórmula proposicional]] 
+#+INCLUDE: "./src/Miscelaneas/Formula_proposicional.lean" src lean
+
 + [[./src/Miscelaneas/La_paradoja_del_barbero.lean][La paradoja del barbero]] 
 #+INCLUDE: "./src/Miscelaneas/La_paradoja_del_barbero.lean" src lean
 
