@@ -1,5 +1,5 @@
 -- ---------------------------------------------------------------------
--- Ejercicio. Importar la librería de tácticas 
+-- Ejercicio. Importar la librería de tácticas
 -- ----------------------------------------------------------------------
 
 import tactic
@@ -47,7 +47,7 @@ open classical
 example (P : Prop) : ¬ ¬ P → P :=
 begin
   intro h,
-  cases em P,
+  cases classical.em P,
   { assumption },
   { contradiction },
 end
@@ -86,4 +86,3 @@ h' : ¬P
   >> { contradiction },
 no goals
 -/
-

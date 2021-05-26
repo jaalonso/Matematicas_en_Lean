@@ -33,18 +33,18 @@ no goals
 -/
 
 theorem converges_to_mul_const
-  {c : ℝ} 
-  (cs : converges_to s a) 
+  {c : ℝ}
+  (cs : converges_to s a)
   : converges_to (λ n, c * s n) (c * a) :=
 begin
   by_cases h : c = 0,
   { convert converges_to_const 0,
-    { ext, 
+    { ext,
       rw [h, zero_mul] },
     { rw [h, zero_mul] }},
   have acpos : 0 < abs c,
-    from abs_pos_of_ne_zero h,
-  intros ε εpos, 
+    from abs_pos.mpr h,
+  intros ε εpos,
   dsimp,
   have εcpos : 0 < ε / abs c,
     by exact div_pos εpos acpos,
@@ -52,10 +52,10 @@ begin
   use Ns,
   intros n hn,
   specialize hs n hn,
-  calc abs (c * s n - c * a) 
+  calc abs (c * s n - c * a)
            = abs (c * (s n - a))   : by { congr, ring }
        ... = abs c * abs (s n - a) : by apply abs_mul
-       ... < abs c * (ε / abs c)   : by exact mul_lt_mul_of_pos_left hs acpos 
+       ... < abs c * (ε / abs c)   : by exact mul_lt_mul_of_pos_left hs acpos
        ... = ε                     : by apply converges_to_mul_const_l1 acpos
 end
 
@@ -92,7 +92,7 @@ h : ¬c = 0
 |   >>   from abs_pos_of_ne_zero h,
 acpos : 0 < abs c
 ⊢ converges_to (λ (n : ℕ), c * s n) (c * a)
-  >> intros ε εpos, 
+  >> intros ε εpos,
 ε : ℝ,
 εpos : ε > 0
 ⊢ ∃ (N : ℕ), ∀ (n : ℕ), n ≥ N → abs ((λ (n : ℕ), c * s n) n - c * a) < ε
@@ -115,32 +115,32 @@ hn : n ≥ Ns
   >> specialize hs n hn,
 hs : abs (s n - a) < ε / abs c
 ⊢ abs (c * s n - c * a) < ε
-  >> calc abs (c * s n - c * a) 
+  >> calc abs (c * s n - c * a)
   >>     = abs (c * (s n - a))   : by { congr, ring }
   >> ... = abs c * abs (s n - a) : by apply abs_mul
-  >> ... < abs c * (ε / abs c)   : by exact mul_lt_mul_of_pos_left hs acpos 
+  >> ... < abs c * (ε / abs c)   : by exact mul_lt_mul_of_pos_left hs acpos
   >> ... = ε                     : by apply converges_to_mul_const_l1-/
 /-acpos,
 no goals
 -/
 
 -- Comentario: Se han usado los lemas
--- + mul_comm a b : a * b = b * a 
--- + ne_of_gt : a > b → a ≠ b 
--- + converges_to_const a : converges_to (λ (x : ℕ), a) a 
--- + zero_mul a : 0 * a = 0 
--- + abs_pos_of_ne_zero : a ≠ 0 → 0 < abs a 
--- + div_pos : 0 < a → 0 < b → 0 < a / b 
--- + abs_mul a b : abs (a * b) = abs a * abs b 
--- + mul_lt_mul_of_pos_left : a < b → 0 < d → d * a < d * b 
+-- + mul_comm a b : a * b = b * a
+-- + ne_of_gt : a > b → a ≠ b
+-- + converges_to_const a : converges_to (λ (x : ℕ), a) a
+-- + zero_mul a : 0 * a = 0
+-- + abs_pos_of_ne_zero : a ≠ 0 → 0 < abs a
+-- + div_pos : 0 < a → 0 < b → 0 < a / b
+-- + abs_mul a b : abs (a * b) = abs a * abs b
+-- + mul_lt_mul_of_pos_left : a < b → 0 < d → d * a < d * b
 
 -- Comprobación:
-variables (b d : ℝ)
-#check @mul_comm _ _ a b
-#check @ne_of_gt _ _ a b
-#check converges_to_const a
-#check @zero_mul _ _ a
-#check @abs_pos_of_ne_zero _ _ a
-#check @div_pos _ _ a b
-#check @abs_mul _ _ a b
-#check @mul_lt_mul_of_pos_left _ _ a b d
+-- variables (b d : ℝ)
+-- #check @mul_comm _ _ a b
+-- #check @ne_of_gt _ _ a b
+-- #check converges_to_const a
+-- #check @zero_mul _ _ a
+-- #check @abs_pos_of_ne_zero _ _ a
+-- #check @div_pos _ _ a b
+-- #check @abs_mul _ _ a b
+-- #check @mul_lt_mul_of_pos_left _ _ a b d

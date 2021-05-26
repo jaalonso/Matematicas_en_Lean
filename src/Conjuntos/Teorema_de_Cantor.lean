@@ -1,6 +1,6 @@
 -- ---------------------------------------------------------------------
 -- Ejercicio. Demostrar el teorema de Cantor: No existe singuna
--- aplicación suprayectiva de un conjunto en su conjunto potencia.  
+-- aplicación suprayectiva de un conjunto en su conjunto potencia.
 -- ----------------------------------------------------------------------
 
 import data.set.basic
@@ -12,17 +12,17 @@ variable {α : Type*}
 theorem Cantor : ∀ f : α → set α, ¬ surjective f :=
 begin
   intros f surjf,
-  let S := { i | i ∉ f i},
-  rcases surjf S with j,
+  let S := {i | i ∉ f i},
+  cases surjf S with j hj,
   have h₁ : j ∉ f j,
   { intro h',
     have : j ∉ f j,
-      { by rwa h at h' },
+      { by rwa hj at h' },
     contradiction },
   have h₂ : j ∈ S,
     from h₁,
   have h₃ : j ∉ S,
-    by rwa h at h₁,
+    by rwa hj at h₁,
   contradiction,
 end
 
@@ -68,4 +68,3 @@ h₃ : j ∉ S
   >> contradiction,
 no goals
 -/
-

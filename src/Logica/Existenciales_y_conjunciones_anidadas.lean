@@ -1,5 +1,8 @@
+import data.nat.prime
 import data.real.basic
-import data.nat.gcd
+-- import data.nat.gcd
+
+open nat
 
 -- 1º ejemplo
 -- ==========
@@ -32,13 +35,11 @@ example (x y : ℝ) : (∃ z : ℝ, x < z ∧ z < y) → x < y :=
 -- 3º ejemplo
 -- ==========
 
-open nat
-
 example : ∃ m n : ℕ,
   4 < m ∧ m < n ∧ n < 10 ∧ prime m ∧ prime n :=
 begin
   use [5, 7],
-  norm_num
+  norm_num,
 end
 
 -- 4º ejemplo

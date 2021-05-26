@@ -5,7 +5,7 @@
 
 import data.real.basic
 
-variables a b : ℝ
+variables a b c : ℝ
 
 -- 1ª demostración
 -- ===============
@@ -26,7 +26,7 @@ end
 -- Nota: Se usa "show" para indicar lo que se demuestra en cada bloque.
 
 -- El desarrollo de la prueba es
--- 
+--
 --    ⊢ min a b = min b a
 -- apply le_antisymm,
 -- |    ⊢ min a b ≤ min b a
@@ -71,13 +71,13 @@ begin
     apply min_le_left },
 end
 
--- Nota. La táctica "repeat" aplica una táctica recursivamente a todos los 
+-- Nota. La táctica "repeat" aplica una táctica recursivamente a todos los
 -- subobjetivos. Ver https://bit.ly/2YuO5P9
 
 -- Lemas usados
 -- ============
 
-#check (le_antisymm : a ≤ b → b ≤ a → a = b) 
-#check (le_min : c ≤ a → c ≤ b → c ≤ min a b)
-#check (min_le_left a b : min a b ≤ a)
-#check (min_le_right a b : min a b ≤ b)
+-- #check (le_antisymm : a ≤ b → b ≤ a → a = b)
+-- #check (le_min : c ≤ a → c ≤ b → c ≤ min a b)
+-- #check (min_le_left a b : min a b ≤ a)
+-- #check (min_le_right a b : min a b ≤ b)

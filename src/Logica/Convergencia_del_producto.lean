@@ -14,16 +14,17 @@ import tactic
 variables {s t : ℕ → ℝ} {a b : ℝ}
 
 theorem converges_to_mul
-  (cs : converges_to s a) 
+  (cs : converges_to s a)
   (ct : converges_to t b)
   : converges_to (λ n, s n * t n) (a * b) :=
 begin
   have h₁ : converges_to (λ n, s n * (t n - b)) 0,
   { apply aux cs,
     convert converges_to_add ct (converges_to_const (-b)),
-    ring },
+    ring,
+    linarith, },
   convert (converges_to_add h₁ (@converges_to_mul_const s a b cs)),
-  { ext, 
+  { ext,
     ring },
   { ring },
 end
@@ -50,10 +51,9 @@ h₁ : converges_to (λ (n : ℕ), s n * (t n - b)) 0
 | ⊢ (λ (n : ℕ), s n * t n) = λ (n : ℕ), s n * (t n - b) + b * s n
 |   >> { ext,
 | x : ℕ
-| ⊢ s x * t x = s x * (t x - b) + b * s x 
+| ⊢ s x * t x = s x * (t x - b) + b * s x
 |   >>   ring },
 ⊢ a * b = 0 + b * a
   >> { ring },
 no goals
 -/
-

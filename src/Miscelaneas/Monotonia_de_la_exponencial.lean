@@ -1,5 +1,5 @@
 -- ---------------------------------------------------------------------
--- Ejercicio. Sean a, b, c, d y e números reales. Demostrar que si 
+-- Ejercicio. Sean a, b, c, d y e números reales. Demostrar que si
 -- d ≤ e, entonces
 --    c + exp (a + d) ≤ c + exp (a + e)
 -- ---------------------------------------------------------------------
@@ -12,9 +12,9 @@ variables (a b c d e : ℝ)
 
 -- 1ª demostración
 -- ===============
- 
-example 
-  (h₀ : d ≤ e) 
+
+example
+  (h₀ : d ≤ e)
   : c + exp (a + d) ≤ c + exp (a + e) :=
 begin
   suffices h: exp (a + d) ≤ exp (a + e), {linarith},
@@ -24,19 +24,14 @@ end
 
 -- 2ª demostración
 -- ===============
- 
-@[mono] 
-lemma exp_le_exp' 
-  {x y : ℝ} 
-  : x ≤ y → exp x ≤ exp y := 
+
+@[mono]
+lemma exp_le_exp'
+  {x y : ℝ}
+  : x ≤ y → exp x ≤ exp y :=
 exp_le_exp.mpr
 
-example 
-  (h₀ : d ≤ e) 
+example
+  (h₀ : d ≤ e)
   : c + exp (a + d) ≤ c + exp (a + e) :=
-by mono*
-
-
-
-
-
+by finish

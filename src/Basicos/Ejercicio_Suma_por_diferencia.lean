@@ -1,6 +1,6 @@
 -- ---------------------------------------------------------------------
 -- Ejercicio. Demostrar que si a y b son números reales, entonces
---    (a + b) * (a - b) = a^2 - b^2 
+--    (a + b) * (a - b) = a^2 - b^2
 -- ---------------------------------------------------------------------
 
 import data.real.basic
@@ -66,21 +66,21 @@ calc
   ... = (a^2 - a * b) + b * (a - b)       : by rw ← pow_two
   ... = (a^2 - a * b) + (b * a - b * b)   : by rw mul_sub
   ... = (a^2 - a * b) + (b * a - b^2)     : by rw ← pow_two
-  ... = (a^2 + -(a * b)) + (b * a - b^2)  : by exact rfl
+  ... = (a^2 + -(a * b)) + (b * a - b^2)  : by ring
   ... = a^2 + (-(a * b) + (b * a - b^2))  : by rw add_assoc
-  ... = a^2 + (-(a * b) + (b * a + -b^2)) : by exact rfl
-  ... = a^2 + ((-(a * b) + b * a) + -b^2) : by rw ← add_assoc 
-                                               (-(a * b)) (b * a) (-b^2) 
+  ... = a^2 + (-(a * b) + (b * a + -b^2)) : by ring
+  ... = a^2 + ((-(a * b) + b * a) + -b^2) : by rw ← add_assoc
+                                               (-(a * b)) (b * a) (-b^2)
   ... = a^2 + ((-(a * b) + a * b) + -b^2) : by rw mul_comm
   ... = a^2 + (0 + -b^2)                  : by rw neg_add_self (a * b)
-  ... = (a^2 + 0) + -b^2                  : by rw ← add_assoc 
+  ... = (a^2 + 0) + -b^2                  : by rw ← add_assoc
   ... = a^2 + -b^2                        : by rw add_zero
-  ... = a^2 - b^2                         : by exact rfl
+  ... = a^2 - b^2                         : by linarith
 
 -- Comentario. Se han usado los siguientes lemas:
--- + pow_two a : a ^ 2 = a * a 
--- + mul_sub a b c : a * (b - c) = a * b - a * c 
--- + add_mul a b c : (a + b) * c = a * c + b * c 
+-- + pow_two a : a ^ 2 = a * a
+-- + mul_sub a b c : a * (b - c) = a * b - a * c
+-- + add_mul a b c : (a + b) * c = a * c + b * c
 -- + add_sub a b c : a + (b - c) = a + b - c
 -- + sub_sub a b c : a - b - c = a - (b + c)
 -- + add_zero a : a + 0 = a
@@ -90,5 +90,3 @@ calc
 
 example : (a + b) * (a - b) = a^2 - b^2 :=
 by ring
-
-

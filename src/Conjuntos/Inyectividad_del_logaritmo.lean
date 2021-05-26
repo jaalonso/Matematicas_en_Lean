@@ -1,6 +1,6 @@
 -- ---------------------------------------------------------------------
 -- Ejercicio. Demostrar que lo función logarítmica es inyectiva sobre
--- los números positivos. 
+-- los números positivos.
 -- ----------------------------------------------------------------------
 
 import analysis.special_functions.exp_log
@@ -9,7 +9,7 @@ open set real
 
 example : inj_on log { x | x > 0 } :=
 begin
-  intros x y xpos ypos,
+  intros x xpos y ypos,
   intro h,
   calc
     x   = exp (log x) : by rw exp_log xpos

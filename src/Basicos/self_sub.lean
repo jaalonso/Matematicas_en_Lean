@@ -3,7 +3,7 @@
 --    1. Importar la teoría de anillos.
 --    2. Crear el espacio de nombres my_ring
 --    3. Declarar R como una variable sobre anillos.
---    4. Declarar a como variable sobre R. 
+--    4. Declarar a como variable sobre R.
 -- ----------------------------------------------------------------------
 
 import algebra.ring            -- 1
@@ -19,7 +19,7 @@ variables (a : R)              -- 4
 
 theorem self_sub : a - a = 0 :=
 calc
-  a - a = a + -a : by reflexivity
+  a - a = a + -a : sub_eq_add_neg a a
   ...   = 0      : by rw add_right_neg
 
 end my_ring

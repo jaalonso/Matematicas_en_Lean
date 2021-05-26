@@ -33,27 +33,27 @@
 El objetivo de este trabajo es presentar el uso de Lean mediante ejemplos
 matemáticos usando Lean. Está basado en el libro [[https://leanprover-community.github.io/mathematics_in_lean/index.html][Mathematics in Lean]] de Jeremy
 Avigad, Kevin Buzzard, Robert Y. Lewis y Patrick Massot.
- 
+
 El trabajo se presenta en 3 formas:
 + Como un [[https://www.cs.us.es/~jalonso/apuntes/Matematicas_en_Lean/Matematicas_en_Lean.pdf][libro en PDF]]
 + Como una [[https://www.cs.us.es/~jalonso/apuntes/Matematicas_en_Lean/README.html][página HTML]].
-+ Como un [[https://github.com/jaalonso/Matematicas_en_Lean][proyecto en GitHub]].  
++ Como un [[https://github.com/jaalonso/Matematicas_en_Lean][proyecto en GitHub]].
 
 # ** Creación del proyecto
-# 
-# + Se crea con 
+#
+# + Se crea con
 #   : leanproject new Matematicas_en_Lean
-# 
+#
 # + Crea el directorio =Matematicas_en_Lean= cuya estructura se ve con
 #   : tree -d
-#  
+#
 # ** Importación del código del proyecto
-# 
+#
 # + Importación
 #   : > cd ~/Descargas
 #   : > leanproject get mathematics_in_lean
-# 
-# + Resultado 
+#
+# + Resultado
 #   + Crea el directorio [[/home/jalonso/Descargas/mathematics_in_lean][mathematics_in_lean]].
 #   + El código está en [[/home/jalonso/Descargas/mathematics_in_lean/examples][examples]].
 
@@ -80,9 +80,9 @@ El trabajo se presenta en 3 formas:
 * Aspectos básicos del razonamiento matemático en Lean
 
 En este capítulo se presentan los aspectos básicos del razonamiento matemático
-en Lean: 
-+ cálculos, 
-+ aplicación de lemas y teoremas y 
+en Lean:
++ cálculos,
++ aplicación de lemas y teoremas y
 + razonamiento sobre estructuras genéricas.
 
 ** Cálculos
@@ -111,7 +111,7 @@ en Lean:
 + [[./src/Basicos/Ejercicio_con_calc.lean][Ejercicio con calc]]
 #+INCLUDE: "./src/Basicos/Ejercicio_con_calc.lean" src lean
 
-+ [[./src/Basicos/Ejercicio_Suma_por_diferencia.lean][Ejercicio: Suma por diferencia]] 
++ [[./src/Basicos/Ejercicio_Suma_por_diferencia.lean][Ejercicio: Suma por diferencia]]
 #+INCLUDE: "./src/Basicos/Ejercicio_Suma_por_diferencia.lean" src lean
 
 + [[./src/Basicos/Reescritura_en_hipotesis_y_tactica_exact.lean][Reescritura en hipótesis y táctica exact]]
@@ -145,7 +145,7 @@ en Lean:
 + [[./src/Basicos/mul_zero.lean][Lema mul_zero con have]]
 #+INCLUDE: "./src/Basicos/mul_zero.lean" src lean
 
-+ [[./src/Basicos/zero_mul.lean][Ejercicio zero_mul]] 
++ [[./src/Basicos/zero_mul.lean][Ejercicio zero_mul]]
 #+INCLUDE: "./src/Basicos/zero_mul.lean" src lean
 
 + [[./src/Basicos/Ejercicios_sobre_anillos.lean][Ejercicios sobre anillos]]
@@ -212,7 +212,7 @@ en Lean:
 + [[./src/Basicos/Desigualdades_con_calc.lean][Desigualdades con calc]]
 #+INCLUDE: "./src/Basicos/Desigualdades_con_calc.lean" src lean
 
-+ [[./src/Basicos/Ejercicio_desigualdades_absolutas.lean][Ejercicio desigualdades absolutas]] 
++ [[./src/Basicos/Ejercicio_desigualdades_absolutas.lean][Ejercicio desigualdades absolutas]]
 #+INCLUDE: "./src/Basicos/Ejercicio_desigualdades_absolutas.lean" src lean
 
 ** Más sobre orden y divisibilidad
@@ -314,7 +314,7 @@ en Lean:
 En este capítulo se muestra el razonamiento con Lean sobre las conectivas y
 cuantificadores; es decir, las tácticas para introducirlos en la conclusión o
 eliminarlos de las hipótesis. Como aplicación, se demostrarán propiedades sobre
-límites de sucesiones. 
+límites de sucesiones.
 
 ** Implicación y cuantificación universal
 
@@ -637,7 +637,7 @@ conjuntistas y sobre las funciones.
 + [[./src/Conjuntos/Rango_del_cuadrado.lean][Rango del cuadrado]]
 #+INCLUDE: "./src/Conjuntos/Rango_del_cuadrado.lean" src lean
 
-+ [[./src/Conjuntos/Ejercicios_de_imagenes_y_preimagenes.lean][Ejercicios de imágenes y preimágenes]] 
++ [[./src/Conjuntos/Ejercicios_de_imagenes_y_preimagenes.lean][Ejercicios de imágenes y preimágenes]]
 #+INCLUDE: "./src/Conjuntos/Ejercicios_de_imagenes_y_preimagenes.lean" src lean
 
 + [[./src/Conjuntos/Valor_por_defecto_y_eleccion_de_valores.lean][Valor por defecto y elección de valores]]
@@ -664,8 +664,8 @@ conjuntistas y sobre las funciones.
 + [[https://gist.github.com/utensil/dc635f2991255f76d8da797efdabbf15][Basic guide to tactics]] de Kevin Buzzard.
 + [[https://leanprover-community.github.io/mathlib_docs/][Lean mathlib documentation]].
 + [[https://leanprover-community.github.io/mathematics_in_lean/index.html][Mathematics in Lean]] de Jeremy Avigad, Kevin Buzzard, Robert Y. Lewis y Patrick
-  Massot. 
-+ [[https://github.com/kbuzzard/xena/tree/master/Maths_Challenges][Maths challenges for the Lean curious]] de Kevin Buzzard. 
+  Massot.
++ [[https://github.com/kbuzzard/xena/tree/master/Maths_Challenges][Maths challenges for the Lean curious]] de Kevin Buzzard.
 + [[https://leanprover.github.io/reference/index.html][The Lean reference manual]] de Jeremy Avigad, Gabriel Ebner y Sebastian Ullrich.
-+ [[https://leanprover-community.github.io/undergrad.html][Undergraduate mathematics in mathlib]] y 
++ [[https://leanprover-community.github.io/undergrad.html][Undergraduate mathematics in mathlib]] y
   [[https://leanprover-community.github.io/undergrad_todo.html][Missing undergraduate mathematics in mathlib]].

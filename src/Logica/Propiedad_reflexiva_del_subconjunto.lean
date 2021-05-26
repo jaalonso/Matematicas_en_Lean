@@ -1,6 +1,8 @@
 -- ---------------------------------------------------------------------
--- Ejercicio. Demostrar que para cualquier conjunto s, s ⊆ s. 
+-- Ejercicio. Demostrar que para cualquier conjunto s, s ⊆ s.
 -- ----------------------------------------------------------------------
+
+import tactic
 
 variables {α : Type*} (s : set α)
 
@@ -8,11 +10,13 @@ variables {α : Type*} (s : set α)
 -- ===============
 
 example : s ⊆ s :=
-by { intros x xs, exact xs }
+begin
+  intros x xs,
+  exact xs,
+end
 
 -- 2ª demostración
 -- ===============
 
-example : s ⊆ s := 
-λ x xs, xs
-
+example : s ⊆ s :=
+λ x (xs : x ∈ s), xs

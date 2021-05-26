@@ -1,4 +1,5 @@
 import data.real.basic
+import data.real.sqrt
 
 open set real
 
@@ -68,13 +69,13 @@ no goals
 -/
 
 -- Comentario: Se han usado los lemas
--- + x.sqrt_nonneg : 0 ≤ x.sqrt 
--- + pow_nonneg : 0 ≤ x → ∀ (n : ℕ), 0 ≤ x ^ n 
+-- + x.sqrt_nonneg : 0 ≤ x.sqrt
+-- + pow_nonneg : 0 ≤ x → ∀ (n : ℕ), 0 ≤ x ^ n
 
--- Comprobación: 
-variable (x : ℝ)
-#check @sqrt_nonneg x
-#check @pow_nonneg _ _ x
+-- Comprobación:
+-- variable (x : ℝ)
+-- #check @sqrt_nonneg x
+-- #check @pow_nonneg _ _ x
 
 -- ---------------------------------------------------------------------
 -- Ejercicio. Demostrar que
@@ -134,10 +135,9 @@ no goals
 -/
 
 -- Comentario: Se han usado los lemas
--- + pow_two_nonneg x : 0 ≤ x ^ 2 
--- + sqr_sqrt : 0 ≤ x → (sqrt x) ^ 2 = x 
+-- + pow_two_nonneg x : 0 ≤ x ^ 2
+-- + sqr_sqrt : 0 ≤ x → (sqrt x) ^ 2 = x
 
 -- Comprobación:
-#check @pow_two_nonneg _ _ x
-#check @sqr_sqrt x
-
+-- #check @pow_two_nonneg _ _ x
+-- #check @sqr_sqrt x

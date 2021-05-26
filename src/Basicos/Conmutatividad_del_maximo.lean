@@ -5,7 +5,7 @@
 
 import data.real.basic
 
-variables a b : ℝ
+variables a b c : ℝ
 
 -- 1ª demostración
 -- ===============
@@ -51,6 +51,6 @@ end
 -- Lemas usados
 -- ============
 
-#check (le_max_left a b : a ≤ max a b)
-#check (le_max_right a b : b ≤ max a b)
-#check (max_le : a ≤ c → b ≤ c → max a b ≤ c)
+-- #check (le_max_left a b : a ≤ max a b)
+-- #check (le_max_right a b : b ≤ max a b)
+-- #check (max_le : a ≤ c → b ≤ c → max a b ≤ c)

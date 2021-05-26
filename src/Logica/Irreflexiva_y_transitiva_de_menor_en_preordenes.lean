@@ -2,12 +2,12 @@
 -- Ejercicio 1. Realizar las siguientes acciones:
 -- 1. Importar la librería de tácticas.
 -- 2. Declarar α como una variables sobre preórdenes.
--- 3. Declarar a, b y c como variables sobre elementos de α. 
+-- 3. Declarar a, b y c como variables sobre elementos de α.
 -- ----------------------------------------------------------------------
 
 import tactic                       -- 1
 variables {α : Type*} [preorder α]  -- 2
-variables a b c : α                 -- 3 
+variables a b c : α                 -- 3
 
 -- ---------------------------------------------------------------------
 -- Ejercicio 1. Demostrar que que la relación menor es irreflexiva.
@@ -42,7 +42,7 @@ no goals
 -/
 
 -- Comentarios:
--- + La táctica (rintros ⟨h1, h2⟩), si el objetivo es de la forma ¬(P ∧ Q), 
+-- + La táctica (rintros ⟨h1, h2⟩), si el objetivo es de la forma ¬(P ∧ Q),
 --   añade  las hipótesis (h1 : P) y (h2 : Q) y cambia el objetivo a false.
 -- + Se ha usado el lema
 --      lt_iff_le_not_le : a < b ↔ a ≤ b ∧ ¬b ≤ a
@@ -105,4 +105,4 @@ no goals
 -- ===============
 
 example : a < b → b < c → a < c :=
-lt.trans
+lt_trans

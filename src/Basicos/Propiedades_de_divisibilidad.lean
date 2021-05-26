@@ -1,7 +1,7 @@
 -- ---------------------------------------------------------------------
 -- Ejercicio 1. Realizar la siguientes acciones:
 --    1. Importar la teoría de mcd sobre los naturales.
---    2. Declarar x, y y z como variables sobre los naturales. 
+--    2. Declarar x, y y z como variables sobre los naturales.
 -- ----------------------------------------------------------------------
 
 import data.nat.gcd   -- 1
@@ -9,15 +9,15 @@ variables x y z : ℕ   -- 2
 
 -- ---------------------------------------------------------------------
 -- Ejercicio 2. Demostrar que si
---    x ∣ y 
+--    x ∣ y
 --    y ∣ z
--- entonces 
+-- entonces
 --    x ∣ z
 -- ----------------------------------------------------------------------
 
-example 
-  (h₀ : x ∣ y) 
-  (h₁ : y ∣ z) 
+example
+  (h₀ : x ∣ y)
+  (h₁ : y ∣ z)
   : x ∣ z :=
 dvd_trans h₀ h₁
 
@@ -47,14 +47,14 @@ end
 
 example : x ∣ x^2 :=
 begin
-  rw nat.pow_two,
+  rw pow_two,
   apply dvd_mul_left
 end
 
 -- Su desarrollo es
 --
 --    ⊢ x ∣ x ^ 2
--- rw nat.pow_two,
+-- rw pow_two,
 --    ⊢ x ∣ x * x
 -- apply dvd_mul_left
 --    no goals
@@ -62,7 +62,7 @@ end
 -- Lemas usados
 -- ============
 
-#check (dvd_trans : x ∣ y → y ∣ z → x ∣ z)
-#check (dvd_mul_of_dvd_left : x ∣ y → ∀ (c : ℕ), x ∣ y * c)
-#check (dvd_mul_left : ∀ (a b : ℕ), a ∣ b * a)
-#check (nat.pow_two : ∀ (a : ℕ), a ^ 2 = a * a)
+-- #check (dvd_trans : x ∣ y → y ∣ z → x ∣ z)
+-- #check (dvd_mul_of_dvd_left : x ∣ y → ∀ (c : ℕ), x ∣ y * c)
+-- #check (dvd_mul_left : ∀ (a b : ℕ), a ∣ b * a)
+-- #check (pow_two : ∀ (a : ℕ), a ^ 2 = a * a)

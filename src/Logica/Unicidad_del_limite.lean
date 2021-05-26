@@ -1,26 +1,26 @@
 -- ---------------------------------------------------------------------
 -- Ejercicio. Demostrar la unicidad de los límites de las sucesiones
--- convergentes. 
+-- convergentes.
 -- ----------------------------------------------------------------------
 
 import .Definicion_de_convergencia
 
 open_locale classical
 
-theorem converges_to_unique 
-  {s : ℕ → ℝ} 
+theorem converges_to_unique
+  {s : ℕ → ℝ}
   {a b : ℝ}
-  (sa : converges_to s a) 
-  (sb : converges_to s b) 
+  (sa : converges_to s a)
+  (sb : converges_to s b)
   : a = b :=
 begin
   by_contradiction abne,
   have : abs (a - b) > 0,
-  { apply abs_pos_of_ne_zero,
+  { apply abs_pos.mpr,
     exact sub_ne_zero_of_ne abne },
   let ε := abs (a - b) / 2,
   have εpos : ε > 0,
-  { change abs (a - b) / 2 > 0, 
+  { change abs (a - b) / 2 > 0,
     linarith },
   cases sa ε εpos with Na hNa,
   cases sb ε εpos with Nb hNb,
@@ -36,7 +36,7 @@ begin
   have : abs (a - b) < abs (a - b),
     calc abs (a - b)
          = abs ((a - s N) + (s N - b))      : by {congr, ring}
-     ... ≤ abs (a - s N) + abs (s N - b)    : by apply abs_add_le_abs_add_abs
+     ... ≤ abs (a - s N) + abs (s N - b)    : abs_add (a - s N) (s N - b)
      ... = abs (s N - a) + abs (s N - b)    : by rw abs_sub
      ... < ε + ε                            : by exact add_lt_add absa absb
      ... = abs (a - b)                      : by exact add_halves (abs (a - b)),
@@ -68,7 +68,7 @@ this : abs (a - b) > 0
   >> have εpos : ε > 0,
 | ⊢ ε > 0
 |   >> { change abs (a - b) / 2 > 0,
-| ⊢ abs (a - b) / 2 > 0 
+| ⊢ abs (a - b) / 2 > 0
 |   >>   linarith },
 εpos : ε > 0
 ⊢ false
@@ -117,22 +117,22 @@ no goals
 -/
 
 -- Comentario: Se han usado los lemas
--- + abs_add_le_abs_add_abs a b : abs (a + b) ≤ abs a + abs b 
--- + abs_pos_of_ne_zero : a ≠ 0 → 0 < abs a 
--- + abs_sub a b : abs (a - b) = abs (b - a) 
--- + add_halves a : a / 2 + a / 2 = a 
--- + add_lt_add : a < b → c < d → a + c < b + d 
--- + le_max_left a b : a ≤ max a b 
--- + le_max_right a b : b ≤ max a b 
--- + sub_ne_zero_of_ne : a ≠ b → a - b ≠ 0 
+-- + abs_add_le_abs_add_abs a b : abs (a + b) ≤ abs a + abs b
+-- + abs_pos_of_ne_zero : a ≠ 0 → 0 < abs a
+-- + abs_sub a b : abs (a - b) = abs (b - a)
+-- + add_halves a : a / 2 + a / 2 = a
+-- + add_lt_add : a < b → c < d → a + c < b + d
+-- + le_max_left a b : a ≤ max a b
+-- + le_max_right a b : b ≤ max a b
+-- + sub_ne_zero_of_ne : a ≠ b → a - b ≠ 0
 
 -- Comprobación:
-variables (a b c d : ℝ)
-#check @abs_pos_of_ne_zero _ _ a 
-#check @sub_ne_zero_of_ne _ _ a b
-#check @le_max_left _ _ a b
-#check @le_max_right _ _ a b
-#check @abs_add_le_abs_add_abs _ _ a b
-#check @abs_sub _ _ a b
-#check @add_lt_add _ _ a b c d
-#check @add_halves _ _ a
+-- variables (a b c d : ℝ)
+-- #check @abs_pos_of_ne_zero _ _ a
+-- #check @sub_ne_zero_of_ne _ _ a b
+-- #check @le_max_left _ _ a b
+-- #check @le_max_right _ _ a b
+-- #check @abs_add_le_abs_add_abs _ _ a b
+-- #check @abs_sub _ _ a b
+-- #check @add_lt_add _ _ a b c d
+-- #check @add_halves _ _ a

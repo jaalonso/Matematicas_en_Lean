@@ -2,7 +2,7 @@
 -- Ejercicio. Realizar las siguientes acciones:
 -- 1. Importar la teoría data.set.lattice
 -- 2. Importar la teoría data.nat.prime
--- 3. Abrir los espacios de nombre set y nat. 
+-- 3. Abrir los espacios de nombre set y nat.
 -- ----------------------------------------------------------------------
 
 import data.set.lattice   -- 1
@@ -10,7 +10,7 @@ import data.nat.prime     -- 2
 open set nat              -- 3
 
 -- ---------------------------------------------------------------------
--- Ejercicio. Definir el conjunto de los números primos. 
+-- Ejercicio. Definir el conjunto de los números primos.
 -- ----------------------------------------------------------------------
 
 def primes : set ℕ := {x | prime x}
@@ -24,9 +24,9 @@ def primes : set ℕ := {x | prime x}
 -- ===============
 
 example : (⋃ p ∈ primes, {x | p^2 ∣ x}) = {x | ∃ p ∈ primes, p^2 ∣ x} :=
-begin 
-  ext, 
-  rw mem_bUnion_iff, 
+begin
+  ext,
+  rw mem_bUnion_iff,
   refl,
 end
 
@@ -36,11 +36,11 @@ end
 /-
 ⊢ (⋃ (p : ℕ) (H : p ∈ primes), {x : ℕ | p ^ 2 ∣ x}) =
     {x : ℕ | ∃ (p : ℕ) (H : p ∈ primes), p ^ 2 ∣ x}
-  >> ext, 
+  >> ext,
 x : ℕ
 ⊢ (x ∈ ⋃ (p : ℕ) (H : p ∈ primes), {x : ℕ | p ^ 2 ∣ x}) ↔
     x ∈ {x : ℕ | ∃ (p : ℕ) (H : p ∈ primes), p ^ 2 ∣ x}
-  >> rw mem_bUnion_iff, 
+  >> rw mem_bUnion_iff,
 ⊢ (∃ (x_1 : ℕ) (H : x_1 ∈ primes), x ∈ {x : ℕ | x_1 ^ 2 ∣ x}) ↔
     x ∈ {x : ℕ | ∃ (p : ℕ) (H : p ∈ primes), p ^ 2 ∣ x}
   >> refl,
@@ -55,9 +55,9 @@ universes u v
 variable α : Type u
 variable β : Type v
 variable s : set α
-variable t : α → set β 
+variable t : α → set β
 variable y : β
-#check @mem_bUnion_iff α β s t y
+-- #check @mem_bUnion_iff α β s t y
 
 example : y ∈ (⋃ x ∈ s, t x) ↔ ∃ x ∈ s, y ∈ t x :=
 mem_bUnion_iff
@@ -70,7 +70,7 @@ by { ext, rw mem_bUnion_iff, refl }
 
 -- ---------------------------------------------------------------------
 -- Ejercicio. Demostrar que
---    (⋃ p ∈ primes, {x | p^2 ∣ x}) = {x | ∃ p ∈ primes, p^2 ∣ x} 
+--    (⋃ p ∈ primes, {x | p^2 ∣ x}) = {x | ∃ p ∈ primes, p^2 ∣ x}
 -- ----------------------------------------------------------------------
 
 example : (⋃ p ∈ primes, {x | p^2 ∣ x}) = {x | ∃ p ∈ primes, p^2 ∣ x} :=
@@ -106,10 +106,10 @@ no goals
 -/
 
 -- Comentario: Se ha aplicado el lema
--- + exists_prime_and_dvd : 2 ≤ n → (∃ (p : ℕ), p.prime ∧ p ∣ n) 
+-- + exists_prime_and_dvd : 2 ≤ n → (∃ (p : ℕ), p.prime ∧ p ∣ n)
 
 variable n : ℕ
-#check @exists_prime_and_dvd n
+-- #check @exists_prime_and_dvd n
 
 -- ---------------------------------------------------------------------
 -- Ejercicio. Demostrar que
@@ -150,7 +150,7 @@ no goals
 -- + eq_univ_of_forall : (∀ x, x ∈ s) → s = univ
 -- + exists_infinite_primes : ∀ (n : ℕ), ∃ (p : ℕ), n ≤ p ∧ p.prime
 
-variable α : Type*
-variable s : set α
-#check @eq_univ_of_forall α s
-#check exists_infinite_primes
+-- variable α : Type*
+-- variable s : set α
+-- #check @eq_univ_of_forall α s
+-- #check exists_infinite_primes

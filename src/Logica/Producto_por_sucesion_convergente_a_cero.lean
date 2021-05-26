@@ -16,15 +16,15 @@ lemma aux_l1
   (h0 : abs (s n) < B)
   (h1 : abs (t n - 0) < ε / B)
   : abs (s n) * abs (t n - 0) < ε :=
-begin 
+begin
   by_cases h3 : s n = 0,
-  { calc abs (s n) * abs (t n - 0) 
-             = abs 0 * abs (t n - 0) : by rw h3 
-         ... = 0 * abs (t n - 0)     : by rw abs_zero 
+  { calc abs (s n) * abs (t n - 0)
+             = abs 0 * abs (t n - 0) : by rw h3
+         ... = 0 * abs (t n - 0)     : by rw abs_zero
          ... = 0                     : by exact zero_mul (abs (t n - 0))
          ... < ε                     : by exact εpos },
   { have h4 : abs (s n) > 0,
-      by exact abs_pos_iff.mpr h3,
+      by exact abs_pos.mpr h3,
     clear h3,
     have h5 : abs (s n) * abs (t n - 0) < abs (s n) * (ε / B),
       by exact mul_lt_mul_of_pos_left h1 h4,
@@ -37,7 +37,7 @@ begin
                    ... = 1 * ε         : by rw mul_inv_cancel h7
                    ... = ε             : by exact one_mul ε,
     have h9 : abs (s n) * abs (t n - 0) < B * (ε / B),
-      by exact gt.trans h6 h5,
+      by exact lt_trans h5 h6,
     rw h8 at h9,
     assumption },
 end
@@ -58,9 +58,9 @@ h1 : abs (t n - 0) < ε / B
   >> by_cases h3 : s n = 0,
 | h3 : s n = 0
 | ⊢ abs (s n) * abs (t n - 0) < ε
-|   >> { calc abs (s n) * abs (t n - 0) 
-|   >>            = abs 0 * abs (t n - 0) : by rw h3 
-|   >>        ... = 0 * abs (t n - 0)     : by rw abs_zero 
+|   >> { calc abs (s n) * abs (t n - 0)
+|   >>            = abs 0 * abs (t n - 0) : by rw h3
+|   >>        ... = 0 * abs (t n - 0)     : by rw abs_zero
 |   >>        ... = 0                     : by exact zero_mul (abs (t n - 0))
 |   >>        ... < ε                     : by exact εpos },
   >> { have h4 : abs (s n) > 0,
@@ -98,33 +98,33 @@ no goals
 -/
 
 -- Comentarios: Se han usado los lemas
--- + abs_zero : abs 0 = 0 
--- + zero_mul a : 0 * a = 0 
--- + abs_pos_iff : 0 < abs a ↔ a ≠ 0 
--- + mul_lt_mul_of_pos_left : a < b → 0 < c → c * a < c * b 
--- + mul_lt_mul_of_pos_right : a < b → 0 < c → a * c < b * c 
--- + ne_of_gt : a > b → a ≠ b 
--- + mul_inv_cancel : a ≠ 0 → a * a⁻¹ = 1 
--- + one_mul a : 1 * a = a 
--- + gt.trans : a > b → b > c → a > c 
+-- + abs_zero : abs 0 = 0
+-- + zero_mul a : 0 * a = 0
+-- + abs_pos_iff : 0 < abs a ↔ a ≠ 0
+-- + mul_lt_mul_of_pos_left : a < b → 0 < c → c * a < c * b
+-- + mul_lt_mul_of_pos_right : a < b → 0 < c → a * c < b * c
+-- + ne_of_gt : a > b → a ≠ b
+-- + mul_inv_cancel : a ≠ 0 → a * a⁻¹ = 1
+-- + one_mul a : 1 * a = a
+-- + gt.trans : a > b → b > c → a > c
 
 variables (b c : ℝ)
-#check @abs_pos_iff _ _ a
-#check abs_zero
-#check @gt.trans _ _ a b c
-#check @mul_inv_cancel _ _ a
-#check @mul_lt_mul_of_pos_left _ _ a b c
-#check @mul_lt_mul_of_pos_right _ _ a b c
-#check @ne_of_gt _ _ a b
-#check @one_mul _ _ a
-#check @zero_mul _ _ a
+-- #check @abs_pos_iff _ _ a
+-- #check abs_zero
+-- #check @gt.trans _ _ a b c
+-- #check @mul_inv_cancel _ _ a
+-- #check @mul_lt_mul_of_pos_left _ _ a b c
+-- #check @mul_lt_mul_of_pos_right _ _ a b c
+-- #check @ne_of_gt _ _ a b
+-- #check @one_mul _ _ a
+-- #check @zero_mul _ _ a
 
-lemma aux 
-  (cs : converges_to s a) 
-  (ct : converges_to t 0) 
+lemma aux
+  (cs : converges_to s a)
+  (ct : converges_to t 0)
   : converges_to (λ n, s n * t n) 0 :=
 begin
-  intros ε εpos, 
+  intros ε εpos,
   dsimp,
   rcases exists_abs_le_of_converges_to cs with ⟨N₀, B, h₀⟩,
   have Bpos : 0 < B,
@@ -141,13 +141,13 @@ begin
     { exact le_of_max_le_right hn },
   specialize h₁ n hn1,
   clear cs ct hn hn0 hn1 a N₀ N₁,
-  calc 
-    abs (s n * t n - 0) 
-        = abs (s n * (t n - 0))     
+  calc
+    abs (s n * t n - 0)
+        = abs (s n * (t n - 0))
               : by { congr, ring }
-    ... = abs (s n) * abs (t n - 0) 
+    ... = abs (s n) * abs (t n - 0)
               : by exact abs_mul (s n) (t n - 0)
-    ... < ε                         
+    ... < ε
               : by exact aux_l1 B ε εpos Bpos pos₀ n h₀ h₁,
 end
 
@@ -160,7 +160,7 @@ a : ℝ,
 cs : converges_to s a,
 ct : converges_to t 0
 ⊢ converges_to (λ (n : ℕ), s n * t n) 0
-  >> intros ε εpos, 
+  >> intros ε εpos,
 ε : ℝ,
 εpos : ε > 0
 ⊢ ∃ (N : ℕ), ∀ (n : ℕ), n ≥ N → abs ((λ (n : ℕ), s n * t n) n - 0) < ε
@@ -204,30 +204,30 @@ hn1 : n ≥ N₁
 h₁ : abs (t n - 0) < ε / B
 ⊢ abs (s n * t n - 0) < ε
   >> clear cs ct hn hn0 hn1 a N₀ N₁,
-  >> calc 
-  >>   abs (s n * t n - 0) 
-  >>       = abs (s n * (t n - 0))     
+  >> calc
+  >>   abs (s n * t n - 0)
+  >>       = abs (s n * (t n - 0))
   >>             : by { congr, ring }
-  >>   ... = abs (s n) * abs (t n - 0) 
+  >>   ... = abs (s n) * abs (t n - 0)
   >>             : by exact abs_mul (s n) (t n - 0)
-  >>   ... < ε                         
+  >>   ... < ε
   >>             : by exact aux_l1 B ε εpos Bpos pos₀ n h₀ h₁,
 no goals
 -/
 
 -- Comentarios: Se han usado los lemas
 -- + abs_mul : abs (a * b) = abs a * abs b
--- + abs_nonneg a : 0 ≤ abs a 
--- + div_pos : 0 < a → 0 < b → 0 < a / b 
--- + le_of_max_le_left : max a b ≤ c → a ≤ c 
+-- + abs_nonneg a : 0 ≤ abs a
+-- + div_pos : 0 < a → 0 < b → 0 < a / b
+-- + le_of_max_le_left : max a b ≤ c → a ≤ c
 -- + le_of_max_le_right : max a b ≤ c → b ≤ c
--- + lt_of_le_of_lt : a ≤ b → b < c → a < c 
+-- + lt_of_le_of_lt : a ≤ b → b < c → a < c
 
 -- Comprobación:
-variables (b c : ℝ)
-#check @lt_of_le_of_lt _ _ a b c
-#check @abs_nonneg _ _ a
-#check @div_pos _ _ a b
-#check @le_of_max_le_left _ _ a b c
-#check @le_of_max_le_right _ _ a b c
-#check abs_mul
+-- variables (b c : ℝ)
+-- #check @lt_of_le_of_lt _ _ a b c
+-- #check @abs_nonneg _ _ a
+-- #check @div_pos _ _ a b
+-- #check @le_of_max_le_left _ _ a b c
+-- #check @le_of_max_le_right _ _ a b c
+-- #check abs_mul

@@ -5,10 +5,22 @@
 + [[./src/Miscelaneas/El_comando_explore.lean][El comando explore]]
 #+INCLUDE: "./src/Miscelaneas/El_comando_explore.lean" src lean
 
++ [[./src/Miscelaneas/El_comando_refine.lean][El comando refine]]
+#+INCLUDE: "./src/Miscelaneas/El_comando_refine.lean" src lean
+
++ [[./src/Miscelaneas/La_tactica_congr_arg.lean][La táctica congr_arg]]
+#+INCLUDE: "./src/Miscelaneas/La_tactica_congr_arg.lean" src lean
+
++ [[./src/Miscelaneas/Traza_de_simp.lean][Traza de simp]]
+#+INCLUDE: "./src/Miscelaneas/Traza_de_simp.lean" src lean
+
++ [[./src/Miscelaneas/Generacion de contraejemplos.lean][Generación de contraejemplos]]
+#+INCLUDE: "./src/Miscelaneas/Generacion_de_contraejemplos.lean" src lean
+
 ** Tácticas
 
-#+INCLUDE: "./src/Miscelaneas/La_tactica_suggest.lean" src lean
-+ [[./src/Miscelaneas/La_tactica_suggest.lean][La táctica suggest]]
++ [[./src/Miscelaneas/La_tactica_convert.lean][La táctica convert]]
+#+INCLUDE: "./src/Miscelaneas/La_tactica_convert.lean" src lean
 
 + [[./src/Miscelaneas/La_tactica_hint.lean][La táctica hint]]
 #+INCLUDE: "./src/Miscelaneas/La_tactica_hint.lean" src lean
@@ -16,18 +28,27 @@
 + [[./src/Miscelaneas/La_tactica_libray_search.lean][La táctica libray_search]]
 #+INCLUDE: "./src/Miscelaneas/La_tactica_libray_search.lean" src lean
 
-+ [[./src/Miscelaneas/La_tactica_symmetry.lean][La táctica symmetry]]
-#+INCLUDE: "./src/Miscelaneas/La_tactica_symmetry.lean" src lean
++ [[./src/Miscelaneas/La_tactica_nlinearith.lean][La táctica nlinearith]]
+#+INCLUDE: "./src/Miscelaneas/La_tactica_nlinearith.lean" src lean
 
 + [[./src/Miscelaneas/La_tactica_omega.lean][La táctica omega]]
 #+INCLUDE: "./src/Miscelaneas/La_tactica_omega.lean" src lean
 
++ [[./src/Miscelaneas/La_tactica_split_ifs.lean][La táctica split_ifs]]
+#+INCLUDE: "./src/Miscelaneas/La_tactica_split_ifs.lean" src lean
+
++ [[./src/Miscelaneas/La_tactica_suggest.lean][La táctica suggest]]
+#+INCLUDE: "./src/Miscelaneas/La_tactica_suggest.lean" src lean
+
++ [[./src/Miscelaneas/La_tactica_symmetry.lean][La táctica symmetry]]
+#+INCLUDE: "./src/Miscelaneas/La_tactica_symmetry.lean" src lean
+
 ** Lógica
 
-+ [[./src/Miscelaneas/Formula_proposicional.lean][Fórmula proposicional]] 
++ [[./src/Miscelaneas/Formula_proposicional.lean][Fórmula proposicional]]
 #+INCLUDE: "./src/Miscelaneas/Formula_proposicional.lean" src lean
 
-+ [[./src/Miscelaneas/La_paradoja_del_barbero.lean][La paradoja del barbero]] 
++ [[./src/Miscelaneas/La_paradoja_del_barbero.lean][La paradoja del barbero]]
 #+INCLUDE: "./src/Miscelaneas/La_paradoja_del_barbero.lean" src lean
 
 ** Teoría de conjuntos
@@ -38,8 +59,151 @@
 + [[./src/Miscelaneas/Finitud_del_dominio_de_las_funciones_inyectivas_con_codominio_finito.lean][Finitud del dominio de las funciones inyectivas con codominio finito]]
 #+INCLUDE: "./src/Miscelaneas/Finitud_del_dominio_de_las_funciones_inyectivas_con_codominio_finito.lean" src lean
 
-+ [[./src/Miscelaneas/Inclusion_de_segmentos_iniciales_de_naturales.lean][Inclusión de segmentos iniciales de naturales]] 
++ [[./src/Miscelaneas/Inclusion_de_segmentos_iniciales_de_naturales.lean][Inclusión de segmentos iniciales de naturales]]
 #+INCLUDE: "./src/Miscelaneas/Inclusion_de_segmentos_iniciales_de_naturales.lean" src lean
+
++ [[./src/Miscelaneas/Conjunto finito correspondiente a un tipo finito.lean][Conjunto finito correspondiente a un tipo finito]]
+#+INCLUDE: "./src/Miscelaneas/Conjunto_finito_correspondiente_a_un_tipo_finito.lean" src lean
+
++ [[./src/Miscelaneas/Imagen de la union general.lean][Imagen de la unión general]]
+#+INCLUDE: "./src/Miscelaneas/Imagen_de_la_union_general.lean" src lean
+
++ [[./src/Miscelaneas/Union de unitarios.lean][Unión de unitarios]]
+#+INCLUDE: "./src/Miscelaneas/Union_de_unitarios.lean" src lean
+
++ [[./src/Miscelaneas/El_complementario_de_un_finito_en_un_infinito_es_infinito.lean][El complementario de un finito en un infinito es infinito]]
+#+INCLUDE: "./src/Miscelaneas/El_complementario_de_un_finito_en_un_infinito_es_infinito.lean" src lean
+
++ [[./src/Miscelaneas/Ejemplo_de_inclusion.lean][Ejemplo de inclusión]]
+#+INCLUDE: "./src/Miscelaneas/Ejemplo_de_inclusion.lean" src lean
+
++ [[./src/Miscelaneas/Maximo_de_conjunto_finito.lean][Máximo de conjunto finito]]
+#+INCLUDE: "./src/Miscelaneas/Maximo_de_conjunto_finito.lean" src lean
+
++ [[./src/Miscelaneas/CS_de_conjunto_infinito.lean][CS de conjunto infinito]]
+#+INCLUDE: "./src/Miscelaneas/[CS_de_conjunto_infinito.lean" src lean
+
++ [[./src/Miscelaneas/CS2_de_conjunto_infinito.lean][CS2 de conjunto infinito]]
+#+INCLUDE: "./src/Miscelaneas/CS2_de_conjunto_infinito.lean" src lean
+
+** Números naturales
+
++ [[./src/Miscelaneas/Mayores_de_no_nulo_son_no_nulos.lean][Mayores de no nulo son no nulos]]
+#+INCLUDE: "./src/Miscelaneas/Mayores_de_no_nulo_son_no_nulos.lean" src lean
+
++ [[./src/Miscelaneas/Infinitud_de_los_primos.lean][Infinitud de los primos]]
+#+INCLUDE: "./src/Miscelaneas/Infinitud_de_los_primos.lean" src lean
+
++ [[./src/Miscelaneas/N-esimo_primo.lean][N-ésimo primo]]
+#+INCLUDE: "./src/Miscelaneas/N-esimo_primo.lean" src lean
+
++ [[./src/Miscelaneas/Consecutivos_Fibonaccis_son_coprimos.lean][Consecutivos Fibonaccis son coprimos]]
+#+INCLUDE: "./src/Miscelaneas/Consecutivos_Fibonaccis_son_coprimos.lean" src lean
+
++ [[./src/Miscelaneas/Suma_de_los_primeros_numeros_de_Fibonacci.lean][Suma de los primeros números de Fibonacci]]
+#+INCLUDE: "./src/Miscelaneas/Suma_de_los_primeros_numeros_de_Fibonacci.lean" src lean
+
++ [[./src/Miscelaneas/Principio_de_induccion.lean][Principio de inducción]]
+#+INCLUDE: "./src/Miscelaneas/Principio_de_induccion.lean" src lean
+
++ [[./src/Miscelaneas/Si n es un primo par entonces es igual a 2.lean][Si n es un primo par, entonces es igual a 2]]
+#+INCLUDE: "./src/Miscelaneas/Si_n_es_un_primo_par_entonces_es_igual_a_2.lean" src lean
+
++ [[./src/Miscelaneas/Primo con sucesor primo.lean][Primo con sucesor primo]]
+#+INCLUDE: "./src/Miscelaneas/Primo_con_sucesor_primo.lean" src lean
+
++ [[./src/Miscelaneas/Desigualdad_de_naturales.lean][Desigualdad de naturales]]
+#+INCLUDE: "./src/Miscelaneas/Desigualdad_de_naturales.lean" src lean
+
++ [[./src/Miscelaneas/Desigualdad de naturales 2.lean][Desigualdad de naturales (2)]]
+#+INCLUDE: "./src/Miscelaneas/Desigualdad_de_naturales_2.lean" src lean
+
++ [[./src/Miscelaneas/Identidad de naturales 1.lean][Identidad de naturales (1)]]
+#+INCLUDE: "./src/Miscelaneas/Identidad_de_naturales_1.lean" src lean
+
++ [[./src/Miscelaneas/Division_de_una_suma.lean][División de una suma]]
+#+INCLUDE: "./src/Miscelaneas/Division_de_una_suma.lean" src lean
+
++ [[./src/Miscelaneas/Esquema_de_induccion.lean][Esquema de inducción]]
+#+INCLUDE: "./src/Miscelaneas/Esquema_de_induccion.lean" src lean
+
++ [[./src/Miscelaneas/Forma_cerrada_de_una_funcion_recursiva.lean][Forma cerrada de una función recursiva]]
+#+INCLUDE: "./src/Miscelaneas/Forma_cerrada_de_una_funcion_recursiva.lean" src lean
+
++ [[./src/Miscelaneas/Coprimo_con_potencia_de_primo.lean][Coprimo con potencia de primo]]
+#+INCLUDE: "./src/Miscelaneas/Coprimo_con_potencia_de_primo.lean" src lean
+
++ [[./src/Miscelaneas/Suma_mas_factorial_menor_factorial_suma.lean][Suma más factorial menor factorial suma]]
+#+INCLUDE: "./src/Miscelaneas/Suma_mas_factorial_menor_factorial_suma.lean" src lean
+
++ [[./src/Miscelaneas/Divisibilidad_por_tres.lean][Divisibilidad por tres]]
+#+INCLUDE: "./src/Miscelaneas/Divisibilidad_por_tres.lean" src lean
+
++ [[./src/Miscelaneas/Divisibilidad_por_cuatro.lean][Divisibilidad por cuatro]]
+#+INCLUDE: "./src/Miscelaneas/Divisibilidad_por_cuatro.lean" src lean
+
++ [[./src/Miscelaneas/CNS_de_menor.lean][CNS de menor]]
+#+INCLUDE: "./src/Miscelaneas/CNS_de_menor.lean" src lean
+
+*** Dígitos
+
++ [[./src/Miscelaneas/Los_digitos_son_menores_que_la_base.lean][Los dígitos son menores que la base]]
+#+INCLUDE: "./src/Miscelaneas/Los_digitos_son_menores_que_la_base.lean" src lean
+
++ [[./src/Miscelaneas/Representación decimal.lean][Representación decimal]]
+#+INCLUDE: "./src/Miscelaneas/Representacion_decimal.lean" src lean
+
+** Aritmética
+
++ [[./src/Miscelaneas/Multiplica_y_divide.lean][Multiplica y divide]]
+#+INCLUDE: "./src/Miscelaneas/Multiplica_y_divide.lean" src lean
+
++ [[./src/Miscelaneas/Divisibilidad de cuadrados.lean][Divisibilidad de cuadrados]]
+#+INCLUDE: "./src/Miscelaneas/Divisibilidad_de_cuadrados.lean" src lean
+
++ [[./src/Miscelaneas/Caracterizacion_de_coprimos.lean][Caracterización de coprimos]]
+#+INCLUDE: "./src/Miscelaneas/Caracterizacion_de_coprimos.lean" src lean
+
++ [[./src/Miscelaneas/a^7~b^7_syss_a~b.lean][a^7 = b^7 syss a = b]]
+#+INCLUDE: "./src/Miscelaneas/a^7~b^7_syss_a~b.lean" src lean
+
++ [[./src/Miscelaneas/Si_25n~0,_entonces_n~0.lean][Si_25*n=0,_entonces_n=0]]
+#+INCLUDE: "./src/Miscelaneas/Si_25n~0,_entonces_n~0.lean" src lean
+
++ [[./src/Miscelaneas/Existencia_de_subsucesión.lean][Existencia de subsucesión]]
+#+INCLUDE: "./src/Miscelaneas/Existencia_de_subsucesión.lean" src lean
+
+** Aritmética modular
+
++ [[./src/Miscelaneas/Tactica_de_aritmetica_modular.lean][Táctica de aritmética modular]]
+#+INCLUDE: "./src/Miscelaneas/Tactica_de_aritmetica_modular.lean" src lean
+
++ [[./src/Miscelaneas/Producto_dividible_por_seis.lean][Producto dividible por seis]]
+#+INCLUDE: "./src/Miscelaneas/Producto_dividible_por_seis.lean" src lean
+
+** Sumatorios
+
++ [[./src/Miscelaneas/Diferencia_de_sumatorios.lean][Diferencia de sumatorios]]
+#+INCLUDE: "./src/Miscelaneas/Diferencia_de_sumatorios.lean" src lean
+
++ [[./src/Miscelaneas/Propiedad_del_sumatorio.lean][Propiedad del sumatorio]]
+#+INCLUDE: "./src/Miscelaneas/Propiedad_del_sumatorio.lean" src lean
+
+** Listas
+
++ [[./src/Miscelaneas/Concatenacion_con_permutaciones.lean][Concatenación con permutaciones]]
+#+INCLUDE: "./src/Miscelaneas/Concatenacion_con_permutaciones.lean" src lean
+
++ [[./src/Miscelaneas/Propiedades_de_drop.lean][Propiedades de drop]]
+#+INCLUDE: "./src/Miscelaneas/Propiedades_de_drop.lean" src lean
+
++ [[./src/Miscelaneas/Definicion_de_splitAt.lean][Definición de splitAt]]
+#+INCLUDE: "./src/Miscelaneas/Definicion_de_splitAt.lean" src lean
+
+** Matrices
+
++ [[./src/Miscelaneas/Definicion_de_matriz.lean][Definición de matriz]]
+#+INCLUDE: "./src/Miscelaneas/Definicion_de_matriz.lean" src lean
 
 ** Teoría de grupos
 
@@ -51,37 +215,10 @@
 
 + [[./src/Miscelaneas/Propiedad_cancelativa_de_pertenencia_a_subgrupo.lean][Propiedad cancelativa de pertenencia a subgrupo]]
 #+INCLUDE: "./src/Miscelaneas/Propiedad_cancelativa_de_pertenencia_a_subgrupo.lean" src lean
+** Teoría de anillos
 
-** Números naturales
-
-+ [[./src/Miscelaneas/Mayores_de_no_nulo_son_no_nulos.lean][Mayores de no nulo son no nulos]]
-#+INCLUDE: "./src/Miscelaneas/Mayores_de_no_nulo_son_no_nulos.lean" src lean
-
-+ [[./src/Miscelaneas/Infinitud_de_los_primos.lean][Infinitud de los primos]]
-#+INCLUDE: "./src/Miscelaneas/Infinitud_de_los_primos.lean" src lean
-
-*** Dígitos
-
-+ [[./src/Miscelaneas/Los_digitos_son_menores_que_la_base.lean][Los dígitos son menores que la base]]
-#+INCLUDE: "./src/Miscelaneas/Los_digitos_son_menores_que_la_base.lean" src lean
-
-** Aritmética
-
-+ [[./src/Miscelaneas/Multiplica_y_divide.lean][Multiplica y divide]]
-#+INCLUDE: "./src/Miscelaneas/Multiplica_y_divide.lean" src lean
-
-** Aritmética modular
-
-+ [[./src/Miscelaneas/Tactica_de_aritmetica_modular.lean][Táctica de aritmética modular]]
-#+INCLUDE: "./src/Miscelaneas/Tactica_de_aritmetica_modular.lean" src lean
-
-** Sumatorios
-
-+ [[./src/Miscelaneas/Diferencia_de_sumatorios.lean][Diferencia de sumatorios]]
-#+INCLUDE: "./src/Miscelaneas/Diferencia_de_sumatorios.lean" src lean
-
-+ [[./src/Miscelaneas/Propiedad_del_sumatorio.lean][Propiedad del sumatorio]]
-#+INCLUDE: "./src/Miscelaneas/Propiedad_del_sumatorio.lean" src lean
++ [[./src/Miscelaneas/Cubo_de_una_diferencia.lean][Cubo de una diferencia]]
+#+INCLUDE: "./src/Miscelaneas/Cubo_de_una_diferencia.lean" src lean
 
 ** Retículos
 
@@ -111,3 +248,24 @@
 + [[./src/Miscelaneas/Monotonia_de_la_exponencial.lean][Monotonía de la exponencial]]
 #+INCLUDE: "./src/Miscelaneas/Monotonia_de_la_exponencial.lean" src lean
 
++ [[./src/Miscelaneas/Definiciones_de_limite.lean][Definiciones de límite]]
+#+INCLUDE: "./src/Miscelaneas/Definiciones_de_limite.lean" src lean
+
++ [[./src/Miscelaneas/Limite_exponencial.lean][Límite exponencial]]
+#+INCLUDE: "./src/Miscelaneas/Limite_exponencial.lean" src lean
+
++ [[./src/Miscelaneas/Acotacion_de_funciones_crecientes.lean][Acotación de funciones crecientes]]
+#+INCLUDE: "./src/Miscelaneas/Acotacion_de_funciones_crecientes.lean" src lean
+
++ [[./src/Miscelaneas/Propiedad_de_los_reales.lean][Propiedad de los reales]]
+#+INCLUDE: "./src/Miscelaneas/Propiedad_de_los_reales.lean" src lean
+
+** IMO
+
++ [[./src/Miscelaneas/IMO_1959_Q1.lean][IMO 1959 Q1]]
+#+INCLUDE: "./src/Miscelaneas/IMO_1959_Q1.lean" src lean
+** Tipos finitos
+
++ [[./src/Miscelaneas/Producto_de_tipos_finitos.lean][Producto de tipos finitos]]
+#+INCLUDE: "./src/Miscelaneas/Producto_de_tipos_finitos.lean" src lean
+** Otros
