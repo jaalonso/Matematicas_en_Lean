@@ -213,8 +213,28 @@
 + [[./src/Miscelaneas/Producto_de_elementos_por_sus_inversos.lean][Producto de elementos por sus inversos]]
 #+INCLUDE: "./src/Miscelaneas/Producto_de_elementos_por_sus_inversos.lean" src lean
 
++ [[./src/Miscelaneas/Axioma_de_McCune_de_grupos.lean][Axioma de McCune de grupos]]
+#+INCLUDE: "./src/Miscelaneas/Axioma_de_McCune_de_grupos.lean" src lean
+
++ [[./src/Miscelaneas/Axiomas_de_grupos_a_partir_del_de_McCune.lean][Axiomas de grupos a partir del de McCune]]
+#+INCLUDE: "./src/Miscelaneas/Axiomas_de_grupos_a_partir_del_de_McCune.lean" src lean
+
++ [[./src/Miscelaneas/Axiomas_de_grupos_abelianos_a_partir_del_de_McCune.lean][Axiomas de grupos abelianos a partir del de McCune]]
+#+INCLUDE: "./src/Miscelaneas/Axiomas_de_grupos_abelianos_a_partir_del_de_McCune.lean" src lean
+
 + [[./src/Miscelaneas/Propiedad_cancelativa_de_pertenencia_a_subgrupo.lean][Propiedad cancelativa de pertenencia a subgrupo]]
 #+INCLUDE: "./src/Miscelaneas/Propiedad_cancelativa_de_pertenencia_a_subgrupo.lean" src lean
+
++ [[./src/Miscelaneas/Menor_elemento_positivo_en_subgrupo_de_enteros.lean][Menor elemento positivo en subgrupo de enteros]]
+#+INCLUDE: "./src/Miscelaneas/Menor_elemento_positivo_en_subgrupo_de_enteros.lean" src lean
+
++ [[./src/Miscelaneas/Los_subgrupos_de_los_grupos_abelianos_son_normales.lean][Los subgrupos de los grupos abelianos son normales]]
+#+INCLUDE: "./src/Miscelaneas/Los_subgrupos_de_los_grupos_abelianos_son_normales.lean" src lean
+
++ [[./src/Miscelaneas/Los_subgrupos_de_los_grupos_abelianos_son_normales_v2.lean][Los subgrupos de los grupos abelianos son normales (2ª versión)]]
+#+INCLUDE: "./src/Miscelaneas/Los_subgrupos_de_los_grupos_abelianos_son_normales_v2.lean" src lean
+
+
 ** Teoría de anillos
 
 + [[./src/Miscelaneas/Cubo_de_una_diferencia.lean][Cubo de una diferencia]]
