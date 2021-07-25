@@ -189,6 +189,10 @@
 + [[./src/Miscelaneas/Propiedad_del_sumatorio.lean][Propiedad del sumatorio]]
 #+INCLUDE: "./src/Miscelaneas/Propiedad_del_sumatorio.lean" src lean
 
++ [[./src/Miscelaneas/Suma_de_fila_del_triangulo_de_Pascal.lean][Suma de fila del triángulo de Pascal]]
+#+INCLUDE: "./src/Miscelaneas/Suma_de_fila_del_triangulo_de_Pascal.lean" src lean
+
+
 ** Listas
 
 + [[./src/Miscelaneas/Concatenacion_con_permutaciones.lean][Concatenación con permutaciones]]
@@ -233,7 +237,6 @@
 
 + [[./src/Miscelaneas/Los_subgrupos_de_los_grupos_abelianos_son_normales_v2.lean][Los subgrupos de los grupos abelianos son normales (2ª versión)]]
 #+INCLUDE: "./src/Miscelaneas/Los_subgrupos_de_los_grupos_abelianos_son_normales_v2.lean" src lean
-
 
 ** Teoría de anillos
 
