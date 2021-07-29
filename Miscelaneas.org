@@ -14,6 +14,9 @@
 + [[./src/Miscelaneas/Generacion de contraejemplos.lean][Generación de contraejemplos]]
 #+INCLUDE: "./src/Miscelaneas/Generacion_de_contraejemplos.lean" src lean
 
++ [[./src/Miscelaneas/Demostracion_de_una_reduccion.lean][Demostración de una reducción]]
+#+INCLUDE: "./src/Miscelaneas/Demostracion_de_una_reduccion.lean" src lean
+
 ** Tácticas
 
 + [[./src/Miscelaneas/La_tactica_convert.lean][La táctica convert]]
