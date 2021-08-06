@@ -43,6 +43,9 @@
 + [[./src/Miscelaneas/La_tactica_symmetry.lean][La táctica symmetry]]
 #+INCLUDE: "./src/Miscelaneas/La_tactica_symmetry.lean" src lean
 
++ [[./src/Miscelaneas/Definicion_de_la_tactica_tidytauto.lean][Definición de la táctica tidytauto]]
+#+INCLUDE: "./src/Miscelaneas/Definicion_de_la_tactica_tidytauto.lean" src lean
+
 ** Lógica
 
 + [[./src/Miscelaneas/Formula_proposicional.lean][Fórmula proposicional]]
