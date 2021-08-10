@@ -44,3 +44,13 @@ end
 --    0. [simplify.rewrite] [add_right_inj]: a * n + (b * n + (a * m + b * m)) =
 --                                           a * n + (a * m + (b * n + b * m)) ==>
 --                                           b * n + (a * m + b * m) = a * m + (b * n + b * m)
+
+example (a b n m : ℕ): (a + b) * (n + m) = a * n + a * m  + b * n + b * m :=
+begin
+  simp [mul_add, add_assoc, add_mul, add_left_comm], -- succeeds
+end
+
+example (a b n m : ℕ): (a + b) * (n + m) = a * n + a * m  + b * n + b * m :=
+begin
+  simp [add_mul, mul_add, add_assoc, add_left_comm], -- succeeds
+end
