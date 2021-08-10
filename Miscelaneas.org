@@ -17,6 +17,10 @@
 + [[./src/Miscelaneas/Demostracion_de_una_reduccion.lean][Demostración de una reducción]]
 #+INCLUDE: "./src/Miscelaneas/Demostracion_de_una_reduccion.lean" src lean
 
++ [[./src/Miscelaneas/Traza_de_reescrituras.lean][Traza de reescrituras]]
+#+INCLUDE: "./src/Miscelaneas/Traza_de_reescrituras.lean" src lean
+
+
 ** Tácticas
 
 + [[./src/Miscelaneas/La_tactica_convert.lean][La táctica convert]]
