@@ -253,6 +253,12 @@
 + [[./src/Miscelaneas/Cubo_de_una_diferencia.lean][Cubo de una diferencia]]
 #+INCLUDE: "./src/Miscelaneas/Cubo_de_una_diferencia.lean" src lean
 
+** Órdenes totales
+
++ [[./src/Miscelaneas/Un_numero_entre_dos_enteros_consecutivos_no_es_entero.lean][Un número entre dos enteros consecutivos no es entero]]
+#+INCLUDE: "./src/Miscelaneas/Un_numero_entre_dos_enteros_consecutivos_no_es_entero.lean" src lean
+
+
 ** Retículos
 
 + [[./src/Miscelaneas/Conmutatividad_del_minimo.lean][Conmutatividad del mínimo]]
