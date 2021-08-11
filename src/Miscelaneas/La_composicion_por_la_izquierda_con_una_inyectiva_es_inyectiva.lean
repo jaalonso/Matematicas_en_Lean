@@ -4,12 +4,18 @@
 -- Sevilla, 11 de agosto de 2021
 -- ---------------------------------------------------------------------
 
+-- ---------------------------------------------------------------------
+-- Sean f₁ y f₂ funciones de X en Y y g una función de X en Y. Demostrar
+-- que si g es inyectiva y g ∘ f₁ = g ∘ f₂, entonces f₁ = f₂.
+-- ---------------------------------------------------------------------
+
 import tactic
 
+variables {X Y Z : Type*}
+variables {f₁ f₂ : X → Y}
+variable  {g : Y → Z}
+
 example
-  {α β γ : Type*}
-  {f₁ f₂ : α → β}
-  {g : β → γ}
   (hg : function.injective g)
   (hgf : g ∘ f₁ = g ∘ f₂)
   : f₁ = f₂ :=
@@ -23,9 +29,6 @@ begin
 end
 
 example
-  {α β γ : Type*}
-  {f₁ f₂ : α → β}
-  {g : β → γ}
   (hg : function.injective g)
   (hgf : g ∘ f₁ = g ∘ f₂)
   : f₁ = f₂ :=
@@ -36,9 +39,6 @@ begin
 end
 
 lemma function.injective.comp_left
-  {α β γ : Type*}
-  {f₁ f₂ : α → β}
-  {g : β → γ}
   (hg : function.injective g)
   (hgf : g ∘ f₁ = g ∘ f₂)
   : f₁ = f₂ :=
@@ -48,8 +48,6 @@ begin
 end
 
 lemma function.injective.comp_left2
-  {α β γ : Type*}
-  {g : β → γ}
   (hg : function.injective g)
   : function.injective ((∘) g : (α → β) → (α → γ)) :=
 λ f₁ f₂ hgf, funext $ λ i, hg (congr_fun hgf i : _)
