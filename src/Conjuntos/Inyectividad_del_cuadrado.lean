@@ -13,9 +13,9 @@ begin
   intros x hx y hy,
   intro e,
   calc
-    x   = (sqrt x)^2 : by rw sqr_sqrt hx
-    ... = (sqrt y)^2 : by rw e
-    ... = y          : by rw sqr_sqrt hy,
+    x   = (sqrt x)^2 : by finish
+    ... = (sqrt y)^2 : congr_arg (λ x, x^2) e
+    ... = y          : by finish
 end
 
 -- Prueba
@@ -48,9 +48,9 @@ begin
   simp,
   intro e,
   calc
-    x   = sqrt (x ^ 2) : by rw sqrt_sqr xnonneg
+    x   = sqrt (x ^ 2) : by finish
     ... = sqrt (y ^ 2) : by rw e
-    ... = y            : by rw sqrt_sqr ynonneg,
+    ... = y            : by finish
 end
 
 -- Prueba

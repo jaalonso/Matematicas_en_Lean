@@ -8,7 +8,7 @@ begin
   choose u hu hu' using h,
   use (λ n, nat.rec_on n (u 0 0) (λ n v, u (n+1) v) : ℕ → ℕ),
   split,
-  { apply strict_mono.nat,
+  { apply strict_mono_nat_of_lt_succ,
     intro n,
     apply hu },
   { intros n,

@@ -31,9 +31,9 @@ example : 0 ≤ b - a → a ≤ b :=
 begin
   intro h,
   calc
-    a   = 0 + a       : by rw zero_add
-    ... ≤ (b - a) + a : @add_le_add_right R _ 0 (b -a) h a
-    ... = b           : by simp
+    a   = 0 + a       : (zero_add a).symm
+    ... ≤ (b - a) + a : add_le_add_right h a
+    ... = b           : sub_add_cancel b a
 end
 
 -- ---------------------------------------------------------------------

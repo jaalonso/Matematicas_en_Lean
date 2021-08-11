@@ -8,7 +8,7 @@ def f (x : ℕ) := x + 3
 -- Ejercicio 2. Calcular el tipo de f.
 -- ---------------------------------------------------------------------
 
-#check f
+-- #check f
 
 -- Comentario: Al colocar el cursor sobre check se obtiene
 --    f : ℕ → ℕ
@@ -17,7 +17,7 @@ def f (x : ℕ) := x + 3
 -- Ejercicio 3. Calcular el valor de f(2).
 -- ---------------------------------------------------------------------
 
-#eval f 2
+-- #eval f 2
 
 -- Comentario: Al colocar el cursor sobre eval se obtiene
 --    5

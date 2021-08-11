@@ -1,6 +1,6 @@
 import tactic
 
-#explode and_iff_left
+-- #explode and_iff_left
 
 -- Colocando el cursor sobre explode se obtiene
 --    and_iff_left : ∀ {a b : Prop}, b → (a ∧ b ↔ a)
@@ -18,7 +18,7 @@ import tactic
 
 variables (R : Type) [add_group R]
 
-#explode neg_eq_of_add_eq_zero
+-- #explode neg_eq_of_add_eq_zero
 
 -- Colocando el cursor sobre explode se obtiene
 --    neg_eq_of_add_eq_zero : ∀ {G : Type u} [_inst_1 : add_group G] {a b : G}, a + b = 0 → -a = b
@@ -35,16 +35,16 @@ variables (R : Type) [add_group R]
 --    10│1,9 │ ∀I                    │ ∀ [_inst_1 : add_group G] {a b : G}, a + b = 0 → -a = b
 --    11│0,10│ ∀I                    │ ∀ {G : Type u} [_inst_1 : add_group G] {a b : G}, a + b = 0 → -a = b
 
-theorem neg_eq_of_add_eq_zero' 
-  {a b : R} 
-  (h : a + b = 0) 
+theorem neg_eq_of_add_eq_zero'
+  {a b : R}
+  (h : a + b = 0)
   : -a = b :=
 begin
   rw ← add_right_neg a at h,
   rw add_left_cancel h
 end
 
-#explode neg_eq_of_add_eq_zero'
+-- #explode neg_eq_of_add_eq_zero'
 
 -- Colocando el cursor sobre explode se obtiene
 --    neg_eq_of_add_eq_zero' : ∀ (R : Type) [_inst_1 : add_group R] {a b : R}, a + b = 0 → -a = b
@@ -69,4 +69,3 @@ end
 --    18│2,17 │ ∀I              │ ∀ {a b : R}, a + b = 0 → -a = b
 --    19│1,18 │ ∀I              │ ∀ [_inst_1 : add_group R] {a b : R}, a + b = 0 → -a = b
 --    20│0,19 │ ∀I              │ ∀ (R : Type) [_inst_1 : add_group R] {a b : R}, a + b = 0 → -a = b
-

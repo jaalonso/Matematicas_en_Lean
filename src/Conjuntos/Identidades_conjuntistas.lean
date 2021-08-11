@@ -106,21 +106,21 @@ no goals
 
 example : (s \ t) ∪ t = s ∪ t :=
 begin
-  ext x, 
+  ext x,
   split,
   { rintros (⟨xs, xnt⟩ | xt),
-    { left, 
+    { left,
       exact xs },
-    { right, 
+    { right,
     exact xt }},
   rintros (xs | xt),
   { classical,
     by_cases xt : x ∈ t,
-    { right, 
+    { right,
       exact xt },
-    { left, 
+    { left,
       exact ⟨xs, xt⟩ }},
-  { right, 
+  { right,
     exact xt },
 
 end
@@ -152,7 +152,7 @@ begin
         apply xnst,
         exact mem_sep xs h }},
     { right,
-      split, 
+      split,
       { exact xt },
       { intro h,
         apply xnst,
@@ -231,5 +231,4 @@ h : x ∈ s
 no goals
 -/
 
-
-#lint
+-- #lint

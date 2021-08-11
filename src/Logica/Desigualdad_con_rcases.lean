@@ -8,10 +8,10 @@
 import data.real.basic
 import tactic
 
-variables {z : ℝ}      
+variables {z : ℝ}
 
-example 
-  (h : ∃ x y, z = x^2 + y^2 ∨ z = x^2 + y^2 + 1) 
+example
+  (h : ∃ x y, z = x^2 + y^2 ∨ z = x^2 + y^2 + 1)
   : z ≥ 0 :=
 begin
   rcases h with ⟨a, b, h1 | h2⟩,
@@ -66,12 +66,12 @@ no goals
 --    (∃ x y : ℝ, P ‌∨ Q) crea dos casos. Al primero le añade las
 --    hipótesis (a b : ℝ) y (k1 : P). Al segundo, (a b : ℝ) y (h2 : Q).
 -- 2. Se han usado los siguientes lemas:
---    + add_nonneg : 0 ≤ x → 0 ≤ y → 0 ≤ x + y 
---    + pow_two_nonneg x : 0 ≤ x ^ 2 
---    + zero_le_one : 0 ≤ 1 
+--    + add_nonneg : 0 ≤ x → 0 ≤ y → 0 ≤ x + y
+--    + pow_two_nonneg x : 0 ≤ x ^ 2
+--    + zero_le_one : 0 ≤ 1
 
 -- Comprobación:
-variables (x y : ℝ)
-#check (@add_nonneg ℝ _ x y) 
-#check (@pow_two_nonneg ℝ _ x)
-#check zero_le_one
+-- variables (x y : ℝ)
+-- #check (@add_nonneg ℝ _ x y)
+-- #check (@pow_two_nonneg ℝ _ x)
+-- #check zero_le_one

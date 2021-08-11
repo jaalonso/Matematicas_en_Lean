@@ -1,9 +1,8 @@
 -- ---------------------------------------------------------------------
 -- Ejercicio. Demostrar que la operación mínimo en los retículos es
--- asociativa; es decir, 
+-- asociativa; es decir,
 --    (x ⊓ y) ⊓ z = x ⊓ (y ⊓ z)
 -- ----------------------------------------------------------------------
-
 
 import order.lattice
 import tactic
@@ -44,9 +43,9 @@ end
 -- ===============
 
 private meta def infs :=
-`[refl <|> 
-  {apply inf_le_left_of_le, infs} <|> 
-  {apply inf_le_right_of_le, infs}]
+`[refl <|>
+  {apply inf_le_of_left_le, infs} <|>
+  {apply inf_le_of_right_le, infs}]
 
 example : (x ⊓ y) ⊓ z = x ⊓ (y ⊓ z) :=
 by apply le_antisymm; repeat {apply le_inf}; {infs}

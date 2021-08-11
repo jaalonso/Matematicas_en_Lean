@@ -1,5 +1,5 @@
 -- ---------------------------------------------------------------------
--- Ejercicio. Demostrar que para todo par de números reales x e y, si 
+-- Ejercicio. Demostrar que para todo par de números reales x e y, si
 -- x < |y|, entonces x < y ó x < -y.
 -- ----------------------------------------------------------------------
 
@@ -15,12 +15,12 @@ example : x < abs y → x < y ∨ x < -y :=
 begin
   cases le_or_gt 0 y with h1 h2,
   { rw abs_of_nonneg h1,
-    intro h3, 
-    left, 
+    intro h3,
+    left,
     exact h3 },
   { rw abs_of_neg h2,
-    intro h4, 
-    right, 
+    intro h4,
+    right,
     exact h4 },
 end
 
@@ -35,20 +35,20 @@ x y : ℝ
 | ⊢ x < abs y → x < y ∨ x < -y
 |   >> { rw abs_of_nonneg h1,
 | ⊢ x < y → x < y ∨ x < -y
-|   >>   intro h3, 
+|   >>   intro h3,
 | h3 : x < y
 | ⊢ x < y ∨ x < -y
-|   >>   left, 
+|   >>   left,
 | ⊢ x < y
 |   >>   exact h3 },
 h2 : 0 > y
 ⊢ x < abs y → x < y ∨ x < -y
   >> { rw abs_of_neg h2,
 ⊢ x < -y → x < y ∨ x < -y
-  >>   intro h4, 
+  >>   intro h4,
 h4 : x < -y
 ⊢ x < y ∨ x < -y
-  >>   right, 
+  >>   right,
 ⊢ x < -y
   >>   exact h4 },
 no goals
@@ -58,16 +58,16 @@ no goals
 -- + La táctica (cases h with h1 h2), cuando h es una diyunción, aplica
 --   la regla de eliminación de la disyunción; es decir, si h es (P ∨ Q)
 --   abre dos casos, en el primero añade la hipótesis (h1 : P) y en el
---   segundo (h2 : Q).  
+--   segundo (h2 : Q).
 -- + Se han usado los siguientes lemas
 --   + le_or_gt x y : x ≤ y ∨ x > y
 --   + abs_of_nonneg : 0 ≤ x → abs x = x
 --   + abs_of_neg : x < 0 → abs x = -x
 
 -- Comprobación
-#check (@le_or_gt ℝ _ x y)
-#check (@abs_of_nonneg ℝ _ x)
-#check (@abs_of_neg ℝ _ x)
+-- #check (@le_or_gt ℝ _ x y)
+-- #check (@abs_of_nonneg ℝ _ x)
+-- #check (@abs_of_neg ℝ _ x)
 
 -- 2ª Demostración
 -- ===============
@@ -79,4 +79,4 @@ lt_abs.mp
 -- + lt_abs : x < abs y ↔ x < y ∨ x < -y
 
 -- Comprobación
-#check (@lt_abs ℝ _ x y) 
+-- #check (@lt_abs ℝ _ x y)

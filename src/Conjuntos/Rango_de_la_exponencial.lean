@@ -9,7 +9,7 @@ open set real
 
 example : range exp = { y | y > 0 } :=
 begin
-  ext y, 
+  ext y,
   split,
   { rintros ⟨x, rfl⟩,
     apply exp_pos },
@@ -25,7 +25,7 @@ end
 ⊢ range exp = {y : ℝ | y > 0}
   >> ext y,
 y : ℝ
-⊢ y ∈ range exp ↔ y ∈ {y : ℝ | y > 0} 
+⊢ y ∈ range exp ↔ y ∈ {y : ℝ | y > 0}
   >> split,
 | y : ℝ
 | ⊢ y ∈ range exp ↔ y ∈ {y : ℝ | y > 0}
@@ -45,7 +45,7 @@ ypos : y ∈ {y : ℝ | y > 0}
 -/
 
 -- Comentario: Se ha usado el lema
--- + exp_log : 0 < x → log (exp x) = x 
+-- + exp_log : 0 < x → log (exp x) = x
 
 variable (x : ℝ)
-#check @exp_log x
+-- #check @exp_log x

@@ -18,9 +18,9 @@ begin
   ext x,
   simp only [mem_inter_eq],
   split,
-  { rintros ⟨xs, xt⟩, 
+  { rintros ⟨xs, xt⟩,
     exact ⟨xt, xs⟩ },
-  { rintros ⟨xt, xs⟩, 
+  { rintros ⟨xt, xs⟩,
     exact ⟨xs, xt⟩ },
 end
 
@@ -41,10 +41,10 @@ x : α
 |   >> { rintros ⟨xs, xt⟩,
 | xs : x ∈ s,
 | xt : x ∈ t
-| ⊢ x ∈ t ∧ x ∈ s 
+| ⊢ x ∈ t ∧ x ∈ s
 |   >>   exact ⟨xt, xs⟩ },
 ⊢ x ∈ t ∧ x ∈ s → x ∈ s ∧ x ∈ t
-  >> { rintros ⟨xt, xs⟩, 
+  >> { rintros ⟨xt, xs⟩,
 xt : x ∈ t,
 xs : x ∈ s
 ⊢ x ∈ s ∧ x ∈ t
@@ -53,14 +53,14 @@ no goals
 -/
 
 -- Comentarios:
--- 1. La táctica (ext x) transforma la conclusión (s = t) en 
+-- 1. La táctica (ext x) transforma la conclusión (s = t) en
 --    (x ∈ s ↔ x ∈ t).
 -- 2. Se ha usado el lema
---    + mem_inter_eq x s t : x ∈ s ∩ t = (x ∈ s ∧ x ∈ t) 
+--    + mem_inter_eq x s t : x ∈ s ∩ t = (x ∈ s ∧ x ∈ t)
 
 -- Comprobación:
 variable (x : α)
-#check @mem_inter_eq _ x s t
+-- #check @mem_inter_eq _ x s t
 
 -- 2ª demostración
 -- ===============
@@ -88,9 +88,9 @@ inf_comm
 example : s ∩ t = t ∩ s :=
 begin
   apply subset.antisymm,
-  { rintros x ⟨xs, xt⟩, 
+  { rintros x ⟨xs, xt⟩,
     exact ⟨xt, xs⟩ },
-  { rintros x ⟨xt, xs⟩, 
+  { rintros x ⟨xt, xs⟩,
     exact ⟨xs, xt⟩ },
 end
 
@@ -103,14 +103,14 @@ s t : set α
 ⊢ s ∩ t = t ∩ s
   >> apply subset.antisymm,
 | ⊢ s ∩ t ⊆ t ∩ s
-|   >> { rintros x ⟨xs, xt⟩, 
+|   >> { rintros x ⟨xs, xt⟩,
 | x : α,
 | xs : x ∈ s,
 | xt : x ∈ t
 | ⊢ x ∈ t ∩ s
 |   >>   exact ⟨xt, xs⟩ },
 ⊢ t ∩ s ⊆ s ∩ t
-  >> { rintros x ⟨xt, xs⟩, 
+  >> { rintros x ⟨xt, xs⟩,
 x : α,
 xt : x ∈ t,
 xs : x ∈ s
@@ -118,6 +118,3 @@ xs : x ∈ s
   >>   exact ⟨xs, xt⟩ },
 no goals
 -/
-
-
-

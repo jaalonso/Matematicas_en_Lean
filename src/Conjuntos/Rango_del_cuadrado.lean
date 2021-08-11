@@ -22,7 +22,7 @@ begin
     simp at *,
     split,
     { exact pow_nonneg h 2 },
-    { exact sqrt_sqr h }},
+    { finish }},
 end
 
 -- Prueba
@@ -94,7 +94,7 @@ begin
   { intro h,
     use sqrt x,
     simp at *,
-    exact sqr_sqrt h },
+    by finish, },
 end
 
 -- Prueba

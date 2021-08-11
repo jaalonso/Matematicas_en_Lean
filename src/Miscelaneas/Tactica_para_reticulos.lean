@@ -1,16 +1,16 @@
 import order.lattice
 
 meta def infs_and_sups :=
-`[refl <|> 
-  {apply inf_le_left_of_le, infs_and_sups} <|> 
-  {apply inf_le_right_of_le, infs_and_sups} <|>
-  {apply le_sup_left_of_le, infs_and_sups} <|> 
- {apply le_sup_right_of_le, infs_and_sups}]
+`[refl <|>
+  {apply inf_le_of_left_le, infs_and_sups} <|>
+  {apply inf_le_of_right_le, infs_and_sups} <|>
+  {apply le_sup_of_le_left, infs_and_sups} <|>
+ {apply le_sup_of_le_right, infs_and_sups}]
 
 meta def tactic.interactive.lattice :=
-`[try { apply le_antisymm }; 
-        repeat { apply le_inf <|> 
-                 apply sup_le }; 
+`[try { apply le_antisymm };
+        repeat { apply le_inf <|>
+                 apply sup_le };
         infs_and_sups]
 
 variables {L : Type*} [lattice L] {a b c x y z : L}
@@ -32,14 +32,14 @@ by lattice
 
 meta def tactic.interactive.lattice2 :=
 `[solve_by_elim
-  [le_antisymm, 
-   le_inf, 
-   sup_le, 
-   le_refl, 
-   inf_le_left_of_le, 
-   inf_le_right_of_le,
-   le_sup_left_of_le, 
-   le_sup_right_of_le]
+  [le_antisymm,
+   le_inf,
+   sup_le,
+   le_refl,
+   inf_le_of_left_le,
+   inf_le_of_right_le,
+   le_sup_of_le_left,
+   le_sup_of_le_right]
   {max_depth := 30}]
 
 example : a ⊔ (b ⊓ c) ≤ (a ⊔ b) ⊓ (a ⊔ c) :=

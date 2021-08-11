@@ -6,7 +6,7 @@
 -- 4. Declarar α como una variable de tipos en u.
 -- 5. Declarar I como una variable de tipos en v.
 -- 6. Declarar A y B como variables sobre funciones de I en α.
--- 7. Declarar s como variable sobre conjuntos de elementos de α. 
+-- 7. Declarar s como variable sobre conjuntos de elementos de α.
 -- ----------------------------------------------------------------------
 
 import tactic                 -- 1
@@ -74,8 +74,8 @@ no goals
 -- Comprobación
 variable x : α
 variables (a b : set α)
-#check @mem_inter_eq _ x a b
-#check @mem_Union α I x A
+-- #check @mem_inter_eq _ x a b
+-- #check @mem_Union α I x A
 
 -- ---------------------------------------------------------------------
 -- Ejercicio. Demostrar que
@@ -144,10 +144,8 @@ no goals
 
 -- Comentario: Se han usado los lemas
 -- + mem_inter_eq: x ∈ a ∩ b = (x ∈ a ∧ x ∈ b)
--- + mem_Inter : x ∈ Inter A ↔ ∀ (i : I), x ∈ A i 
+-- + mem_Inter : x ∈ Inter A ↔ ∀ (i : I), x ∈ A i
 
 -- Comprobación
-#check @mem_inter_eq _ x a b
-#check @mem_Inter α I x A
-
-
+-- #check @mem_inter_eq _ x a b
+-- #check @mem_Inter α I x A

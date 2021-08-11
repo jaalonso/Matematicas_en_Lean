@@ -1,5 +1,5 @@
 -- ---------------------------------------------------------------------
--- Ejercicio 1. Importar la librería de grupos 
+-- Ejercicio 1. Importar la librería de grupos
 -- ----------------------------------------------------------------------
 
 import algebra.group
@@ -11,10 +11,9 @@ import algebra.group
 variables (G : Type*) [group G]
 
 -- ---------------------------------------------------------------------
--- Ejercicio 3. Comprobar que G verifica los axiomas de los grupos 
+-- Ejercicio 3. Comprobar que G verifica los axiomas de los grupos
 -- ----------------------------------------------------------------------
 
-#check (mul_assoc :    ∀ a b c : G, a * b * c = a * (b * c))
-#check (one_mul :      ∀ a : G,     1 * a = a)
-#check (mul_left_inv : ∀ a : G,     a⁻¹ * a = 1)  
-
+-- #check (mul_assoc :    ∀ a b c : G, a * b * c = a * (b * c))
+-- #check (one_mul :      ∀ a : G,     1 * a = a)
+-- #check (mul_left_inv : ∀ a : G,     a⁻¹ * a = 1)

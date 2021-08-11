@@ -37,6 +37,6 @@ lemma add_factorial_lt_factorial_add' {i n : ℕ} (hi : 2 ≤ i) (hn : 1 ≤ n) 
 begin
   cases hn,
   { rw factorial_one,
-    exact lt_factorial_self (succ_le_succ hi) },
+    exact nat.lt_factorial_self (succ_le_succ hi) },
   { exact add_factorial_lt_factorial_add _ hi }
 end

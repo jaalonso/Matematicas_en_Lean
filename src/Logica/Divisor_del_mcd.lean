@@ -1,5 +1,5 @@
 -- ---------------------------------------------------------------------
--- Ejercicio. Demostrar que 3 divide al máximo xomún divisor de 6 y 15. 
+-- Ejercicio. Demostrar que 3 divide al máximo xomún divisor de 6 y 15.
 -- ----------------------------------------------------------------------
 
 import data.real.basic
@@ -7,7 +7,7 @@ import data.nat.gcd
 
 open nat
 
--- 1ª demostración 
+-- 1ª demostración
 -- ===============
 
 example : 3 ∣ gcd 6 15 :=
@@ -28,42 +28,19 @@ no goals
 -/
 
 -- Comentario: Se ha usado el lema
--- + dvd_gcd_iff: k | gcd m n ↔ k | m ∧ k | b 
+-- + dvd_gcd_iff: k | gcd m n ↔ k | m ∧ k | b
 
 -- 2ª demostración
 -- ===============
 
 example : 3 ∣ gcd 6 15 :=
-dvd_refl 3
+begin
+  convert dvd_refl _,
+  by norm_num,
+end
 
 -- 3ª demostración
 -- ===============
 
 example : 3 ∣ gcd 6 15 :=
 by norm_num
-
-
--- 4ª demostración
--- ===============
-
-example : 3 ∣ gcd 6 15 :=
-by finish
-
--- 5ª demostración
--- ===============
-
-example : 3 ∣ gcd 6 15 :=
-by tauto
-
--- 6ª demostración
--- ===============
-
-example : 3 ∣ gcd 6 15 :=
-dec_trivial
-
--- 7ª demostración
--- ===============
-
-example : 3 ∣ gcd 6 15 :=
-by refl
-

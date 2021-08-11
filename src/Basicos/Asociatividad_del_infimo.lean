@@ -11,15 +11,15 @@ variables x y z : α
 -- 1ª demostración
 -- ===============
 
-example : (x ⊓ y) ⊓ z = x ⊓ (y ⊓ z) := 
+example : (x ⊓ y) ⊓ z = x ⊓ (y ⊓ z) :=
 begin
   apply le_antisymm,
   { apply le_inf,
-    { apply inf_le_left_of_le inf_le_left, },
-    { apply le_inf (inf_le_left_of_le inf_le_right) inf_le_right}},
+    { apply inf_le_of_left_le inf_le_left, },
+    { apply le_inf (inf_le_of_left_le inf_le_right) inf_le_right}},
   {apply le_inf,
-    { apply le_inf inf_le_left (inf_le_right_of_le inf_le_left), },
-    { apply inf_le_right_of_le inf_le_right, },},
+    { apply le_inf inf_le_left (inf_le_of_right_le inf_le_left), },
+    { apply inf_le_of_right_le inf_le_right, },},
 end
 
 -- Su desarrollo es
@@ -43,18 +43,17 @@ end
 -- 2ª demostración
 -- ===============
 
-example : (x ⊓ y) ⊓ z = x ⊓ (y ⊓ z) := 
+example : (x ⊓ y) ⊓ z = x ⊓ (y ⊓ z) :=
 le_antisymm
   (le_inf
-    (inf_le_left_of_le inf_le_left)
-    (le_inf (inf_le_left_of_le inf_le_right) inf_le_right))
+    (inf_le_of_left_le inf_le_left)
+    (le_inf (inf_le_of_left_le inf_le_right) inf_le_right))
   (le_inf
-    (le_inf inf_le_left (inf_le_right_of_le inf_le_left))
-    (inf_le_right_of_le inf_le_right))
+    (le_inf inf_le_left (inf_le_of_right_le inf_le_left))
+    (inf_le_of_right_le inf_le_right))
 
 -- 3ª demostración
 -- ===============
 
-example : (x ⊓ y) ⊓ z = x ⊓ (y ⊓ z) := 
+example : (x ⊓ y) ⊓ z = x ⊓ (y ⊓ z) :=
 inf_assoc
-

@@ -41,4 +41,4 @@ h : x.log = y.log
 
 -- Comprobación:
 variable (x : ℝ)
-#check @exp_log x
+-- #check @exp_log x

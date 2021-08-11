@@ -4,7 +4,7 @@
 import data.nat.digits
 import data.list.range
 
-lemma list.map_with_index_core_eq
+lemma list.map_with_index_core_eq_1
   {α β : Type*}
   (l : list α)
   (f : ℕ → α → β) (n : ℕ)
@@ -17,7 +17,7 @@ begin
 end
 
 @[simp]
-lemma list.map_uncurry_zip_eq_zip_with
+lemma list.map_uncurry_zip_eq_zip_with_1
   {α β γ : Type*}
   (f : α → β → γ)
   (l : list α)
@@ -31,7 +31,7 @@ begin
     { simp [hl] } }
 end
 
-lemma list.zip_with_map_left
+lemma list.zip_with_map_left_1
   {α β γ δ : Type*}
   (f : α → β → γ)
   (g : δ → α)
@@ -46,7 +46,7 @@ begin
     { simp [hl] } }
 end
 
-lemma list.zip_with_map_right
+lemma list.zip_with_map_right_1
   {α β γ δ : Type*}
   (f : α → β → γ)
   (l : list α)
@@ -69,12 +69,12 @@ lemma list.map_with_index_eq_enum_map_uncurry
 begin
   induction l with hd tl hl generalizing f,
   { simp [list.map_with_index, list.map_with_index_core, list.enum_eq_zip_range] },
-  { rw [list.map_with_index, list.map_with_index_core, list.map_with_index_core_eq, hl],
-    simp [list.enum_eq_zip_range, list.range_succ_eq_map, list.zip_with_map_left] }
+  { rw [list.map_with_index, list.map_with_index_core, list.map_with_index_core_eq_1, hl],
+    simp [list.enum_eq_zip_range, list.range_succ_eq_map, list.zip_with_map_left_1] }
 end
 
 @[simp]
-lemma list.sum_zip_with_distrib_left
+lemma list.sum_zip_with_distrib_left_1
   {α β : Type*}
   (f : α → β → ℕ)
   (n : ℕ)
@@ -113,10 +113,10 @@ begin
       rw ← nat.of_digits_digits b n,
     },
   rw [list.map_with_index_eq_enum_map_uncurry, list.enum_eq_zip_range,
-      list.map_uncurry_zip_eq_zip_with, nat.of_digits_eq_foldr b],
+      list.map_uncurry_zip_eq_zip_with_1, nat.of_digits_eq_foldr b],
   induction b.digits n with hd tl hl,
   { simp },
-  { simp [list.range_succ_eq_map, list.zip_with_map_left, aux, hl] }
+  { simp [list.range_succ_eq_map, list.zip_with_map_left_1, aux, hl] }
 end
 
 -- Referencia

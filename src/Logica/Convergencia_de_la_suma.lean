@@ -8,11 +8,11 @@ import .Definicion_de_convergencia
 variables {s t : ℕ → ℝ} {a b c : ℝ}
 
 lemma converges_to_add
-  (cs : converges_to s a) 
+  (cs : converges_to s a)
   (ct : converges_to t b)
   : converges_to (λ n, s n + t n) (a + b) :=
 begin
-  intros ε εpos, 
+  intros ε εpos,
   dsimp,
   have ε2pos : 0 < ε / 2,
     { linarith },
@@ -28,7 +28,7 @@ begin
     { exact le_of_max_le_right hn },
   specialize ht n nNt,
   clear hn nNs nNt Ns Nt,
-  calc abs (s n + t n - (a + b)) 
+  calc abs (s n + t n - (a + b))
            = abs ((s n - a) + (t n -  b))   : by { congr, ring }
        ... ≤ abs (s n - a) + abs (t n -  b) : by apply abs_add
        ... < ε / 2 + ε / 2                  : by linarith [hs, ht]
@@ -44,7 +44,7 @@ a b : ℝ,
 cs : converges_to s a,
 ct : converges_to t b
 ⊢ converges_to (λ (n : ℕ), s n + t n) (a + b)
-  >> intros ε εpos, 
+  >> intros ε εpos,
 ε : ℝ,
 εpos : ε > 0
 ⊢ ∃ (N : ℕ), ∀ (n : ℕ), n ≥ N → abs ((λ (n : ℕ), s n + t n) n - (a + b)) < ε
@@ -140,7 +140,7 @@ n : ℕ,
 hs : abs (s n - a) < ε / 2,
 ht : abs (t n - b) < ε / 2
 ⊢ abs (s n + t n - (a + b)) < ε
-  >> calc abs (s n + t n - (a + b)) 
+  >> calc abs (s n + t n - (a + b))
   >>          = abs ((s n - a) + (t n -  b))   : by { congr, ring }
   >>      ... ≤ abs (s n - a) + abs (t n -  b) : by apply abs_add
   >>      ... < ε / 2 + ε / 2                  : by linarith [hs, ht]
@@ -149,13 +149,13 @@ no goals
 -/
 
 -- Comentario. Se han usado los lemas:
--- + le_of_max_le_left : max a b ≤ c → a ≤ c 
--- + le_of_max_le_right : max a b ≤ c → b ≤ c 
--- + abs_add a b : abs (a + b) ≤ abs a + abs b 
--- + add_halves a : a / 2 + a / 2 = a 
+-- + le_of_max_le_left : max a b ≤ c → a ≤ c
+-- + le_of_max_le_right : max a b ≤ c → b ≤ c
+-- + abs_add a b : abs (a + b) ≤ abs a + abs b
+-- + add_halves a : a / 2 + a / 2 = a
 
 -- Comprobación
-#check @le_of_max_le_left _ _ a b c
-#check @le_of_max_le_right _ _ a b c
-#check @abs_add _ _ a b
-#check @add_halves _ _ a
+-- #check @le_of_max_le_left _ _ a b c
+-- #check @le_of_max_le_right _ _ a b c
+-- #check @abs_add _ _ a b
+-- #check @add_halves _ _ a

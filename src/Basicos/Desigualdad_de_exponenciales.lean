@@ -13,20 +13,20 @@ variables (a b : ℝ)                         -- 3
 -- Ejercicio 2. Calcular el tipo del lema exp_le_exp
 -- ----------------------------------------------------------------------
 
-#check @exp_le_exp a b
+-- #check @exp_le_exp a b
 
 -- Comentario: Al colocar el cursor sobre check se obtiene
 --    exp_le_exp : a.exp ≤ b.exp ↔ a ≤ b
 
 -- ---------------------------------------------------------------------
 -- Ejercicio 3. Demostrar que si
---    a ≤ b 
---    exp a ≤ exp b 
+--    a ≤ b
+--    exp a ≤ exp b
 -- ----------------------------------------------------------------------
 
 -- 1ª demostración
-example  
-  (h : a ≤ b) 
+example
+  (h : a ≤ b)
   : exp a ≤ exp b :=
 begin
   rw exp_le_exp,
@@ -34,8 +34,8 @@ begin
 end
 
 -- 2ª demostración
-example  
-  (h : a ≤ b) 
+example
+  (h : a ≤ b)
   : exp a ≤ exp b :=
 exp_le_exp.mpr h
 

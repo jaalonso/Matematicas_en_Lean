@@ -23,7 +23,7 @@ begin
       unfold digits at hd IH,
       have h := digits_aux_def (b+2) (by linarith) n,
       cases n with n,
-      { cases hd },
+      { finish },
       { replace h := h (nat.zero_lt_succ n),
         rw h at hd,
         cases hd,

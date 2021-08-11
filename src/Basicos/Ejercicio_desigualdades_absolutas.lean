@@ -29,4 +29,5 @@ begin
            ≤ 2*(a*b)+(a^2-2*a*b+b^2)  : by exact le_add_of_nonneg_right h1
        ... = a^2 + b^2                : by ring,
     by linarith [h2] },
+    exact ordered_add_comm_monoid.to_covariant_class_left ℝ,
 end

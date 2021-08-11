@@ -3,7 +3,7 @@
 -- 1. Importar la teoría de grupos ordenados.
 -- 2. Declaral α como un tipo.
 -- 3. Declarar R como un monoide ordenado cancelativo.
--- 4. Declarar a, b, c y d como variables sobre R. 
+-- 4. Declarar a, b, c y d como variables sobre R.
 -- ----------------------------------------------------------------------
 
 import algebra.ordered_group                                         -- 1
@@ -17,7 +17,7 @@ variables a b c d : R                                                -- 4
 --     @add_le_add R _ a b c d
 -- ----------------------------------------------------------------------
 
-#check @add_le_add R _ a b c d
+-- #check @add_le_add
 
 -- Comentario: Al colocar el cursor sobre check se obtiene
 --    a ≤ b → c ≤ d → a + c ≤ b + d
@@ -35,10 +35,10 @@ def fn_ub (f : α → R) (a : R) : Prop := ∀ x, f x ≤ a
 -- otra de g es una cota superior de f + g.
 -- ----------------------------------------------------------------------
 
-theorem fn_ub_add 
-  {f g : α → R} 
+theorem fn_ub_add
+  {f g : α → R}
   {a b : R}
-  (hfa : fn_ub f a) 
-  (hgb : fn_ub g b) 
+  (hfa : fn_ub f a)
+  (hgb : fn_ub g b)
   : fn_ub (λ x, f x + g x) (a + b) :=
 λ x, add_le_add (hfa x) (hgb x)

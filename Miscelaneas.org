@@ -97,7 +97,6 @@
 + [[./src/Miscelaneas/La_composicion_por_la_izquierda_con_una_inyectiva_es_inyectiva.lean][La composición por la izquierda con una inyectiva es inyectiva]]
 #+INCLUDE: "./src/Miscelaneas/La_composicion_por_la_izquierda_con_una_inyectiva_es_inyectiva.lean" src lean
 
-
 ** Números naturales
 
 + [[./src/Miscelaneas/Mayores_de_no_nulo_son_no_nulos.lean][Mayores de no nulo son no nulos]]
@@ -168,6 +167,11 @@
 
 + [[./src/Miscelaneas/Representación decimal.lean][Representación decimal]]
 #+INCLUDE: "./src/Miscelaneas/Representacion_decimal.lean" src lean
+
+** Números reales
+
++ [[./src/Miscelaneas/Acotacion_de_la_potencia_de_la_suma.lean][Acotación de la potencia de la suma]]
+#+INCLUDE: "./src/Miscelaneas/Acotacion_de_la_potencia_de_la_suma.lean" src lean
 
 ** Aritmética
 

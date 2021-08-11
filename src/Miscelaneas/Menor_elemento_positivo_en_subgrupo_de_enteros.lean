@@ -5,6 +5,7 @@
 -- ---------------------------------------------------------------------
 
 import tactic
+import data.int.least_greatest
 
 -- 1ª demostración
 example

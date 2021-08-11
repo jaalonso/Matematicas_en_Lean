@@ -1,13 +1,13 @@
 import tactic
 
-example (n : nat) : n < n + 1 :=
-begin 
-  suggest, 
-  sorry 
-end
+-- example (n : nat) : n < n + 1 :=
+-- begin
+--   suggest,
+--   sorry
+-- end
 
 example (n : nat) : n < n + 1 :=
-by exact lt_add_one n 
+by exact lt_add_one n
 
 -- Al colocar el cursor sobre suggest muestra las siguientes sugerencias
 --    Try this: exact lt_add_one n

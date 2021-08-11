@@ -2,7 +2,7 @@
 -- Ejercicio 1. Realizar las siguientes acciones:
 -- 1. Importar la teoría de los números reales.
 -- 2. Declarar x e y como variables sobre los reales.
--- 3. Iniciar el espacio de nombre my_abs. 
+-- 3. Iniciar el espacio de nombre my_abs.
 -- ----------------------------------------------------------------------
 
 import data.real.basic   -- 1
@@ -35,15 +35,15 @@ x y : ℝ
 no goals
 -/
 
--- Comentarios: 
--- 1. La táctica (unfold e) despliega la definición de e. 
+-- Comentarios:
+-- 1. La táctica (unfold e) despliega la definición de e.
 -- 2. La definición de abs
 --    + abs (a : α) : α := max a (-a)
 -- 3. Se ha usado el lema
 --    + lt_max_iff : x < max y z ↔ x < y ∨ x < z
 
 -- Comprobación
-#check (@lt_max_iff ℝ _ x y z)
+-- #check (@lt_max_iff ℝ _ x y z)
 
 -- 2ª demostración
 -- ===============
@@ -118,11 +118,11 @@ no goals
 -/
 
 -- Comentarios: Se han usado los siguientes lemas:
--- + max_lt_iff : max x y < z ↔ x < z ∧ y < z 
--- + neg_lt : -x < y ↔ -y < x 
+-- + max_lt_iff : max x y < z ↔ x < z ∧ y < z
+-- + neg_lt : -x < y ↔ -y < x
 
 -- Comprobación:
-#check (@max_lt_iff ℝ _ x y z)
-#check (@neg_lt ℝ _ x y)
+-- #check (@max_lt_iff ℝ _ x y z)
+-- #check (@neg_lt ℝ _ x y)
 
 end my_abs

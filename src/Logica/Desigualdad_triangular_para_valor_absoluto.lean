@@ -2,7 +2,7 @@
 -- Ejercicio 1. Realizar las siguientes acciones:
 -- 1. Importar la librería de los números reales.
 -- 2. Declarar x, y, a y b como variables sobre los reales.
--- 3. Crear el espacio de nombres my_abs. 
+-- 3. Crear el espacio de nombres my_abs.
 -- ----------------------------------------------------------------------
 
 import data.real.basic    -- 1
@@ -22,7 +22,7 @@ begin
   cases (le_or_gt 0 x) with h1 h2,
   { rw abs_of_nonneg h1 },
   { rw abs_of_neg h2,
-    apply self_le_neg,
+    apply left.self_le_neg,
     apply le_of_lt h2 },
 end
 
@@ -54,11 +54,11 @@ no goals
 -- + le_of_lt : x < y → x ≤ y
 
 -- Comprobación
-#check (@le_or_gt ℝ _ x y)
-#check (@abs_of_nonneg ℝ _ x)
-#check (@abs_of_neg ℝ _ x)
-#check (@self_le_neg ℝ _ x)
-#check (@le_of_lt ℝ _ x y)
+-- #check (@le_or_gt ℝ _ x y)
+-- #check (@abs_of_nonneg ℝ _ x)
+-- #check (@abs_of_neg ℝ _ x)
+-- #check (@self_le_neg ℝ _ x)
+-- #check (@le_of_lt ℝ _ x y)
 
 -- 2ª demostración
 -- ===============
@@ -69,16 +69,16 @@ begin
   exact le_max_left x (-x),
 end
 
--- Comentarios: 
--- 1. La táctica (unfold e) despliega la definición de e. 
+-- Comentarios:
+-- 1. La táctica (unfold e) despliega la definición de e.
 -- 2. La definición de abs
 --    + abs (a : α) : α := max a (-a)
 -- 3. Se ha usado el lema
 --    + le_max_left x y : x ≤ max x y
 
 -- Comprobación
-#check (@le_max_left ℝ _ x y)
-#print abs 
+-- #check (@le_max_left ℝ _ x y)
+-- #print abs
 
 -- 3ª demostración
 -- ===============
@@ -97,7 +97,7 @@ le_max_left x (-x)
 theorem neg_le_abs_self : -x ≤ abs x :=
 begin
   cases (le_or_gt 0 x) with h1 h2,
-  { rw abs_of_nonneg h1, 
+  { rw abs_of_nonneg h1,
     apply neg_le_self h1 },
   { rw abs_of_neg h2 },
 end
@@ -112,7 +112,7 @@ x : ℝ
 | h1 : 0 ≤ x
 | ⊢ -x ≤ abs x
 |   >> { rw abs_of_nonneg h1,
-| ⊢ -x ≤ x 
+| ⊢ -x ≤ x
 |   >>   apply neg_le_self h1 },
 h2 : 0 > x
 ⊢ -x ≤ abs x
@@ -127,10 +127,10 @@ no goals
 -- + abs_of_neg : x < 0 → abs x = -x
 
 -- Comprobación
-#check (@le_or_gt ℝ _ x y)
-#check (@abs_of_nonneg ℝ _ x)
-#check (@neg_le_self ℝ _ x)
-#check (@abs_of_neg ℝ _ x)
+-- #check (@le_or_gt ℝ _ x y)
+-- #check (@abs_of_nonneg ℝ _ x)
+-- #check (@neg_le_self ℝ _ x)
+-- #check (@abs_of_neg ℝ _ x)
 
 -- 2ª demostración
 -- ===============
@@ -141,15 +141,15 @@ begin
   exact le_max_right x (-x),
 end
 
--- Comentarios: 
--- 1. La táctica (unfold e) despliega la definición de e. 
+-- Comentarios:
+-- 1. La táctica (unfold e) despliega la definición de e.
 -- 2. La definición de abs
 --    + abs (a : α) : α := max a (-a)
 -- 3. Se ha usado el lema
 --    + le_max_right x y : y ≤ max x y
 
 -- Comprobación:
-#check (@le_max_right ℝ _ x y)
+-- #check (@le_max_right ℝ _ x y)
 
 -- 3ª demostración
 -- ===============
@@ -159,7 +159,7 @@ le_max_right x (-x)
 
 -- ---------------------------------------------------------------------
 -- Ejercicio 4. Demostrar que si
---    0 ≤ a + b 
+--    0 ≤ a + b
 --    0 ≤ a
 -- entonces
 --    abs (a + b) ≤ abs a + abs b
@@ -167,21 +167,21 @@ le_max_right x (-x)
 
 open_locale classical
 
-lemma aux1 
-  (h1 : 0 ≤ a + b) 
-  (h2 : 0 ≤ a) 
+lemma aux1
+  (h1 : 0 ≤ a + b)
+  (h2 : 0 ≤ a)
   : abs (a + b) ≤ abs a + abs b :=
 begin
-  by_cases h3 : 0 ≤ b, 
-  show abs (a + b) ≤ abs a + abs b, 
+  by_cases h3 : 0 ≤ b,
+  show abs (a + b) ≤ abs a + abs b,
     calc
       abs (a + b) ≤ abs (a + b)   : by apply le_refl
               ... = a + b         : by rw (abs_of_nonneg h1)
               ... = abs a + b     : by rw (abs_of_nonneg h2)
               ... = abs a + abs b : by rw (abs_of_nonneg h3),
-  have h4 : b ≤ 0, 
-    from le_of_lt (lt_of_not_ge h3),    
-  show abs (a + b) ≤ abs a + abs b,  
+  have h4 : b ≤ 0,
+    from le_of_lt (lt_of_not_ge h3),
+  show abs (a + b) ≤ abs a + abs b,
     calc
       abs (a + b) = a + b         : by rw (abs_of_nonneg h1)
               ... = abs a + b     : by rw (abs_of_nonneg h2)
@@ -198,7 +198,7 @@ a b : ℝ,
 h1 : 0 ≤ a + b,
 h2 : 0 ≤ a
 ⊢ abs (a + b) ≤ abs a + abs b
-  >> by_cases h3 : 0 ≤ b, 
+  >> by_cases h3 : 0 ≤ b,
 | h3 : 0 ≤ b
 | ⊢ abs (a + b) ≤ abs a + abs b
 |   >> show abs (a + b) ≤ abs a + abs b, calc
@@ -208,10 +208,10 @@ h2 : 0 ≤ a
 |   >>           ... = abs a + abs b : by rw (abs_of_nonneg h3),
 h3 : ¬0 ≤ b
 ⊢ abs (a + b) ≤ abs a + abs b
-  >> have h4 : b ≤ 0, 
+  >> have h4 : b ≤ 0,
   >>   from le_of_lt (lt_of_not_ge h3),
 h4 : b ≤ 0
-⊢ abs (a + b) ≤ abs a + abs b    
+⊢ abs (a + b) ≤ abs a + abs b
   >> show abs (a + b) ≤ abs a + abs b, calc
   >>   abs (a + b) = a + b         : by rw (abs_of_nonneg h1)
   >>           ... = abs a + b     : by rw (abs_of_nonneg h2)
@@ -231,28 +231,28 @@ h4 : b ≤ 0
 --    + abs_of_nonneg : 0 ≤ x → abs x = x
 --    + le_of_lt : x < y → x ≤ y
 --    + lt_of_not_ge : ¬x ≥ y → x < y
---    + add_le_add_left : x ≤ y → ∀ (c : ℝ), c + x ≤ c + y 
+--    + add_le_add_left : x ≤ y → ∀ (c : ℝ), c + x ≤ c + y
 --    + neg_nonneg_of_nonpos : x ≤ 0 → 0 ≤ -x
---    + abs_of_nonpos : x ≤ 0 → abs x = -x 
+--    + abs_of_nonpos : x ≤ 0 → abs x = -x
 
 -- Comprobación:
-#check (@le_refl ℝ _ x) 
-#check (@abs_of_nonneg ℝ _ x) 
-#check (@le_of_lt ℝ _ x y)
-#check (@lt_of_not_ge ℝ _ x y)
-#check (@add_le_add_left ℝ _ x y)
-#check (@neg_nonneg_of_nonpos ℝ _ x)
-#check (@abs_of_nonpos ℝ _ x)
+-- #check (@le_refl ℝ _ x)
+-- #check (@abs_of_nonneg ℝ _ x)
+-- #check (@le_of_lt ℝ _ x y)
+-- #check (@lt_of_not_ge ℝ _ x y)
+-- #check (@add_le_add_left ℝ _ x y)
+-- #check (@neg_nonneg_of_nonpos ℝ _ x)
+-- #check (@abs_of_nonpos ℝ _ x)
 
 -- ---------------------------------------------------------------------
 -- Ejercicio 5. Demostrar que si
 --    0 ≤ a + b
 -- entonces
---    abs (a + b) ≤ abs a + abs b 
+--    abs (a + b) ≤ abs a + abs b
 -- ----------------------------------------------------------------------
 
 lemma aux2
-  (h1 : 0 ≤ a + b) 
+  (h1 : 0 ≤ a + b)
   : abs (a + b) ≤ abs a + abs b :=
 begin
   by_cases h2 : 0 ≤ a,
@@ -276,12 +276,12 @@ begin
     { exact @aux2 x y h2 },
   have h3 : x + y ≤ 0,
     by exact le_of_not_ge h2,
-  have h4: -x + -y = -(x + y), 
+  have h4: -x + -y = -(x + y),
     by rw neg_add,
-  have h5 : 0 ≤ -(x + y), 
+  have h5 : 0 ≤ -(x + y),
     from neg_nonneg_of_nonpos h3,
-  have h6 : 0 ≤ -x + -y, 
-    { rw [← h4] at h5, 
+  have h6 : 0 ≤ -x + -y,
+    { rw [← h4] at h5,
       exact h5 },
   calc
      abs (x + y) = abs (-x + -y)       : by rw [← abs_neg, neg_add]
@@ -307,14 +307,14 @@ x y : ℝ,
 h2 : ¬0 ≤ x + y,
 h3 : x + y ≤ 0
 ⊢ abs (x + y) ≤ abs x + abs y
-  >> have h4: -x + -y = -(x + y), 
+  >> have h4: -x + -y = -(x + y),
   >>   by rw neg_add,
 x y : ℝ,
 h2 : ¬0 ≤ x + y,
 h3 : x + y ≤ 0,
 h4 : -x + -y = -(x + y)
 ⊢ abs (x + y) ≤ abs x + abs y
-  >> have h5 : 0 ≤ -(x + y), 
+  >> have h5 : 0 ≤ -(x + y),
   >>   from neg_nonneg_of_nonpos h3,
 x y : ℝ,
 h2 : ¬0 ≤ x + y,
@@ -322,8 +322,8 @@ h3 : x + y ≤ 0,
 h4 : -x + -y = -(x + y),
 h5 : 0 ≤ -(x + y)
 ⊢ abs (x + y) ≤ abs x + abs y
-  >> have h6 : 0 ≤ -x + -y, 
-  >>   { rw [← h4] at h5, 
+  >> have h6 : 0 ≤ -x + -y,
+  >>   { rw [← h4] at h5,
 x y : ℝ,
 h2 : ¬0 ≤ x + y,
 h3 : x + y ≤ 0,
@@ -350,8 +350,8 @@ h6 : 0 ≤ -x + -y
 -- + neg_nonneg_of_nonpos : x ≤ 0 → 0 ≤ -x
 
 -- Comprobación:
-#check (@le_of_not_ge ℝ _ x y)
-#check (@neg_add ℝ _ x y)
-#check (@neg_nonneg_of_nonpos ℝ _ x)
+-- #check (@le_of_not_ge ℝ _ x y)
+-- #check (@neg_add ℝ _ x y)
+-- #check (@neg_nonneg_of_nonpos ℝ _ x)
 
 end my_abs

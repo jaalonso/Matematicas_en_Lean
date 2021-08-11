@@ -9,9 +9,9 @@ example
 begin
   have h := sub_eq_zero.mpr hn, -- internally an awkward `0`
   -- h : 25 * n - n = 0
-  ring at *, -- `h` now has a better `0`
+  ring_nf at *, -- `h` now has a better `0`
   -- h : 25 * n - n = 0
-  ring at *,
+  ring_nf at *,
   -- h : 24 * n = 0
   linarith,
 end

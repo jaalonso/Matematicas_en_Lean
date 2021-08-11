@@ -15,11 +15,11 @@ example : (x ⊔ y) ⊔ z = x ⊔ (y ⊔ z) :=
 begin
   apply le_antisymm,
   { apply sup_le,
-    { apply sup_le le_sup_left (le_sup_right_of_le le_sup_left)},
-    { apply le_sup_right_of_le le_sup_right}},
+    { apply sup_le le_sup_left (le_sup_of_le_right le_sup_left)},
+    { apply le_sup_of_le_right le_sup_right}},
   { apply sup_le,
-    { apply le_sup_left_of_le le_sup_left},
-    { apply sup_le (le_sup_left_of_le le_sup_right) le_sup_right}},
+    { apply le_sup_of_le_left le_sup_left},
+    { apply sup_le (le_sup_of_le_left le_sup_right) le_sup_right}},
 end
 
 -- Su desarrollo es
@@ -46,14 +46,14 @@ end
 example : (x ⊔ y) ⊔ z = x ⊔ (y ⊔ z) :=
 le_antisymm
   (sup_le
-    (sup_le le_sup_left (le_sup_right_of_le le_sup_left))
-    (le_sup_right_of_le le_sup_right))
+    (sup_le le_sup_left (le_sup_of_le_right le_sup_left))
+    (le_sup_of_le_right le_sup_right))
   (sup_le
-    (le_sup_left_of_le le_sup_left)
-    (sup_le (le_sup_left_of_le le_sup_right) le_sup_right))
+    (le_sup_of_le_left le_sup_left)
+    (sup_le (le_sup_of_le_left le_sup_right) le_sup_right))
 
 -- 3ª demostración
 -- ===============
 
-example : x ⊔ y ⊔ z = x ⊔ (y ⊔ z) := 
+example : x ⊔ y ⊔ z = x ⊔ (y ⊔ z) :=
 sup_assoc

@@ -11,9 +11,10 @@ example : abs a - abs b ≤ abs (a - b) :=
 begin
   apply sub_le_iff_le_add.mpr,
   have h1 : abs a = abs ((a - b) + b),
-    by ring,
+    by ring_nf,
   rw h1,
   apply abs_add,
+  exact covariant_swap_add_le_of_covariant_add_le ℝ,
 end
 
 -- Lemas usados:

@@ -12,10 +12,10 @@ begin
   simp,
   intro nprime,
   cases prime.eq_two_or_odd nprime with h h,
-  { rw h, 
-    intro, 
+  { rw h,
+    intro,
     linarith },
-  { rw even_iff, 
+  { rw even_iff,
     rw h,
     norm_num },
 end
@@ -37,15 +37,15 @@ nprime : n.prime
 | h : n = 2
 | ⊢ 2 < n → ¬n.even
 |   >> { rw h,
-| ⊢ 2 < 2 → ¬2.even 
-|   >>   intro, 
+| ⊢ 2 < 2 → ¬2.even
+|   >>   intro,
 | a : 2 < 2
 | ⊢ ¬2.even
 |   >>   linarith },
 h : n % 2 = 1
 ⊢ 2 < n → ¬n.even
   >> { rw even_iff,
-⊢ 2 < n → ¬n % 2 = 0 
+⊢ 2 < n → ¬n % 2 = 0
   >>   rw h,
 ⊢ 2 < n → ¬1 = 0
   >>   norm_num },
@@ -53,10 +53,9 @@ no goals
 -/
 
 -- Comentario: Se han usado los lemas
--- + prime.eq_two_or_odd : p.prime → p = 2 ∨ p % 2 = 1 
--- + even_iff : even n ↔ n % 2 = 0 
+-- + prime.eq_two_or_odd : p.prime → p = 2 ∨ p % 2 = 1
+-- + even_iff : even n ↔ n % 2 = 0
 
 variables (n p : ℕ)
-#check @prime.eq_two_or_odd p
-#check @even_iff n
-
+-- #check @prime.eq_two_or_odd p
+-- #check @even_iff n
