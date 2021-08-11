@@ -49,5 +49,5 @@ end
 
 lemma function.injective.comp_left2
   (hg : function.injective g)
-  : function.injective ((∘) g : (α → β) → (α → γ)) :=
+  : function.injective ((∘) g : (X → Y) → (X → Z)) :=
 λ f₁ f₂ hgf, funext $ λ i, hg (congr_fun hgf i : _)
