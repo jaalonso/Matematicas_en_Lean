@@ -168,11 +168,6 @@
 + [[./src/Miscelaneas/Representación decimal.lean][Representación decimal]]
 #+INCLUDE: "./src/Miscelaneas/Representacion_decimal.lean" src lean
 
-** Números reales
-
-+ [[./src/Miscelaneas/Acotacion_de_la_potencia_de_la_suma.lean][Acotación de la potencia de la suma]]
-#+INCLUDE: "./src/Miscelaneas/Acotacion_de_la_potencia_de_la_suma.lean" src lean
-
 ** Aritmética
 
 + [[./src/Miscelaneas/Multiplica_y_divide.lean][Multiplica y divide]]
