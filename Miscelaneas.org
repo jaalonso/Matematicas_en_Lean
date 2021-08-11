@@ -20,7 +20,6 @@
 + [[./src/Miscelaneas/Traza_de_reescrituras.lean][Traza de reescrituras]]
 #+INCLUDE: "./src/Miscelaneas/Traza_de_reescrituras.lean" src lean
 
-
 ** Tácticas
 
 + [[./src/Miscelaneas/La_tactica_convert.lean][La táctica convert]]
@@ -92,6 +91,12 @@
 
 + [[./src/Miscelaneas/CS2_de_conjunto_infinito.lean][CS2 de conjunto infinito]]
 #+INCLUDE: "./src/Miscelaneas/CS2_de_conjunto_infinito.lean" src lean
+
+** Funciones
+
++ [[./src/Miscelaneas/La_composicion_por_la_izquierda_con_una_inyectiva_es_inyectiva.lean][La composición por la izquierda con una inyectiva es inyectiva]]
+#+INCLUDE: "./src/Miscelaneas/La_composicion_por_la_izquierda_con_una_inyectiva_es_inyectiva.lean" src lean
+
 
 ** Números naturales
 
@@ -257,7 +262,6 @@
 
 + [[./src/Miscelaneas/Un_numero_entre_dos_enteros_consecutivos_no_es_entero.lean][Un número entre dos enteros consecutivos no es entero]]
 #+INCLUDE: "./src/Miscelaneas/Un_numero_entre_dos_enteros_consecutivos_no_es_entero.lean" src lean
-
 
 ** Retículos
 
