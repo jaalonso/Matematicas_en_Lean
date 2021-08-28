@@ -98,7 +98,6 @@
 + [[./src/Miscelaneas/CS_de_no_vacio.lean][CS de no vacío]]
 #+INCLUDE: "./src/Miscelaneas/CS_de_no_vacio.lean" src lean
 
-
 ** Funciones
 
 + [[./src/Miscelaneas/La_composicion_por_la_izquierda_con_una_inyectiva_es_inyectiva.lean][La composición por la izquierda con una inyectiva es inyectiva]]
@@ -165,6 +164,9 @@
 
 + [[./src/Miscelaneas/Divisor_de_4.lean][Divisor de 4]]
 #+INCLUDE: "./src/Miscelaneas/Divisor_de_4.lean" src lean
+
++ [[./src/Miscelaneas/La_suma_de_los_n_primeros_impares_es_n^2.lean][La suma de lo n primeros impares es n^2]]
+#+INCLUDE: "./src/Miscelaneas/La_suma_de_los_n_primeros_impares_es_n^2.lean" src lean
 
 
 *** Dígitos
