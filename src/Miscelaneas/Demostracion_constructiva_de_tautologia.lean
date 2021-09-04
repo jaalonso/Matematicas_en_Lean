@@ -25,3 +25,6 @@ end
 
 example : (P → (P → Q)) → ((P → Q) → P) → Q :=
 λ f g, f (g (λ R, f R R)) (g (λ R, f R R))
+
+example : (P → (P → Q)) → ((P → Q) → P) → Q :=
+λ f g, let h : P → Q := λ h, f h h in h (g h)
