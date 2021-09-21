@@ -22,6 +22,9 @@
 
 ** Tácticas
 
++ [[./src/Miscelaneas/La_tactica_conv.lean][La táctica conv]]
+#+INCLUDE: "./src/Miscelaneas/La_tactica_conv.lean" src lean
+
 + [[./src/Miscelaneas/La_tactica_convert.lean][La táctica convert]]
 #+INCLUDE: "./src/Miscelaneas/La_tactica_convert.lean" src lean
 
