@@ -28,6 +28,9 @@
 + [[./src/Miscelaneas/La_tactica_conv.lean][La táctica conv]]
 #+INCLUDE: "./src/Miscelaneas/La_tactica_conv.lean" src lean
 
++ [[./src/Miscelaneas/La_tactica_conv_lhs.lean][La táctica conv_lhs]]
+#+INCLUDE: "./src/Miscelaneas/La_tactica_conv_lhs.lean" src lean
+
 + [[./src/Miscelaneas/La_tactica_convert.lean][La táctica convert]]
 #+INCLUDE: "./src/Miscelaneas/La_tactica_convert.lean" src lean
 
@@ -68,7 +71,6 @@
 
 + [[./src/Miscelaneas/Demostracion_constructiva_de_tautologia.lean][Demostración constructiva de tautología]]
 #+INCLUDE: "./src/Miscelaneas/Demostracion_constructiva_de_tautologia.lean" src lean
-
 
 ** Teoría de conjuntos
 
