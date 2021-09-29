@@ -228,6 +228,9 @@
 + [[./src/Miscelaneas/Suma_de_fila_del_triangulo_de_Pascal.lean][Suma de fila del triángulo de Pascal]]
 #+INCLUDE: "./src/Miscelaneas/Suma_de_fila_del_triangulo_de_Pascal.lean" src lean
 
++ [[./src/Miscelaneas/Cuadrado_del_sumatorio_de_productos.lean][Cuadrado del sumatorio de productos]]
+#+INCLUDE: "./src/Miscelaneas/Cuadrado_del_sumatorio_de_productos.lean" src lean
+
 ** Listas
 
 + [[./src/Miscelaneas/Concatenacion_con_permutaciones.lean][Concatenación con permutaciones]]
