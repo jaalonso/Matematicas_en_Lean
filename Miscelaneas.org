@@ -110,6 +110,9 @@
 + [[./src/Miscelaneas/CS_de_no_vacio.lean][CS de no vacío]]
 #+INCLUDE: "./src/Miscelaneas/CS_de_no_vacio.lean" src lean
 
++ [[./src/Miscelaneas/Teorema_de_Cantor.lean][Teorema de Cantor]]
+#+INCLUDE: "./src/Miscelaneas/Teorema_de_Cantor.lean" src lean
+
 ** Funciones
 
 + [[./src/Miscelaneas/La_composicion_por_la_izquierda_con_una_inyectiva_es_inyectiva.lean][La composición por la izquierda con una inyectiva es inyectiva]]
