@@ -655,9 +655,6 @@ conjuntistas y sobre las funciones.
 + [[./src/Conjuntos/Teorema_de_Cantor.lean][Teorema de Cantor]]
 #+INCLUDE: "./src/Conjuntos/Teorema_de_Cantor.lean" src lean
 
-# * Misceláneas
-# #+INCLUDE: ./Miscelaneas.org
-
 * Bibliografía
 
 + [[https://github.com/mavam/abstract-algebra-cheatsheet][Abstract algebra cheatsheet]]. de Matthias Vallentin.
