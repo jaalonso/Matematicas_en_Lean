@@ -3,7 +3,7 @@
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="./estilo.css" />
 #+LATEX_CLASS: book-noparts
 #+LATEX_CLASS_OPTIONS: [a4paper,12pt,twoside]
-
+ 
 * Contenido                                                             :TOC:
 - [[#introducción][Introducción]]
   - [[#resumen][Resumen]]
