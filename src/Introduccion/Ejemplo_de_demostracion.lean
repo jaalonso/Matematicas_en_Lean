@@ -1,18 +1,19 @@
 -- ---------------------------------------------------------------------
--- Ejercicio. Demostrar que los procutos de los números naturales por
+-- Ejercicio. Demostrar que los productos de los números naturales por
 -- números pares son pares.
 -- ---------------------------------------------------------------------
 
-import data.nat.parity tactic
+import data.nat.parity
+import tactic
 
 open nat
 
 -- 1ª demostración
 example : ∀ m n : ℕ, even n → even (m * n) :=
-  assume m n ⟨k, (hk : n = 2 * k)⟩,
-  have hmn : m * n = 2 * (m * k),
-    by rw [hk, mul_left_comm],
-  show ∃ l, m * n = 2 * l,
+  assume m n ⟨k, (hk : n = k + k)⟩,
+  have hmn : m * n = m * k + m * k,
+    by rw [hk, mul_add],
+  show ∃ l, m * n = l + l,
     from ⟨_, hmn⟩
 
 -- 2ª demostración (mediante término)
