@@ -18,7 +18,7 @@ example : ∀ m n : ℕ, even n → even (m * n) :=
 
 -- 2ª demostración (mediante término)
 example : ∀ m n : ℕ, even n → even (m * n) :=
-  λ m n ⟨k, hk⟩, ⟨m * k, by rw [hk, mul_left_comm]⟩
+  λ m n ⟨k, hk⟩, ⟨m * k, by rw [hk, mul_add]⟩
 
 -- 3ª demostración (mediante tácticas)
 example : ∀ m n : ℕ, even n → even (m * n) :=
