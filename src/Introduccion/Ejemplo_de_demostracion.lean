@@ -30,7 +30,7 @@ example : ∀ m n : ℕ, even n → even (m * n) :=
 
 -- 4ª demostración (mediante tácticas en una línea)
 example : ∀ m n : ℕ, even n → even (m * n) :=
-  by rintros m n ⟨k, hk⟩; use m * k; rw [hk, mul_left_comm]
+  by rintros m n ⟨k, hk⟩; use m * k; rw [hk, mul_add]
 
 -- 4ª demostración (automática)
 example : ∀ m n : ℕ, even n → even (m * n) :=
