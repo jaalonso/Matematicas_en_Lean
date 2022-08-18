@@ -4,5 +4,5 @@
 
 -- #eval 2 + 3
 
--- Comentario: Al poner el cursor sobre eval se escribe el resultado en el
--- minibuffer.
+-- Comentario: Al descomentar la línea anterior y poner el cursor sobre
+-- eval se escribe el resultado en el minibuffer.
