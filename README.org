@@ -3,7 +3,7 @@
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="./estilo.css" />
 #+LATEX_CLASS: book-noparts
 #+LATEX_CLASS_OPTIONS: [a4paper,12pt,twoside]
- 
+
 * Contenido                                                             :TOC:
 - [[#introducción][Introducción]]
   - [[#resumen][Resumen]]
@@ -31,7 +31,7 @@
 ** Resumen
 
 El objetivo de este trabajo es presentar el uso de Lean mediante ejemplos
-matemáticos usando Lean. Está basado en el libro [[https://leanprover-community.github.io/mathematics_in_lean/index.html][Mathematics in Lean]] de Jeremy
+matemáticos. Está basado en el libro [[https://leanprover-community.github.io/mathematics_in_lean/index.html][Mathematics in Lean]] de Jeremy
 Avigad, Kevin Buzzard, Robert Y. Lewis y Patrick Massot.
 
 El trabajo se presenta en 3 formas:
