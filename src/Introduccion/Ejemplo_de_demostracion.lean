@@ -25,7 +25,7 @@ example : ∀ m n : ℕ, even n → even (m * n) :=
   begin
     rintros m n ⟨k, hk⟩,
     use m * k,
-    rw [hk, mul_left_comm]
+    rw [hk, mul_add]
   end
 
 -- 4ª demostración (mediante tácticas en una línea)
