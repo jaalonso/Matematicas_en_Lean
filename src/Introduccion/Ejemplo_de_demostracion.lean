@@ -32,7 +32,7 @@ example : ∀ m n : ℕ, even n → even (m * n) :=
 example : ∀ m n : ℕ, even n → even (m * n) :=
   by rintros m n ⟨k, hk⟩; use m * k; rw [hk, mul_add]
 
--- 4ª demostración (automática)
+-- 5ª demostración (automática)
 example : ∀ m n : ℕ, even n → even (m * n) :=
   by intros; simp * with parity_simps
 
