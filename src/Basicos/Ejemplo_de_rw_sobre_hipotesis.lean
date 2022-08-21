@@ -1,6 +1,6 @@
 -- ---------------------------------------------------------------------
 -- Ejercicio. Demostrar que si a, b, c, d, e y f son números reales
--- tales que 
+-- tales que
 --    a * b = c * d
 --    e = f
 -- Entonces,
@@ -12,10 +12,10 @@ import data.real.basic
 -- 1ª demostración
 -- ===============
 
-example 
-  (a b c d e f : ℝ) 
-  (h1 : a * b = c * d) 
-  (h2 : e = f) 
+example
+  (a b c d e f : ℝ)
+  (h1 : a * b = c * d)
+  (h2 : e = f)
   : a * (b * e) = c * (d * f) :=
 begin
   rw h2,
@@ -48,7 +48,7 @@ end
 --    no goals
 --
 -- En el desarrollo anterior, S es el conjunto de las hipótesis; es
--- decir, 
+-- decir,
 --    S = {a b c d e f : ℝ,
 --         h1 : a * b = c * d,
 --         h2 : e = f}
@@ -56,10 +56,10 @@ end
 -- 2ª demostración
 -- ===============
 
-example 
-  (a b c d e f : ℝ) 
-  (h1 : a * b = c * d) 
-  (h2 : e = f) 
+example
+  (a b c d e f : ℝ)
+  (h1 : a * b = c * d)
+  (h2 : e = f)
   : a * (b * e) = c * (d * f) :=
 calc
   a * (b * e) = a * (b * f) : by rw h2
@@ -70,13 +70,12 @@ calc
 -- 3ª demostración
 -- ===============
 
-example 
-  (a b c d e f : ℝ) 
-  (h1 : a * b = c * d) 
-  (h2 : e = f) 
+example
+  (a b c d e f : ℝ)
+  (h1 : a * b = c * d)
+  (h2 : e = f)
   : a * (b * e) = c * (d * f) :=
 by finish
 
 -- Comentario: La táctica finish (ver https://bit.ly/3ionJHE) simplifica
 -- el objetivo usando las hipótesis.
-
