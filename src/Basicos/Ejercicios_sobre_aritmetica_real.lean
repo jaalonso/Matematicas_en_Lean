@@ -1,6 +1,6 @@
 -- ---------------------------------------------------------------------
 -- Ejercicio 1. Demostrar que los números reales tienen la siguente
--- propiedad 
+-- propiedad
 --    (c * b) * a = b * (a * c)
 -- ---------------------------------------------------------------------
 
@@ -12,8 +12,8 @@ import data.real.basic
 -- 1ª demostración
 -- ===============
 
-example 
-  (a b c : ℝ) 
+example
+  (a b c : ℝ)
   : (c * b) * a = b * (a * c) :=
 begin
   rw mul_comm c b,
@@ -38,8 +38,8 @@ end
 -- 2ª demostración
 -- ===============
 
-example 
-  (a b c : ℝ) 
+example
+  (a b c : ℝ)
   : (c * b) * a = b * (a * c) :=
 calc
   (c * b) * a = (b * c) * a : by rw mul_comm c b
@@ -49,22 +49,22 @@ calc
 -- 3ª demostración
 -- ===============
 
-example 
-  (a b c : ℝ) 
+example
+  (a b c : ℝ)
   : (c * b) * a = b * (a * c) :=
 by ring
 
 -- ---------------------------------------------------------------------
 -- Ejercicio 2. Demostrar que los números reales tienen la siguente
--- propiedad 
+-- propiedad
 --    a * (b * c) = b * (a * c)
 -- ---------------------------------------------------------------------
 
 -- 1ª demostración
 -- ===============
 
-example 
-  (a b c : ℝ) 
+example
+  (a b c : ℝ)
   : a * (b * c) = b * (a * c) :=
 begin
   rw ←mul_assoc,
@@ -92,8 +92,8 @@ end
 -- 2ª demostración
 -- ===============
 
-example 
-  (a b c : ℝ) 
+example
+  (a b c : ℝ)
   : a * (b * c) = b * (a * c) :=
 calc
   a * (b * c) = (a * b) * c : by rw ←mul_assoc
@@ -103,7 +103,7 @@ calc
 -- 3ª demostración
 -- ===============
 
-example 
-  (a b c : ℝ) 
+example
+  (a b c : ℝ)
   : a * (b * c) = b * (a * c) :=
 by ring
