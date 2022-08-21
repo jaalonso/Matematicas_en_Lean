@@ -10,31 +10,72 @@ open nat
 
 -- 1ª demostración
 example : ∀ m n : ℕ, even n → even (m * n) :=
+begin
+  intros m n hn,
+  unfold even at *,
+  cases hn with k hk,
+  use m * k,
+  calc m * n
+       = m * (k + k)   : congr_arg (has_mul.mul m) hk
+   ... = m * k + m * k : mul_add m k k
+end
+
+-- 2ª demostración
+example : ∀ m n : ℕ, even n → even (m * n) :=
+begin
+  intros m n hn,
+  cases hn with k hk,
+  use m * k,
+  calc m * n
+       = m * (k + k)   : congr_arg (has_mul.mul m) hk
+   ... = m * k + m * k : mul_add m k k
+end
+
+-- 3ª demostración
+example : ∀ m n : ℕ, even n → even (m * n) :=
+begin
+  rintros m n ⟨k, hk⟩,
+  use m * k,
+  calc m * n
+       = m * (k + k)   : congr_arg (has_mul.mul m) hk
+   ... = m * k + m * k : mul_add m k k
+end
+
+-- 4ª demostración
+example : ∀ m n : ℕ, even n → even (m * n) :=
+begin
+  rintros m n ⟨k, hk⟩,
+  use m * k,
+  rw hk,
+  exact mul_add m k k,
+end
+
+-- 5ª demostración
+example : ∀ m n : ℕ, even n → even (m * n) :=
+begin
+  rintros m n ⟨k, hk⟩,
+  use m * k,
+  rw [hk, mul_add]
+end
+
+-- 6ª demostración
+example : ∀ m n : ℕ, even n → even (m * n) :=
+begin
+  rintros m n ⟨k, hk⟩,
+  exact ⟨m * k, by rw [hk, mul_add]⟩
+end
+
+-- 7ª demostración
+example : ∀ m n : ℕ, even n → even (m * n) :=
+λ m n ⟨k, hk⟩, ⟨m * k, by rw [hk, mul_add]⟩
+
+-- 8ª demostración
+example : ∀ m n : ℕ, even n → even (m * n) :=
   assume m n ⟨k, (hk : n = k + k)⟩,
   have hmn : m * n = m * k + m * k,
     by rw [hk, mul_add],
   show ∃ l, m * n = l + l,
     from ⟨_, hmn⟩
-
--- 2ª demostración (mediante término)
-example : ∀ m n : ℕ, even n → even (m * n) :=
-  λ m n ⟨k, hk⟩, ⟨m * k, by rw [hk, mul_add]⟩
-
--- 3ª demostración (mediante tácticas)
-example : ∀ m n : ℕ, even n → even (m * n) :=
-  begin
-    rintros m n ⟨k, hk⟩,
-    use m * k,
-    rw [hk, mul_add]
-  end
-
--- 4ª demostración (mediante tácticas en una línea)
-example : ∀ m n : ℕ, even n → even (m * n) :=
-  by rintros m n ⟨k, hk⟩; use m * k; rw [hk, mul_add]
-
--- 5ª demostración (automática)
-example : ∀ m n : ℕ, even n → even (m * n) :=
-  by intros; simp * with parity_simps
 
 -- Comentarios:
 -- 1. Al poner el curso en la línea 1 sobre data.nat.parity y pulsar M-.
