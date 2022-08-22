@@ -1,18 +1,18 @@
 -- ---------------------------------------------------------------------
--- Ejercicio 1. Importar la librería de las tácticas. 
+-- Ejercicio 1. Importar la librería de las tácticas.
 -- ----------------------------------------------------------------------
 
 import tactic
 
 -- ---------------------------------------------------------------------
 -- Ejercicio 2. Declarar R como una variable de tipo de los anillos
--- conmutativos.  
+-- conmutativos.
 -- ----------------------------------------------------------------------
 
 variables (R : Type*) [comm_ring R]
 
 -- ---------------------------------------------------------------------
--- Ejercicio 3. Declarar a, b, c y d como variables sobre R. 
+-- Ejercicio 3. Declarar a, b, c y d como variables sobre R.
 -- ----------------------------------------------------------------------
 
 variables a b c d : R
@@ -26,7 +26,7 @@ example : (c * b) * a = b * (a * c) :=
 by ring
 
 -- ---------------------------------------------------------------------
--- Ejercicio 5. Demostrar que 
+-- Ejercicio 5. Demostrar que
 --     (a + b) * (a + b) = a * a + 2 * (a * b) + b * b
 -- ----------------------------------------------------------------------
 
@@ -46,12 +46,12 @@ by ring
 --    c = d * a + b
 --    b = a * d
 -- entonces
---    c = 2 * a * d 
+--    c = 2 * a * d
 -- ----------------------------------------------------------------------
 
-example 
-  (h1 : c = d * a + b) 
-  (h2 : b = a * d) 
+example
+  (h1 : c = d * a + b)
+  (h2 : b = a * d)
   : c = 2 * a * d :=
 begin
   rw [h1, h2],
