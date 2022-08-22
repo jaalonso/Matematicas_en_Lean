@@ -3,7 +3,7 @@
 --    c = d * a + b
 --    b = a * d
 -- entonces
---    c = 2 * a * d 
+--    c = 2 * a * d
 -- ---------------------------------------------------------------------
 
 import data.real.basic
@@ -13,8 +13,8 @@ variables a b c d : ℝ
 -- 1ª demostración
 -- ===============
 
-example 
-  (h1 : c = d * a + b) 
+example
+  (h1 : c = d * a + b)
   (h2 : b = a * d)
   : c = 2 * a * d :=
 begin
@@ -30,11 +30,11 @@ end
 -- 1. La táctica (rw e at h) rescribe la parte izquierda de la
 --    ecuación e por la derecha en la hipótesis h.
 -- 2. La táctica (exact p) tiene éxito si el tipo de p se unifica con el
---    objetivo. 
+--    objetivo.
 -- 3. La táctica (clear h) borra la hipótesis h.
 
 -- El desarrollo de la prueba es
---    
+--
 --    a b c d : ℝ,
 --    h1 : c = d * a + b,
 --    h2 : b = a * d
@@ -66,8 +66,8 @@ end
 -- 2ª demostración
 -- ===============
 
-example 
-  (h1 : c = d * a + b) 
+example
+  (h1 : c = d * a + b)
   (h2 : b = a * d)
   : c = 2 * a * d :=
 calc
@@ -80,8 +80,8 @@ calc
 -- 3ª demostración
 -- ===============
 
-example 
-  (h1 : c = d * a + b) 
+example
+  (h1 : c = d * a + b)
   (h2 : b = a * d)
   : c = 2 * a * d :=
 by rw [h1, h2, mul_comm d a, ← two_mul (a * d), mul_assoc]
@@ -89,23 +89,23 @@ by rw [h1, h2, mul_comm d a, ← two_mul (a * d), mul_assoc]
 -- 4ª demostración
 -- ===============
 
-example 
-  (h1 : c = d * a + b) 
+example
+  (h1 : c = d * a + b)
   (h2 : b = a * d)
   : c = 2 * a * d :=
 begin
-  rw h1, 
+  rw h1,
   rw h2,
   ring,
 end
 
 -- El desarrollo de la prueba es
---    
+--
 --    a b c d : ℝ,
 --    h1 : c = d * a + b,
 --    h2 : b = a * d
 --    ⊢ c = 2 * a * d
--- rw h1, 
+-- rw h1,
 --    ⊢ d * a + b = 2 * a * d
 -- rw h2,
 --    ⊢ d * a + a * d = 2 * a * d
@@ -115,8 +115,8 @@ end
 -- 5ª demostración
 -- ===============
 
-example 
-  (h1 : c = d * a + b) 
+example
+  (h1 : c = d * a + b)
   (h2 : b = a * d)
   : c = 2 * a * d :=
 begin
@@ -127,8 +127,8 @@ end
 -- 6ª demostración
 -- ===============
 
-example 
-  (h1 : c = d * a + b) 
+example
+  (h1 : c = d * a + b)
   (h2 : b = a * d)
   : c = 2 * a * d :=
 by rw [h1, h2]; ring
@@ -136,10 +136,8 @@ by rw [h1, h2]; ring
 -- 7ª demostración
 -- ===============
 
-example 
-  (h1 : c = d * a + b) 
+example
+  (h1 : c = d * a + b)
   (h2 : b = a * d)
   : c = 2 * a * d :=
 by finish * using [two_mul]
-
-
