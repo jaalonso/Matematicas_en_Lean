@@ -32,6 +32,14 @@ variable (a : R)
 -- ===============
 
 example : a + 0 = a :=
+calc a + 0
+     = 0 + a : by rw add_comm
+ ... = a     : by rw zero_add
+
+-- 2ª demostración
+-- ===============
+
+example : a + 0 = a :=
 begin
   rw add_comm,
   rw zero_add,
@@ -48,15 +56,6 @@ end
 -- rw zero_add,
 --    no goals
 
--- 2ª demostración
--- ===============
-
-example : a + 0 = a :=
-calc
-  a + 0 = 0 + a : by rw add_comm
-    ... = a     : by rw zero_add
-
-
 -- 3ª demostración
 -- ===============
 
@@ -69,6 +68,14 @@ by rw [add_comm, zero_add]
 -- ----------------------------------------------------------------------
 
 -- 1ª demostración
+-- ===============
+
+example : a + -a = 0 :=
+calc a + -a
+     = -a + a : by rw add_comm
+ ... = 0      : by rw add_left_neg
+
+-- 2ª demostración
 -- ===============
 
 example : a + -a = 0 :=
@@ -88,20 +95,11 @@ end
 -- rw add_left_neg,
 --    no goals
 
--- 2ª demostración
--- ===============
-
-example : a + -a = 0 :=
-calc
-  a + -a = -a + a : by rw add_comm
-     ... = 0 : by rw add_left_neg
-
 -- 3ª demostración
 -- ===============
 
 theorem add_right_neg : a + -a = 0 :=
 by rw [add_comm, add_left_neg]
-
 
 -- ---------------------------------------------------------------------
 -- Ejercicio 6. Cerrar el espacio de nombre my_ring.
