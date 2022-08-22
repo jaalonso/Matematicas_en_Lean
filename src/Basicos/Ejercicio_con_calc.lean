@@ -10,7 +10,37 @@ variables a b c d : ℝ
 -- 1ª demostración
 -- ===============
 
-example 
+example
+  : (a + b) * (c + d) = a * c + a * d + b * c + b * d :=
+calc
+  (a + b) * (c + d)
+      = a * (c + d) + b * (c + d)       : by rw add_mul
+  ... = a * c + a * d + b * (c + d)     : by rw mul_add
+  ... = a * c + a * d + (b * c + b * d) : by rw mul_add
+  ... = a * c + a * d + b * c + b * d   : by rw ←add_assoc
+
+-- 2ª demostración
+-- ===============
+
+example
+  : (a + b) * (c + d) = a * c + a * d + b * c + b * d :=
+calc
+  (a + b) * (c + d)
+      = a * (c + d) + b * (c + d)       : by ring
+  ... = a * c + a * d + b * (c + d)     : by ring
+  ... = a * c + a * d + (b * c + b * d) : by ring
+  ... = a * c + a * d + b * c + b * d   : by ring
+
+-- 3ª demostración
+-- ===============
+
+example : (a + b) * (c + d) = a * c + a * d + b * c + b * d :=
+by ring
+
+-- 4ª demostración
+-- ===============
+
+example
   : (a + b) * (c + d) = a * c + a * d + b * c + b * d :=
 begin
    rw add_mul,
@@ -32,26 +62,8 @@ end
 -- rw ← add_assoc,
 --    no goals
 
--- 2ª demostración
--- ===============
-
-example 
-  : (a + b) * (c + d) = a * c + a * d + b * c + b * d :=
-calc 
-  (a + b) * (c + d) 
-      = a * (c + d) + b * (c + d)       : by rw add_mul
-  ... = a * c + a * d + b * (c + d)     : by rw mul_add
-  ... = a * c + a * d + (b * c + b * d) : by rw mul_add
-  ... = a * c + a * d + b * c + b * d   : by rw ←add_assoc
-
--- 3ª demostración 
+-- 5ª demostración
 -- ===============
 
 example : (a + b) * (c + d) = a * c + a * d + b * c + b * d :=
 by rw [add_mul, mul_add, mul_add, ←add_assoc]
-
--- 4ª demostración 
--- ===============
-
-example : (a + b) * (c + d) = a * c + a * d + b * c + b * d :=
-by ring
