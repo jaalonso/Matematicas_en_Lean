@@ -1,4 +1,5 @@
 #+TITLE: Matemáticas en Lean
+#+STARTUP: showall
 #+OPTIONS: ^:nil
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="./estilo.css" />
 #+LATEX_CLASS: book-noparts
