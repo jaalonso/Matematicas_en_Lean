@@ -31,7 +31,7 @@ example : a * 0 = 0 :=
 begin
   have h : a * 0 + a * 0 = a * 0 + 0,
     calc a * 0 + a * 0
-         = a * (0 + 0) : by rw ←mul_add
+         = a * (0 + 0) : by rw ← mul_add
      ... = a * 0       : by rw add_zero
      ... = a * 0 + 0   : by rw add_zero,
   rw add_left_cancel h
