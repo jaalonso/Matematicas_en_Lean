@@ -3,7 +3,7 @@
 --    1. Importar la teoría de anillos.
 --    2. Crear el espacio de nombres my_ring
 --    3. Declarar R como una variable sobre anillos.
---    4. Declarar a y b como variables sobre R. 
+--    4. Declarar a y b como variables sobre R.
 -- ----------------------------------------------------------------------
 
 import algebra.ring            -- 1
@@ -15,11 +15,11 @@ variables {a b : R}            -- 4
 -- Ejercicio 2. Demostrar que si
 --    a + b = 0
 -- entonces
---    -a = b 
+--    -a = b
 -- ----------------------------------------------------------------------
 
-theorem neg_eq_of_add_eq_zero  
-  (h : a + b = 0) 
+theorem neg_eq_of_add_eq_zero
+  (h : a + b = 0)
   : -a = b :=
 calc
   -a  = -a + 0       : by rw add_zero
@@ -42,23 +42,23 @@ lemma neg_add_cancel_right : (a + b) + -b = a :=
 by rw [add_assoc, add_right_neg, add_zero]
 
 -- ---------------------------------------------------------------------
--- Ejercicio 4. Demostrar que si 
+-- Ejercicio 4. Demostrar que si
 --    a + b = 0
 -- entonces
---    a = -b 
+--    a = -b
 -- ----------------------------------------------------------------------
 
-theorem eq_neg_of_add_eq_zero 
-  (h : a + b = 0) 
+theorem eq_neg_of_add_eq_zero
+  (h : a + b = 0)
   : a = -b :=
-calc 
+calc
   a   = (a + b) + -b : by rw neg_add_cancel_right
   ... = 0 + -b       : by rw h
   ... = -b           : by rw zero_add
 
 -- ---------------------------------------------------------------------
 -- Ejercicio 5. Demostrar que
---    - 0 = 0 
+--    - 0 = 0
 -- ----------------------------------------------------------------------
 
 theorem neg_zero : (-0 : R) = 0 :=
@@ -68,7 +68,7 @@ begin
 end
 
 -- El desarrollo de la prueba es
--- 
+--
 --    R : Type u_1,
 --    _inst_1 : ring R
 --    ⊢ -0 = 0
@@ -89,7 +89,7 @@ begin
 end
 
 -- El desarrollo de la prueba es
--- 
+--
 --    R : Type u_1,
 --    _inst_1 : ring R,
 --    a : R
