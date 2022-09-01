@@ -1,12 +1,12 @@
 -- ---------------------------------------------------------------------
 -- Ejercicio. Demostrar que si a, b, c, d y e son números reales tales
--- que 
+-- que
 --    a ≤ b
 --    b < c
 --    c ≤ d
 --    d < e
 -- entonces
---    a < e 
+--    a < e
 -- ----------------------------------------------------------------------
 
 
@@ -17,15 +17,15 @@ variables a b c d e : ℝ
 -- 1ª demostración
 -- ===============
 
-example 
-  (h₀ : a ≤ b) 
-  (h₁ : b < c) 
+example
+  (h₀ : a ≤ b)
+  (h₁ : b < c)
   (h₂ : c ≤ d)
   (h₃ : d < e) :
   a < e :=
 begin
   apply lt_of_le_of_lt h₀,
-  apply lt_trans h₁, 
+  apply lt_trans h₁,
   apply lt_of_le_of_lt h₂,
   exact h₃,
 end
@@ -41,7 +41,7 @@ end
 -- apply lt_of_le_of_lt h₀,
 --    ⊢ b < e
 -- apply lt_trans h₁,
---    ⊢ c < e 
+--    ⊢ c < e
 -- apply lt_of_le_of_lt h₂,
 --    ⊢ d < e
 -- exact h₃,
@@ -50,9 +50,9 @@ end
 -- 2ª demostración
 -- ===============
 
-example 
-  (h₀ : a ≤ b) 
-  (h₁ : b < c) 
+example
+  (h₀ : a ≤ b)
+  (h₁ : b < c)
   (h₂ : c ≤ d)
   (h₃ : d < e) :
   a < e :=
@@ -65,9 +65,9 @@ calc
 -- 3ª demostración
 -- ===============
 
-example 
-  (h₀ : a ≤ b) 
-  (h₁ : b < c) 
+example
+  (h₀ : a ≤ b)
+  (h₁ : b < c)
   (h₂ : c ≤ d)
   (h₃ : d < e) :
   a < e :=
