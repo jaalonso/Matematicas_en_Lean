@@ -1,7 +1,7 @@
 -- ---------------------------------------------------------------------
 -- Ejercicio 1. Realizar las siguientes acciones:
 --    1. Importar la teoría de los números reales
---    2. Declarar x, y y z como variables sobre R. 
+--    2. Declarar x, y y z como variables sobre R.
 -- ----------------------------------------------------------------------
 
 import data.real.basic
@@ -12,16 +12,16 @@ variables (x y z : ℝ)
 -- Ejercicio 2. Demostrar que si
 --    x ≤ y
 --    y ≤ z
--- entonces 
---    x ≤ z 
+-- entonces
+--    x ≤ z
 -- ----------------------------------------------------------------------
 
 -- 1ª demostración
 -- ===============
 
-example 
-  (h1 : x ≤ y) 
-  (h2 : y ≤ z) 
+example
+  (h1 : x ≤ y)
+  (h2 : y ≤ z)
   : x ≤ z :=
 begin
   apply le_trans,
@@ -45,9 +45,9 @@ end
 -- 2ª demostración
 -- ===============
 
-example 
-  (h1 : x ≤ y) 
-  (h2 : y ≤ z) 
+example
+  (h1 : x ≤ y)
+  (h2 : y ≤ z)
   : x ≤ z :=
 begin
   apply le_trans h1,
@@ -68,18 +68,18 @@ end
 -- 3ª demostración
 -- ===============
 
-example 
-  (h1 : x ≤ y) 
-  (h2 : y ≤ z) 
+example
+  (h1 : x ≤ y)
+  (h2 : y ≤ z)
   : x ≤ z :=
 by exact le_trans h1 h2
 
 -- 4ª demostración
 -- ===============
 
-example 
-  (h1 : x ≤ y) 
-  (h2 : y ≤ z) 
+example
+  (h1 : x ≤ y)
+  (h2 : y ≤ z)
   : x ≤ z :=
 le_trans h1 h2
 
