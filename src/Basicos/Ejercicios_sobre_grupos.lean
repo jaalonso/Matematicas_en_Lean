@@ -3,7 +3,7 @@
 --    1. Importar la teoría de grupo.
 --    2. Crear el espacio de nombres my_group
 --    3. Declarar G como una variable sobre anillos.
---    4. Declarar a y b como variable sobre G. 
+--    4. Declarar a y b como variable sobre G.
 -- ----------------------------------------------------------------------
 
 import algebra.group            -- 1
@@ -42,13 +42,13 @@ calc
 -- ---------------------------------------------------------------------
 -- Ejercicio 4. Demostrar que si
 --     b * a = 1
--- entonces 
---    a⁻¹ = b 
+-- entonces
+--    a⁻¹ = b
 -- ----------------------------------------------------------------------
 
 
 lemma inv_eq_of_mul_eq_one
-  (h : b * a = 1) 
+  (h : b * a = 1)
   : a⁻¹ = b :=
 calc
   a⁻¹ =  1 * a⁻¹       : by rw one_mul
@@ -65,7 +65,7 @@ calc
 -- En la demostración se usará el siguiente lema:
 lemma mul_inv_rev_aux : (b⁻¹ * a⁻¹) * (a * b) = 1 :=
 calc
-  (b⁻¹ * a⁻¹) * (a * b) 
+  (b⁻¹ * a⁻¹) * (a * b)
       = b⁻¹ * (a⁻¹ * (a * b)) : by rw mul_assoc
   ... = b⁻¹ * ((a⁻¹ * a) * b) : by rw mul_assoc
   ... = b⁻¹ * (1 * b)         : by rw mul_left_inv
@@ -79,7 +79,7 @@ begin
 end
 
 -- El desarrollo de la prueba es
--- 
+--
 --    G : Type u_1,
 --    _inst_1 : group G,
 --    a b : G

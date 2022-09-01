@@ -3,7 +3,7 @@
 --    1. Importar la teoría de anillos.
 --    2. Crear el espacio de nombres my_ring
 --    3. Declarar R como una variable sobre anillos.
---    4. Declarar a como variable sobre R. 
+--    4. Declarar a como variable sobre R.
 -- ----------------------------------------------------------------------
 
 import algebra.ring            -- 1
@@ -13,14 +13,14 @@ variables (a : R)              -- 4
 
 -- ---------------------------------------------------------------------
 -- Ejercicio 2. Demostrar que
---    1 + 1 = 2 
+--    1 + 1 = 2
 -- ----------------------------------------------------------------------
 
 lemma one_add_one_eq_two : 1 + 1 = (2 : R) :=
 by refl
 
 -- ---------------------------------------------------------------------
--- Ejercicio 3. Demostrar que 
+-- Ejercicio 3. Demostrar que
 --    2 * a = a + a
 -- ----------------------------------------------------------------------
 
