@@ -30,7 +30,7 @@ variables a b c d e : ℝ                     -- 3
 --    a ≤ b
 --    c < d
 -- entonces
---    a + exp c + e < b + exp d + e :=
+--    a + exp c + e < b + exp d + e
 -- ----------------------------------------------------------------------
 
 example
