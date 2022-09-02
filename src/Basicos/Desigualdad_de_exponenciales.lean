@@ -5,7 +5,7 @@
 --    3. Declarar a y b como variables sobre los reales.
 -- ----------------------------------------------------------------------
 
-import analysis.special_functions.exp_log   -- 1
+import analysis.special_functions.log.basic -- 1
 open real                                   -- 2
 variables (a b : ℝ)                         -- 3
 
