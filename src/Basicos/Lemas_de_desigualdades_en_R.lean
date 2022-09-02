@@ -12,7 +12,7 @@
 --    exp_pos
 -- ----------------------------------------------------------------------
 
-import analysis.special_functions.exp_log
+import analysis.special_functions.log.basic
 
 open real
 
