@@ -5,7 +5,7 @@
 --    c - exp b ≤ c - exp a :=
 -- ----------------------------------------------------------------------
 
-import analysis.special_functions.log.basic -- 1
+import analysis.special_functions.log.basic
 import tactic
 
 open real
