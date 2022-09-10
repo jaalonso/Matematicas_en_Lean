@@ -10,7 +10,7 @@ import tactic
 
 open real
 
-variables a b c d : ℝ
+variables a b c : ℝ
 
 -- 1ª demostración
 -- ===============
@@ -18,7 +18,11 @@ variables a b c d : ℝ
 example
   (h : a ≤ b)
   : c - b ≤ c - a :=
-by library_search
+-- by library_search
+sub_le_sub_left h c
+
+-- 2ª demostración
+-- ===============
 
 example
   (h : a ≤ b)
@@ -42,22 +46,31 @@ end
 -- apply exp_le_exp.mpr h,
 --    no goals
 
--- 2ª demostración
--- ===============
-
-example
-  (h : a ≤ b)
-  : c - exp b ≤ c - exp a :=
--- by library_search [exp_le_exp.mpr h]
-by exact sub_le_sub_left (exp_le_exp.mpr h) c
-
 -- 3ª demostración
 -- ===============
 
 example
   (h : a ≤ b)
   : c - exp b ≤ c - exp a :=
+-- by library_search [exp_le_exp.mpr h]
+sub_le_sub_left (exp_le_exp.mpr h) c
+
+-- 4ª demostración
+-- ===============
+
+example
+  (h : a ≤ b)
+  : c - exp b ≤ c - exp a :=
 by linarith [exp_le_exp.mpr h]
+
+-- 5ª demostración
+-- ===============
+
+example
+  (h : a ≤ b)
+  : c - exp b ≤ c - exp a :=
+-- by hint
+by finish
 
 -- Los lemas usados son:
 -- #check (add_le_add : a ≤ b → c ≤ d → a + c ≤ b + d)
