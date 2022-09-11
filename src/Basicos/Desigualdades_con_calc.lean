@@ -11,7 +11,7 @@ variables a b : ℝ
 -- 1ª demostración
 example : 2*a*b ≤ a^2 + b^2 :=
 begin
-  have : 0 ≤ (a - b)^2 := pow_two_nonneg (a - b),
+  have : 0 ≤ (a - b)^2 := sq_nonneg (a - b),
   have : 0 ≤ a^2 - 2*a*b + b^2, by linarith,
   show 2*a*b ≤ a^2 + b^2, by linarith,
 end
