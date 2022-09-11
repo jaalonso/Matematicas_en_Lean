@@ -31,9 +31,11 @@ begin
   have h : ∀ x y, max x y ≤ max y x,
   { intros x y,
     apply max_le,
-    apply le_max_right,
-    apply le_max_left },
-  apply le_antisymm, apply h, apply h
+    { apply le_max_right },
+    { apply le_max_left }},
+  apply le_antisymm,
+  apply h,
+  apply h
 end
 
 -- 3ª demostración
