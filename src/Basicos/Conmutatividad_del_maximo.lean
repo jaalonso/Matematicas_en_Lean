@@ -16,11 +16,11 @@ begin
   { show max a b ≤ max b a,
     apply max_le,
     { apply le_max_right },
-    apply le_max_left },
+    { apply le_max_left }},
   { show max b a ≤ max a b,
     apply max_le,
     { apply le_max_right },
-    apply le_max_left }
+    { apply le_max_left }},
 end
 
 -- 2ª demostración
