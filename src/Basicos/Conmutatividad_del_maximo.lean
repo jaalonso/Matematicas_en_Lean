@@ -43,6 +43,17 @@ end
 
 example : max a b = max b a :=
 begin
+  have h : ∀ {x y : ℝ}, max x y ≤ max y x,
+  { intros x y,
+    exact max_le (le_max_right y x) (le_max_left y x),},
+  exact le_antisymm h h,
+end
+
+-- 4ª demostración
+-- ===============
+
+example : max a b = max b a :=
+begin
   apply le_antisymm,
   repeat {
     apply max_le,
