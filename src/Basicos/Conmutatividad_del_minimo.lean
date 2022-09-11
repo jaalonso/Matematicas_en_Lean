@@ -5,7 +5,7 @@
 
 import data.real.basic
 
-variables a b c : ℝ
+variables a b : ℝ
 
 -- 1ª demostración
 -- ===============
