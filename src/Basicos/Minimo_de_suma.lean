@@ -11,8 +11,8 @@ example : min a b + c = min (a + c) (b + c) :=
 begin
   by_cases (a ≤ b),
   { have h1 : a + c ≤ b + c,
-      apply add_le_add_right h, 
-    calc min a b + c = a + c               : by simp [min_eq_left h] 
+      apply add_le_add_right h,
+    calc min a b + c = a + c               : by simp [min_eq_left h]
                  ... = min (a + c) (b + c) : by simp [min_eq_left h1]},
   { have h2: b ≤ a,
       linarith,
