@@ -5,7 +5,7 @@
 
 import data.real.basic
 
-variables a b c : ℝ
+variables a b : ℝ
 
 example : |a| - |b| ≤ |a - b| :=
 calc |a| - |b|
