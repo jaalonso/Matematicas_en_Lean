@@ -26,6 +26,28 @@ dvd_trans h₀ h₁
 --    x ∣ y * x * z
 -- ----------------------------------------------------------------------
 
+-- 1ª demostración
+-- ===============
+
+example : x ∣ y * x * z :=
+begin
+  have h1 : x ∣ y * x,
+    { exact dvd_mul_left x y },
+  have h2 : (y * x) ∣ (y * x * z),
+    { exact dvd.intro z rfl},
+  show x ∣ y * x * z,
+    { exact dvd_trans h1 h2},
+end
+
+-- 2ª demostración
+-- ===============
+
+example : x ∣ y * x * z :=
+dvd_trans (dvd_mul_left x y) (dvd.intro z rfl)
+
+-- 3ª demostración
+-- ===============
+
 example : x ∣ y * x * z :=
 begin
   apply dvd_mul_of_dvd_left,
