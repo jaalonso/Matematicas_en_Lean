@@ -67,10 +67,13 @@ end
 --    x ∣ x^2
 -- ----------------------------------------------------------------------
 
+-- 1ª demostración
+-- ===============
+
 example : x ∣ x^2 :=
 begin
   rw pow_two,
-  apply dvd_mul_left
+  apply dvd_mul_right,
 end
 
 -- Su desarrollo es
@@ -80,6 +83,12 @@ end
 --    ⊢ x ∣ x * x
 -- apply dvd_mul_left
 --    no goals
+
+-- 2ª demostración
+-- ===============
+
+example : x ∣ x^2 :=
+by apply dvd_mul_right
 
 -- Lemas usados
 -- ============
