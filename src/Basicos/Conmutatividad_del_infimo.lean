@@ -11,7 +11,39 @@ variables x y z : α
 -- 1ª demostración
 -- ===============
 
-lemma aux : x ⊓ y ≤ y ⊓ x :=
+lemma aux1 : x ⊓ y ≤ y ⊓ x :=
+begin
+  have h1 : x ⊓ y ≤ y,
+    by exact inf_le_right,
+  have h2 : x ⊓ y ≤ x,
+    by exact inf_le_left,
+  show x ⊓ y ≤ y ⊓ x,
+    by exact le_inf h1 h2,
+end
+
+example : x ⊓ y = y ⊓ x :=
+begin
+  have h1 : x ⊓ y ≤ y ⊓ x,
+    by exact aux1 x y,
+  have h2 : y ⊓ x ≤ x ⊓ y,
+    by exact aux1 y x,
+  show x ⊓ y = y ⊓ x,
+    by exact le_antisymm h1 h2,
+end
+
+-- 2ª demostración
+-- ===============
+
+lemma aux2 : x ⊓ y ≤ y ⊓ x :=
+le_inf inf_le_right inf_le_left
+
+example : x ⊓ y = y ⊓ x :=
+le_antisymm (aux2 x y) (aux2 y x)
+
+-- 3ª demostración
+-- ===============
+
+lemma aux3 : x ⊓ y ≤ y ⊓ x :=
 begin
   apply le_inf,
   apply inf_le_right,
@@ -31,8 +63,8 @@ end
 example : x ⊓ y = y ⊓ x :=
 begin
   apply le_antisymm,
-  apply aux,
-  apply aux,
+  apply aux3,
+  apply aux3,
 end
 
 -- Su desarrollo es
@@ -45,13 +77,13 @@ end
 -- |   apply aux,
 -- no goals
 
--- 2ª demostración
+-- 4ª demostración
 -- ===============
 
 example : x ⊓ y = y ⊓ x :=
 by apply le_antisymm; simp
 
--- 3ª demostración
+-- 5ª demostración
 -- ===============
 
 example : x ⊓ y = y ⊓ x :=
