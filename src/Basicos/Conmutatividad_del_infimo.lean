@@ -87,7 +87,15 @@ by apply le_antisymm; simp
 -- ===============
 
 example : x ⊓ y = y ⊓ x :=
+-- by library_search
 inf_comm
+
+-- 6ª demostración
+-- ===============
+
+example : x ⊓ y = y ⊓ x :=
+-- by hint
+by finish
 
 -- Lemas usados
 -- ============
