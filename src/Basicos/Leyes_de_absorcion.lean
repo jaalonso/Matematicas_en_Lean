@@ -88,6 +88,33 @@ by simp
 
 example : x ⊔ (x ⊓ y) = x :=
 begin
+  have h1 : x ⊔ (x ⊓ y) ≤ x, finish,
+  have h2 : x ≤ x ⊔ (x ⊓ y), finish,
+  show x ⊔ (x ⊓ y) = x,
+    by exact le_antisymm h1 h2,
+end
+
+-- 2ª demostración
+-- ===============
+
+example : x ⊔ (x ⊓ y) = x :=
+begin
+  have h1 : x ⊔ (x ⊓ y) ≤ x,
+  { have h1a : x ≤ x := le_rfl,
+    have h1b : x ⊓ y ≤ x := inf_le_left,
+    show x ⊔ (x ⊓ y) ≤ x,
+      by exact sup_le h1a h1b,
+  },
+  have h2 : x ≤ x ⊔ (x ⊓ y) := le_sup_left,
+  show x ⊔ (x ⊓ y) = x,
+    by exact le_antisymm h1 h2,
+end
+
+-- 3ª demostración
+-- ===============
+
+example : x ⊔ (x ⊓ y) = x :=
+begin
   apply le_antisymm,
   { apply sup_le,
     { apply le_refl },
@@ -109,14 +136,16 @@ end
 -- | |    { apply le_sup_left },
 -- no goals
 
--- 2ª demostración
+-- 4ª demostración
 -- ===============
 
 example : x ⊔ (x ⊓ y) = x :=
-by simp
-
--- 3ª demostración
--- ===============
-
-example : x ⊔ (x ⊓ y) = x :=
+-- by library_search
 sup_inf_self
+
+-- 4ª demostración
+-- ===============
+
+example : x ⊔ (x ⊓ y) = x :=
+-- by hint
+by simp
