@@ -5,7 +5,7 @@
 --    3. Declarar a, b y c como variables sobre R.
 -- ----------------------------------------------------------------------
 
-import algebra.ordered_ring              -- 1
+import algebra.order.ring                -- 1
 variables {R : Type*} [ordered_ring R]   -- 2
 variables a b c: R                       -- 3
 
@@ -18,7 +18,7 @@ example : a ≤ b → 0 ≤ b - a :=
 begin
   intro h,
   calc
-    0   = a - a : by rw sub_self
+    0   = a - a : (sub_self a).symm
     ... ≤ b - a : sub_le_sub_right h a
 end
 
