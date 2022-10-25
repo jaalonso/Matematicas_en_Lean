@@ -27,6 +27,9 @@ end
 --    0 ≤ b - a → a ≤ b
 -- ----------------------------------------------------------------------
 
+-- 1ª demostración
+-- ===============
+
 example : 0 ≤ b - a → a ≤ b :=
 begin
   intro h,
@@ -35,6 +38,20 @@ begin
     ... ≤ (b - a) + a : add_le_add_right h a
     ... = b           : sub_add_cancel b a
 end
+
+-- 2ª demostración
+-- ===============
+
+example : 0 ≤ b - a → a ≤ b :=
+-- by library_search
+sub_nonneg.mp
+
+-- 3ª demostración
+-- ===============
+
+example : 0 ≤ b - a → a ≤ b :=
+-- by hint
+by simp
 
 -- ---------------------------------------------------------------------
 -- Ejercicio 4. Demostrar que
@@ -47,40 +64,56 @@ end
 -- 1ª demostración
 -- ===============
 
+example
+  (h1 : a ≤ b)
+  (h2 : 0 ≤ c)
+  : a * c ≤ b * c :=
+begin
+  have h3 : 0 ≤ b - a :=
+    sub_nonneg.mpr h1,
+  have h4 : 0 ≤ (b - a) * c :=
+    mul_nonneg h3 h2,
+  have h5 : (b - a) * c = b * c - a * c :=
+    sub_mul b a c,
+  have h6 : 0 ≤ b * c - a * c :=
+    eq.trans_ge h5 h4,
+  show a * c ≤ b * c,
+    by exact sub_nonneg.mp h6,
+end
+
+-- 2ª demostración
+-- ===============
+
 open_locale classical
 
 example
-  (h₁ : a ≤ b)
-  (h₂ : 0 ≤ c)
+  (h1 : a ≤ b)
+  (h2 : 0 ≤ c)
   : a * c ≤ b * c :=
 begin
-  by_cases h₃ : b ≤ a,
-  { have : a = b,
-      { apply le_antisymm h₁ h₃},
-    rw this },
-  { by_cases h₄ : c = 0,
-    { calc a * c = a * 0 : by rw h₄
+  by_cases h3 : b ≤ a,
+  { have h3a : a = b :=
+      le_antisymm h1 h3,
+    show a * c ≤ b * c,
+      by rw h3a },
+  { by_cases h4 : c = 0,
+    { calc a * c = a * 0 : by rw h4
              ... = 0     : by rw mul_zero
-             ... ≤ 0     : by exact le_refl 0
+             ... ≤ 0     : le_refl 0
              ... = b * 0 : by rw mul_zero
-             ... = b * c : by {congr; rw h₄}},
+             ... = b * c : by {congr ; rw h4}},
     { apply le_of_lt,
       apply mul_lt_mul_of_pos_right,
-      { exact lt_of_le_not_le h₁ h₃ },
-      { exact lt_of_le_of_ne h₂ (ne.symm h₄) }}},
+      { show a < b,
+          by exact lt_of_le_not_le h1 h3 },
+      { show 0 < c,
+          by exact lt_of_le_of_ne h2 (ne.symm h4) }}},
 end
-
-
--- 2ª demostración
-example
-  (h₁ : a ≤ b)
-  (h₂ : 0 ≤ c)
-  : a * c ≤ b * c :=
-by exact mul_le_mul_of_nonneg_right h₁ h₂
 
 -- 3ª demostración
 example
-  (h₁ : a ≤ b)
-  (h₂ : 0 ≤ c)
+  (h1 : a ≤ b)
+  (h2 : 0 ≤ c)
   : a * c ≤ b * c :=
-mul_le_mul_of_nonneg_right h₁ h₂
+-- by library_search
+mul_le_mul_of_nonneg_right h1 h2
