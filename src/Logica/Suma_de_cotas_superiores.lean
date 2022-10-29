@@ -1,8 +1,8 @@
 -- ---------------------------------------------------------------------
 -- Ejercicio 1. Realizar las siguientes acciones:
 -- 1. Importar la librería de los números reales.
--- 2. Definir cota superior de una función. 
--- 3. Definir cota inferior de una función. 
+-- 2. Definir cota superior de una función.
+-- 3. Definir cota inferior de una función.
 -- 4. Declarar f y g como variables de funciones de ℝ en ℝ.
 -- 5. Declarar a y b como variables sobre ℝ.
 -- ----------------------------------------------------------------------
@@ -23,13 +23,31 @@ variables (a b : ℝ)                                                  -- 5
 -- 1ª demostración
 -- ===============
 
-example 
-  (hfa : fn_ub f a) 
-  (hgb : fn_ub g b) 
+example
+  (hfa : fn_ub f a)
+  (hgb : fn_ub g b)
+  : fn_ub (λ x, f x + g x) (a + b) :=
+begin
+  have h1 : ∀ x, f x + g x ≤ a + b,
+  { intro x,
+    have h1a : f x ≤ a := hfa x,
+    have h1b : g x ≤ b := hgb x,
+    show f x + g x ≤ a + b,
+      by exact add_le_add (hfa x) (hgb x), },
+  show fn_ub (λ x, f x + g x) (a + b),
+    by exact h1,
+end
+
+-- 2ª demostración
+-- ===============
+
+example
+  (hfa : fn_ub f a)
+  (hgb : fn_ub g b)
   : fn_ub (λ x, f x + g x) (a + b) :=
 begin
   intro x,
-  -- dsimp,
+  dsimp,
   change f x + g x ≤ a + b,
   apply add_le_add,
   apply hfa,
@@ -55,17 +73,17 @@ end
 -- |    -- apply hgb
 -- no goals
 
--- Notas. 
--- + Nota 1. Con "intro x" se despliega la definición de fn_ub y se introduce 
---   la variable x en el contexto. 
--- + Nota 2. Con "dsimp" se simplifica la definición del lambda. El mismo 
+-- Notas.
+-- + Nota 1. Con "intro x" se despliega la definición de fn_ub y se introduce
+--   la variable x en el contexto.
+-- + Nota 2. Con "dsimp" se simplifica la definición del lambda. El mismo
 --   efecto se consigue con "change f x + g x ≤ a + b"
 
--- 2ª demostración
+-- 3ª demostración
 -- ===============
 
-example 
-  (hfa : fn_ub f a) 
-  (hgb : fn_ub g b) 
+example
+  (hfa : fn_ub f a)
+  (hgb : fn_ub g b)
   : fn_ub (λ x, f x + g x) (a + b) :=
 λ x, add_le_add (hfa x) (hgb x)
