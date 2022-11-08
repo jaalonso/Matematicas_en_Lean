@@ -1,12 +1,12 @@
 -- ---------------------------------------------------------------------
 -- Ejercicio 1. Realizar las siguientes acciones:
--- 1. Importar la teoría de grupos ordenados.
+-- 1. Importar la teoría de monoides.
 -- 2. Declaral α como un tipo.
 -- 3. Declarar R como un monoide ordenado cancelativo.
 -- 4. Declarar a, b, c y d como variables sobre R.
 -- ----------------------------------------------------------------------
 
-import algebra.ordered_group                                         -- 1
+import algebra.order.monoid                                         -- 1
 
 variables {α : Type*}                                                -- 2
 variables {R : Type*} [ordered_cancel_add_comm_monoid R]             -- 3
