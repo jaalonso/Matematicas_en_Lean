@@ -1,23 +1,23 @@
 import import data.real.basic                                               -- 1
 
 -- ---------------------------------------------------------------------
--- Ejercicio 1. Deckarar x como variable implícita sobre los reales. 
+-- Ejercicio 1. Declarar x como variable implícita sobre los reales.
 -- ----------------------------------------------------------------------
 
-variable {x : ℝ} 
+variable {x : ℝ}
 
 -- ---------------------------------------------------------------------
 -- Ejercicio 2. Demostrar que si
 --    ∃a, x < a
--- entonces 
+-- entonces
 --    ∃b, x < b * 2
 -- ----------------------------------------------------------------------
 
 -- 1ª demostración
 -- ===============
 
-example 
-  (h : ∃a, x < a) 
+example
+  (h : ∃a, x < a)
   : ∃b, x < b * 2 :=
 begin
   cases h with a hxa,
@@ -44,14 +44,14 @@ hxa : x < a
 -/
 
 -- Comentario: Se han usado los lemas
--- + div_mul_cancel a : b ≠ 0 → a / b * b = a 
--- + two_ne_zero : 2 ≠ 0 
+-- + div_mul_cancel a : b ≠ 0 → a / b * b = a
+-- + two_ne_zero : 2 ≠ 0
 
 -- 2ª demostración
 -- ===============
 
-example 
-  (h : ∃a, x < a) 
+example
+  (h : ∃a, x < a)
   : ∃b, x < b * 2 :=
 begin
   cases h with a hxa,
@@ -78,8 +78,7 @@ no goals
 -- 3ª demostración
 -- ===============
 
-example 
-  (h : ∃a, x < a) 
+example
+  (h : ∃a, x < a)
   : ∃b, x < b * 2 :=
 let ⟨a, hxa⟩ := h in ⟨a/2, by linarith⟩
-
