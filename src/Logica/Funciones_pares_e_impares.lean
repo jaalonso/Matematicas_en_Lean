@@ -30,15 +30,35 @@ def odd  (f : ℝ → ℝ) : Prop := ∀ x, f x = - f (-x)
 -- Ejercicio 4. Demostrar que la suma de dos funciones pares es par.
 -- ----------------------------------------------------------------------
 
+-- 1ª demostración
+-- ===============
+
 example
   (ef : even f)
   (eg : even g)
-  : even (λ x, f x + g x) :=
+  : even (f + g) :=
 begin
   intro x,
-  calc
-    (λ x, f x + g x) x = f x + g x       : rfl
-                   ... = f (-x) + g (-x) : by rw [ef, eg]
+  have h1 : f x = f (-x) := ef x,
+  have h2 : g x = g (-x) := eg x,
+  calc (f + g) x
+       = f x + g x       : rfl
+   ... = f (-x) + g x    : congr_arg (+ g x) h1
+   ... = f (-x) + g (-x) : congr_arg ((+) (f (-x))) h2
+end
+
+-- 2ª demostración
+-- ===============
+
+example
+  (ef : even f)
+  (eg : even g)
+  : even (f + g) :=
+begin
+  intro x,
+  calc (f + g) x
+       = f x + g x       : rfl
+   ... = f (-x) + g (-x) : by rw [ef, eg]
 end
 
 -- ---------------------------------------------------------------------
