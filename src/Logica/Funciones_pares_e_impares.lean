@@ -62,21 +62,57 @@ begin
 end
 
 -- ---------------------------------------------------------------------
--- Ejercicio 5. Demostrar que la suma de dos funciones impares es par.
+-- Ejercicio 5. Demostrar que el producto de dos funciones impares es par.
 -- ----------------------------------------------------------------------
+
+-- 1ª demostración
+-- ===============
 
 example
   (of : odd f)
   (og : odd g)
-  : even (λ x, f x * g x) :=
+  : even (f * g) :=
 begin
   intro x,
-  calc
-    (λ x, f x * g x) x
-        = f x * g x               : rfl
-    ... = -f (-x) * -g (-x)       : by rw [of, og]
-    ... = f (-x) * g (-x)         : by rw neg_mul_neg
-    ... = ((λ x, f x * g x) (-x)) : rfl
+  have h1 : f x = -f (-x) := of x,
+  have h2 : g x = -g (-x) := og x,
+  calc (f * g) x
+       = f x * g x             : rfl
+   ... = (-f (-x)) * g x       : congr_arg (* g x) h1
+   ... = (-f (-x)) * (-g (-x)) : congr_arg ((*) (-f (-x))) h2
+   ... = f (-x) * g (-x)       : neg_mul_neg (f (-x)) (g (-x))
+   ... = (f * g) (-x)          : rfl,
+end
+
+-- 2ª demostración
+-- ===============
+
+example
+  (of : odd f)
+  (og : odd g)
+  : even (f * g) :=
+begin
+  intro x,
+  calc (f * g) x
+       = f x * g x         : rfl
+   ... = -f (-x) * -g (-x) : by rw [of, og]
+   ... = f (-x) * g (-x)   : by rw neg_mul_neg
+   ... = (f * g) (-x)      : rfl
+end
+
+-- 3ª demostración
+-- ===============
+
+example
+  (of : odd f)
+  (og : odd g)
+  : even (f * g) :=
+begin
+  intro x,
+  calc (f * g) x
+       = f x * g x         : rfl
+   ... = f (-x) * g (-x)   : by rw [of, og, neg_mul_neg]
+   ... = (f * g) (-x)      : rfl
 end
 
 -- ---------------------------------------------------------------------
