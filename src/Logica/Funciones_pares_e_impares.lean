@@ -62,7 +62,8 @@ begin
 end
 
 -- ---------------------------------------------------------------------
--- Ejercicio 5. Demostrar que el producto de dos funciones impares es par.
+-- Ejercicio 5. Demostrar que el producto de dos funciones impares es
+-- par.
 -- ----------------------------------------------------------------------
 
 -- 1ª demostración
@@ -110,9 +111,9 @@ example
 begin
   intro x,
   calc (f * g) x
-       = f x * g x         : rfl
-   ... = f (-x) * g (-x)   : by rw [of, og, neg_mul_neg]
-   ... = (f * g) (-x)      : rfl
+       = f x * g x       : rfl
+   ... = f (-x) * g (-x) : by rw [of, og, neg_mul_neg]
+   ... = (f * g) (-x)    : rfl
 end
 
 -- ---------------------------------------------------------------------
@@ -120,18 +121,54 @@ end
 -- impar es impar.
 -- ----------------------------------------------------------------------
 
+-- 1ª demostración
+-- ===============
+
 example
   (ef : even f)
   (og : odd g)
-  : odd (λ x, f x * g x) :=
+  : odd (f * g) :=
 begin
   intro x,
-  calc
-    (λ x, f x * g x) x
-        = f x * g x                : rfl
-    ... = f (-x) * -g (-x)         : by rw [ef, og]
-    ... = -(f (-x) * g (-x))       : by rw neg_mul_eq_mul_neg
-    ... = -((λ x, f x * g x) (-x)) : rfl
+  have h1 : f x = f (-x) := ef x,
+  have h2 : g x = -g (-x) := og x,
+  calc (f * g) x
+       = f x * g x            : rfl
+   ... = (f (-x)) * g x       : congr_arg (* g x) h1
+   ... = (f (-x)) * (-g (-x)) : congr_arg ((*) (f (-x))) h2
+   ... = -(f (-x) * g (-x))   : mul_neg (f (-x)) (g (-x))
+   ... = -(f * g) (-x)        : rfl,
+end
+
+-- 2ª demostración
+-- ===============
+
+example
+  (ef : even f)
+  (og : odd g)
+  : odd (f * g) :=
+begin
+  intro x,
+  calc (f * g) x
+       = f x * g x          : rfl
+   ... = f (-x) * -g (-x)   : by rw [ef, og]
+   ... = -(f (-x) * g (-x)) : by rw mul_neg
+   ... = -(f * g) (-x)      : rfl
+end
+
+-- 3ª demostración
+-- ===============
+
+example
+  (ef : even f)
+  (og : odd g)
+  : odd (f * g) :=
+begin
+  intro x,
+  calc (f * g) x
+       = f x * g x                : rfl
+   ... = -(f (-x) * g (-x))       : by rw [ef, og, neg_mul_eq_mul_neg]
+   ... = -((λ x, f x * g x) (-x)) : rfl
 end
 
 -- ---------------------------------------------------------------------
