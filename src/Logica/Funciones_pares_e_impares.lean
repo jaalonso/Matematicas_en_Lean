@@ -176,18 +176,38 @@ end
 -- es par.
 -- ----------------------------------------------------------------------
 
+-- 1ª demostración
+-- ===============
+
 example
   (ef : even f)
   (og : odd g)
-  : even (λ x, f (g x)) :=
+  : even (f ∘ g) :=
 begin
   intro x,
-  calc
-    (λ x, f (g x)) x
-        = f (g x)               : rfl
-    ... = f (-g (-x))           : by rw og
-    ... = f (g (-x))            : by rw ← ef
-    ... = ((λ x, f (g x)) (-x)) : rfl
+  have h1 : f x = f (-x) := ef x,
+  have h2 : g x = -g (-x) := og x,
+  calc (f ∘ g) x
+       = f (g x)      : rfl
+   ... = f (-g (-x))  : congr_arg f (og x)
+   ... = f (g (-x))   : eq.symm (ef (g (-x)))
+   ... = (f ∘ g) (-x) : rfl
+end
+
+-- 2ª demostración
+-- ===============
+
+example
+  (ef : even f)
+  (og : odd g)
+  : even (f ∘ g) :=
+begin
+  intro x,
+  calc (f ∘ g) x
+       = f (g x)      : rfl
+   ... = f (-g (-x))  : by rw og
+   ... = f (g (-x))   : by rw ←ef
+   ... = (f ∘ g) (-x) : rfl
 end
 
 end oculto
