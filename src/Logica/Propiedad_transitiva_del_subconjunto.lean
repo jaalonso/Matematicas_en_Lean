@@ -1,25 +1,44 @@
 -- ---------------------------------------------------------------------
 -- Ejercicio. Demostrar la propiedad transitiva de la inclusión de
--- conjuntos.  
+-- conjuntos.
 -- ----------------------------------------------------------------------
 
 import tactic
 
-variables {α : Type*} (r s t : set α)
+variables {α : Type*}
+variables r s t : set α
 
 -- 1ª demostración
 -- ===============
 
-example : r ⊆ s → s ⊆ t → r ⊆ t :=
+example
+  (rs : r ⊆ s)
+  (st : s ⊆ t)
+  : r ⊆ t :=
 begin
-  intros rs st x xr,
+  assume x,
+  assume xr : x ∈ r,
+  have h1 : x ∈ s := rs xr,
+  show x ∈ t,
+    by exact st h1,
+end
+
+-- 2ª demostración
+-- ===============
+
+example
+  (rs : r ⊆ s)
+  (st : s ⊆ t)
+  : r ⊆ t :=
+begin
+  intros x xr,
   apply st,
   apply rs,
-  exact xr 
+  exact xr
 end
 
 -- El desarrollo es
--- 
+--
 -- α : Type u_1,
 -- r s t : set α
 -- ⊢ r ⊆ s → s ⊆ t → r ⊆ t
@@ -33,12 +52,34 @@ end
 -- ⊢ x ∈ s
 --    >> apply rs,
 -- ⊢ x ∈ r
---    >> exact xr 
+--    >> exact xr
 -- no goals
 
--- 2ª demostración
+-- 3ª demostración
 -- ===============
 
-example : r ⊆ s → s ⊆ t → r ⊆ t :=
-λ rs st x xr, st (rs xr)
+example
+  (rs : r ⊆ s)
+  (st : s ⊆ t)
+  : r ⊆ t :=
+λ x xr, st (rs xr)
 
+-- 4ª demostración
+-- ===============
+
+example
+  (rs : r ⊆ s)
+  (st : s ⊆ t)
+  : r ⊆ t :=
+-- by library_search
+set.subset.trans rs st
+
+-- 5ª demostración
+-- ===============
+
+example
+  (rs : r ⊆ s)
+  (st : s ⊆ t)
+  : r ⊆ t :=
+-- by hint
+by tauto
