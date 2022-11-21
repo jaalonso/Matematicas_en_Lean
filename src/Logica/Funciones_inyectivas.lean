@@ -1,12 +1,14 @@
 -- ---------------------------------------------------------------------
 -- Ejercicio 1. Realizar las siguientes acciones:
 -- 1. Importar la librería de números reales.
--- 2. Abrir el espacio de nombre de las funciones. 
+-- 2. Abrir el espacio de nombre de las funciones.
 -- ----------------------------------------------------------------------
 
 import data.real.basic                                               -- 1
 
 open function                                                        -- 2
+
+variable {c : ℝ}
 
 -- ---------------------------------------------------------------------
 -- Ejercicio 2. Demostrar que, para todo c la función
@@ -14,63 +16,61 @@ open function                                                        -- 2
 -- es inyectiva
 -- ----------------------------------------------------------------------
 
-example 
-  (c : ℝ) 
+-- 1ª demostración
+-- ===============
+
+example
   : injective (λ x, x + c) :=
 begin
-  intros x₁ x₂ h',
-  change x₁ + c = x₂ + c at h',
-  apply add_right_cancel h',
+  assume x1 : ℝ,
+  assume x2 : ℝ,
+  assume h1 : (λ x, x + c) x1 = (λ x, x + c) x2,
+  have h2 : x1 + c = x2 + c := h1,
+  show x1 = x2,
+    by exact (add_left_inj c).mp h2,
 end
-
--- Su desarrollo es
--- 
--- c : ℝ
--- ⊢ injective (λ (x : ℝ), x + c)
---    >> intros x₁ x₂ h',
--- c x₁ x₂ : ℝ,
--- h' : (λ (x : ℝ), x + c) x₁ = (λ (x : ℝ), x + c) x₂
--- ⊢ x₁ = x₂
---    >> change x₁ + c = x₂ + c at h',
--- c x₁ x₂ : ℝ,
--- h' : x₁ + c = x₂ + c
--- ⊢ x₁ = x₂
---    >> apply add_right_cancel h'
--- no goals
 
 -- 2ª demostración
 -- ===============
 
-example 
-  (c : ℝ) 
+example
   : injective (λ x, x + c) :=
 begin
-  intros x₁ x₂ h',
+  intros x1 x2 h,
+  change x1 + c = x2 + c at h,
+  apply add_right_cancel h,
+end
+
+-- 3ª demostración
+-- ===============
+
+example
+  : injective (λ x, x + c) :=
+begin
+  intros x1 x2 h,
   apply (add_left_inj c).mp,
-  exact h', 
+  exact h,
 end
 
 -- Su desarrollo es
--- 
+--
 -- c : ℝ
 -- ⊢ injective (λ (x : ℝ), x + c)
---    >> intros x₁ x₂ h',
--- c x₁ x₂ : ℝ,
--- h' : (λ (x : ℝ), x + c) x₁ = (λ (x : ℝ), x + c) x₂
--- ⊢ x₁ = x₂
+--    >> intros x1 x2 h,
+-- c x1 x2 : ℝ,
+-- h : (λ (x : ℝ), x + c) x1 = (λ (x : ℝ), x + c) x2
+-- ⊢ x1 = x2
 --    >> apply (add_left_inj c).mp,
--- ⊢ x₁ + c = x₂ + c
---    >> exact h', 
+-- ⊢ x1 + c = x2 + c
+--    >> exact h,
 -- no goals
 
 -- 3ª demostración
 -- ===============
 
-example 
-  (c : ℝ) 
+example
   : injective (λ x, x + c) :=
-λ x₁ x₂ h', (add_left_inj c).mp h'
-
+λ x1 x2 h, (add_left_inj c).mp h
 
 -- ---------------------------------------------------------------------
 -- Ejercicio 3. Demostrar que, para todo c distinto de cero la función
@@ -78,63 +78,51 @@ example
 -- es inyectiva
 -- ----------------------------------------------------------------------
 
-example 
-  {c : ℝ} 
-  (h : c ≠ 0) 
+-- 1ª demostración
+-- ===============
+
+example
+  (h : c ≠ 0)
   : injective (λ x, c * x) :=
 begin
-  intros x₁ x₂ h',
-  change c * x₁ = c * x₂ at h',
-  apply mul_left_cancel' h h',
+  assume x1 : ℝ,
+  assume x2 : ℝ,
+  assume h1 : (λ x, c * x) x1 = (λ x, c * x) x2,
+  have h2 : c * x1 = c * x2 := h1,
+  show x1 = x2,
+    by exact (mul_right_inj' h).mp h1,
 end
-
--- Su desarrollo es
---
--- c : ℝ,
--- h : c ≠ 0
--- ⊢ injective (λ (x : ℝ), c * x)
---    >> intros x₁ x₂ h',
--- x₁ x₂ : ℝ,
--- h' : (λ (x : ℝ), c * x) x₁ = (λ (x : ℝ), c * x) x₂
--- ⊢ x₁ = x₂
---    >> change c * x₁ = c * x₂ at h',
--- h' : c * x₁ = c * x₂
--- ⊢ x₁ = x₂
---    >> apply mul_left_cancel' h h',
--- no goals
 
 -- 2ª demostración
 -- ===============
 
-example 
-  {c : ℝ} 
-  (h : c ≠ 0) 
+example
+  (h : c ≠ 0)
   : injective (λ x, c * x) :=
 begin
-  intros x₁ x₂ h',
-  apply mul_left_cancel' h,
+  intros x1 x2 h',
+  dsimp at h',
+  apply mul_left_cancel₀ h,
   exact h',
 end
-
--- Su desarrollo es
--- 
--- c : ℝ,
--- h : c ≠ 0
--- ⊢ injective (λ (x : ℝ), c * x)
---    >> intros x₁ x₂ h',
--- x₁ x₂ : ℝ,
--- h' : (λ (x : ℝ), c * x) x₁ = (λ (x : ℝ), c * x) x₂
--- ⊢ x₁ = x₂
---    >> apply mul_left_cancel' h,
--- ⊢ c * x₁ = c * x₂
---    >> exact h',
--- no goals
 
 -- 3ª demostración
 -- ===============
 
-example 
-  {c : ℝ} 
-  (h : c ≠ 0) 
+example
+  (h : c ≠ 0)
   : injective (λ x, c * x) :=
-λ x₁ x₂ h', mul_left_cancel' h h'
+begin
+  intros x1 x2 h',
+  dsimp at h',
+  exact (mul_right_inj' h).mp h'
+end
+
+-- 3ª demostración
+-- ===============
+
+example
+  {c : ℝ}
+  (h : c ≠ 0)
+  : injective (λ x, c * x) :=
+λ x1 x2 h', mul_left_cancel₀ h h'
