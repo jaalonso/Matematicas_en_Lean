@@ -1,6 +1,6 @@
 -- ---------------------------------------------------------------------
 -- Ejercicio. Demostrar que la composición de funciones inyectivas es
--- inyectiva. 
+-- inyectiva.
 -- ----------------------------------------------------------------------
 
 import tactic
@@ -8,16 +8,36 @@ import tactic
 open function
 
 variables {α : Type*} {β : Type*} {γ : Type*}
-variables {f : α → β} {g : β → γ} 
+variables {f : α → β} {g : β → γ}
+
+-- 1ª demostración
+-- ===============
 
 example
-  (injg : injective g) 
-  (injf : injective f) :
-  injective (λ x, g (f x)) :=
+  (hg : injective g)
+  (hf : injective f) :
+  injective (g ∘ f) :=
 begin
-  intros x₁ x₂ h,
-  apply injf,
-  apply injg,
+  assume x : α,
+  assume y : α,
+  assume h1: (g ∘ f) x = (g ∘ f) y,
+  have h2: g (f x) = g (f y) := h1,
+  have h3: f x = f y := hg h2,
+  show x = y,
+    by exact hf h3,
+end
+
+-- 2ª demostración
+-- ===============
+
+example
+  (hg : injective g)
+  (hf : injective f) :
+  injective (g ∘ f) :=
+begin
+  intros x y h,
+  apply hf,
+  apply hg,
   apply h,
 end
 
@@ -28,18 +48,45 @@ end
 -- γ : Type u_3,
 -- f : α → β,
 -- g : β → γ,
--- injg : injective g,
--- injf : injective f
+-- hg : injective g,
+-- hf : injective f
 -- ⊢ injective (λ (x : α), g (f x))
---    >> intros x₁ x₂ h,
--- x₁ x₂ : α,
--- h : (λ (x : α), g (f x)) x₁ = (λ (x : α), g (f x)) x₂
--- ⊢ x₁ = x₂
---    >> apply injf,
--- ⊢ f x₁ = f x₂
---    >> apply injg,
--- ⊢ g (f x₁) = g (f x₂)
+--    >> intros x y h,
+-- x y : α,
+-- h : (λ (x : α), g (f x)) x = (λ (x : α), g (f x)) y
+-- ⊢ x = y
+--    >> apply hf,
+-- ⊢ f x = f y
+--    >> apply hg,
+-- ⊢ g (f x) = g (f y)
 --    >> apply h,
 -- no goals
 
+-- 3ª demostración
+-- ===============
 
+example
+  (hg : injective g)
+  (hf : injective f) :
+  injective (g ∘ f) :=
+λ x y h, hf (hg h)
+
+-- 4ª demostración
+-- ===============
+
+example
+  (hg : injective g)
+  (hf : injective f) :
+  injective (g ∘ f) :=
+-- by library_search
+injective.comp hg hf
+
+-- 5ª demostración
+-- ===============
+
+example
+  (hg : injective g)
+  (hf : injective f) :
+  injective (g ∘ f) :=
+-- by hint
+by tauto
