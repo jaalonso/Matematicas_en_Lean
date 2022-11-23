@@ -52,20 +52,7 @@ begin
   exact h,
 end
 
--- Su desarrollo es
---
--- c : ℝ
--- ⊢ injective (λ (x : ℝ), x + c)
---    >> intros x1 x2 h,
--- c x1 x2 : ℝ,
--- h : (λ (x : ℝ), x + c) x1 = (λ (x : ℝ), x + c) x2
--- ⊢ x1 = x2
---    >> apply (add_left_inj c).mp,
--- ⊢ x1 + c = x2 + c
---    >> exact h,
--- no goals
-
--- 3ª demostración
+-- 4ª demostración
 -- ===============
 
 example
