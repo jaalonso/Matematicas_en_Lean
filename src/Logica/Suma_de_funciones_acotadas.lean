@@ -79,10 +79,33 @@ theorem fn_ub_add
 -- superiormente también lo está.
 -- ----------------------------------------------------------------------
 
-lemma aux
+-- 1ª demostración
+-- ===============
+
+example
   (ubf : fn_has_ub f)
-  (ubg : fn_has_ub g) :
-  fn_has_ub (λ x, f x + g x) :=
+  (ubg : fn_has_ub g)
+  : fn_has_ub (f + g) :=
+begin
+  cases ubf with a ha,
+  have h1 : ∀ x, f x ≤ a := ha,
+  cases ubg with b hb,
+  have h2 : ∀ x, g x ≤ b := hb,
+  have h3 : ∀ x, (f + g) x ≤ a + b :=
+    λ x, add_le_add (h1 x) (h2 x),
+  have h4 : ∃ z, ∀ x, (f + g) x ≤ z,
+    by exact Exists.intro (a + b) h3,
+  show fn_has_ub (f + g),
+    by exact h4,
+end
+
+-- 2ª demostración
+-- ===============
+
+example
+  (ubf : fn_has_ub f)
+  (ubg : fn_has_ub g)
+  : fn_has_ub (f + g) :=
 begin
   cases ubf with a ubfa,
   cases ubg with b ubfb,
@@ -113,3 +136,33 @@ end
 -- ⊢ fn_ub (λ (x : ℝ), f x + g x) (a + b)
 --    >> apply fn_ub_add ubfa ubfb
 -- no goals
+
+-- 3ª demostración
+-- ===============
+
+example
+  (ubf : fn_has_ub f)
+  (ubg : fn_has_ub g)
+  : fn_has_ub (f + g) :=
+begin
+  rcases ubf with ⟨a, ubfa⟩,
+  rcases ubg with ⟨b, ubfb⟩,
+  exact ⟨a + b, fn_ub_add ubfa ubfb⟩
+end
+
+-- 4ª demostración
+-- ===============
+
+example :
+  fn_has_ub f → fn_has_ub g → fn_has_ub (f + g) :=
+begin
+  rintros ⟨a, ubfa⟩ ⟨b, ubfb⟩,
+  exact ⟨a + b, fn_ub_add ubfa ubfb⟩,
+end
+
+-- 5ª demostración
+-- ===============
+
+example :
+  fn_has_ub f → fn_has_ub g → fn_has_ub (f + g) :=
+λ ⟨a, ubfa⟩ ⟨b, ubfb⟩, ⟨a + b, fn_ub_add ubfa ubfb⟩
