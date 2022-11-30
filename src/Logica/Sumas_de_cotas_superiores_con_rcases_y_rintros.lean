@@ -1,7 +1,7 @@
 -- ---------------------------------------------------------------------
 -- Ejercicio 1. Realizar las siguientes acciones:
 -- 1. Importar la teoría Definicion_de_funciones_acotadas
--- 2. Declarar f y g como variable de funciones de ℝ en ℝ. 
+-- 2. Declarar f y g como variable de funciones de ℝ en ℝ.
 -- 3. Declarar a y c como variables sobre ℝ.
 -- ----------------------------------------------------------------------
 
@@ -15,9 +15,9 @@ variables {a b : ℝ}                      -- 3
 -- cota superior de g, entonces a + b lo es de f + g.
 -- ----------------------------------------------------------------------
 
-theorem fn_ub_add 
-  (hfa : fn_ub f a) 
-  (hgb : fn_ub g b) 
+theorem fn_ub_add
+  (hfa : fn_ub f a)
+  (hgb : fn_ub g b)
   : fn_ub (λ x, f x + g x) (a + b) :=
 λ x, add_le_add (hfa x) (hgb x)
 
@@ -29,9 +29,9 @@ theorem fn_ub_add
 -- 1ª demostración
 -- ===============
 
-example 
-  (ubf : fn_has_ub f) 
-  (ubg : fn_has_ub g) 
+example
+  (ubf : fn_has_ub f)
+  (ubg : fn_has_ub g)
   : fn_has_ub (λ x, f x + g x) :=
 begin
   rcases ubf with ⟨a, ubfa⟩,
@@ -64,8 +64,8 @@ end
 -- 2ª demostración
 -- ===============
 
-example : 
-  fn_has_ub f → 
+example :
+  fn_has_ub f →
   fn_has_ub g →
   fn_has_ub (λ x, f x + g x) :=
 begin
@@ -74,7 +74,7 @@ begin
 end
 
 -- Su desarrollo es
--- 
+--
 -- f g : ℝ → ℝ
 -- ⊢ fn_has_ub f → fn_has_ub g → fn_has_ub (λ (x : ℝ), f x + g x)
 --    >> rintros ⟨a, ubfa⟩ ⟨b, ubfb⟩,
