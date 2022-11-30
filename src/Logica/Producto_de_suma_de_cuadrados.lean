@@ -1,7 +1,7 @@
 -- ---------------------------------------------------------------------
 -- Ejercicio 1. Realizar las siguientes acciones:
 -- 1. Importar la librería de tácticas.
--- 2. Declarar α como un tipo sobre los anillos conmutativos. 
+-- 2. Declarar α como un tipo sobre los anillos conmutativos.
 -- 3. Declarar x e y como variables sobre α.
 -- ----------------------------------------------------------------------
 
@@ -11,7 +11,7 @@ variables {x y : α}                   -- 3
 
 -- ---------------------------------------------------------------------
 -- Ejercicio 2. Definir la función
---    sum_of_squares : α → Prop 
+--    sum_of_squares : α → Prop
 -- tal que (sum_of_squares x) afima que x se puede escribir como la suma
 -- de dos cuadrados.
 -- ----------------------------------------------------------------------
@@ -26,9 +26,51 @@ def sum_of_squares (x : α) := ∃ a b, x = a^2 + b^2
 -- 1ª demostración
 -- ===============
 
-theorem sum_of_squares_mul 
-  (sosx : sum_of_squares x) 
-  (sosy : sum_of_squares y) 
+example
+  (sosx : sum_of_squares x)
+  (sosy : sum_of_squares y)
+  : sum_of_squares (x * y) :=
+begin
+  rcases sosx with ⟨a, b, xeq : x = a^2 + b^2⟩,
+  rcases sosy with ⟨c, d, yeq : y = c^2 + d^2⟩,
+  have h1: x * y = (a*c - b*d)^2 + (a*d + b*c)^2,
+    calc x * y
+         = (a^2 + b^2) * (c^2 + d^2)     : by rw [xeq, yeq]
+     ... = (a*c - b*d)^2 + (a*d + b*c)^2 : by ring,
+  have h2 : ∃ f, x * y = (a*c - b*d)^2 + f^2,
+    by exact Exists.intro (a*d + b*c) h1,
+  have h3 : ∃ e f, x * y = e^2 + f^2,
+    by exact Exists.intro (a*c - b*d) h2,
+  show sum_of_squares (x * y),
+    by exact h3,
+end
+
+-- 2ª demostración
+-- ===============
+
+example
+  (sosx : sum_of_squares x)
+  (sosy : sum_of_squares y)
+  : sum_of_squares (x * y) :=
+begin
+  rcases sosx with ⟨a, b, xeq : x = a^2 + b^2⟩,
+  rcases sosy with ⟨c, d, yeq : y = c^2 + d^2⟩,
+  have h1: x * y = (a*c - b*d)^2 + (a*d + b*c)^2,
+    calc x * y
+         = (a^2 + b^2) * (c^2 + d^2)     : by rw [xeq, yeq]
+     ... = (a*c - b*d)^2 + (a*d + b*c)^2 : by ring,
+  have h2 : ∃ e f, x * y = e^2 + f^2,
+    by tauto,
+  show sum_of_squares (x * y),
+    by exact h2,
+end
+
+-- 3ª demostración
+-- ===============
+
+example
+  (sosx : sum_of_squares x)
+  (sosy : sum_of_squares y)
   : sum_of_squares (x * y) :=
 begin
   rcases sosx with ⟨a, b, xeq⟩,
@@ -39,7 +81,7 @@ begin
 end
 
 -- Su desarrollo es
--- 
+--
 -- α : Type u_1,
 -- _inst_1 : comm_ring α,
 -- x y : α,
@@ -69,12 +111,12 @@ end
 --    >> ring
 -- no goals
 
--- 2ª demostración
+-- 3ª demostración
 -- ===============
 
 example
-  (sosx : sum_of_squares x) 
-  (sosy : sum_of_squares y) 
+  (sosx : sum_of_squares x)
+  (sosy : sum_of_squares y)
   : sum_of_squares (x * y) :=
 begin
   rcases sosx with ⟨a, b, rfl⟩,
@@ -84,7 +126,7 @@ begin
 end
 
 -- Su desarrollo es
--- 
+--
 -- α : Type u_1,
 -- _inst_1 : comm_ring α,
 -- x y : α,
@@ -111,5 +153,3 @@ end
 -- ⊢ (a^2 + b^2) * (c^2 + d^2) = (a * c - b * d)^2 + (a * d + b * c)^2
 --    >> ring
 -- no goals
-
-
