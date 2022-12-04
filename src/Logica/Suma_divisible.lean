@@ -3,27 +3,75 @@
 -- es de b + c.
 -- ----------------------------------------------------------------------
 
--- 1ª demostración
--- ===============
-
 import tactic
 
 variables {a b c : ℕ}
 
-example 
-  (divab : a ∣ b) 
-  (divac : a ∣ c) : 
-  a ∣ (b + c) :=
+-- 1ª demostración
+-- ===============
+
+example
+  (divab : a ∣ b)
+  (divac : a ∣ c)
+  : a ∣ (b + c) :=
+begin
+  rcases divab with ⟨d, beq : b = a * d⟩,
+  rcases divac with ⟨e, ceq: c = a * e⟩,
+  have h1 : b + c = a * (d + e),
+    calc b + c
+         = (a * d) + c       : congr_arg (+ c) beq
+     ... = (a * d) + (a * e) : congr_arg ((+) (a * d)) ceq
+     ... = a * (d + e)       : by rw ← mul_add,
+  show a ∣ (b + c),
+    by exact dvd.intro (d + e) (eq.symm h1),
+end
+
+-- 2ª demostración
+-- ===============
+
+example
+  (divab : a ∣ b)
+  (divac : a ∣ c)
+  : a ∣ (b + c) :=
+begin
+  rcases divab with ⟨d, beq : b = a * d⟩,
+  rcases divac with ⟨e, ceq: c = a * e⟩,
+  have h1 : b + c = a * (d + e), by linarith,
+  show a ∣ (b + c),
+    by exact dvd.intro (d + e) (eq.symm h1),
+end
+
+-- 3ª demostración
+-- ===============
+
+example
+  (divab : a ∣ b)
+  (divac : a ∣ c)
+  : a ∣ (b + c) :=
+begin
+  rcases divab with ⟨d, beq : b = a * d⟩,
+  rcases divac with ⟨e, ceq: c = a * e⟩,
+  show a ∣ (b + c),
+    by exact dvd.intro (d + e) (by linarith),
+end
+
+-- 4ª demostración
+-- ===============
+
+example
+  (divab : a ∣ b)
+  (divac : a ∣ c)
+  : a ∣ (b + c) :=
 begin
   cases divab with d beq,
   cases divac with e ceq,
   rw [ceq, beq],
-  use (d + e), 
-  ring,
+  use (d + e),
+  ring
 end
 
 -- Su desarrollo es
--- 
+--
 -- a b c : ℕ,
 -- divab : a ∣ b,
 -- divac : a ∣ c
@@ -42,27 +90,27 @@ end
 -- ⊢ a ∣ b + c
 --    >> rw [ceq, beq],
 -- ⊢ a ∣ a * d + a * e
---    >> use (d + e), 
+--    >> use (d + e),
 -- ⊢ a * d + a * e = a * (d + e)
 --    >> ring,
 -- no goals
 
--- 2ª demostración
+-- 5ª demostración
 -- ===============
 
-example 
-  (divab : a ∣ b) 
-  (divac : a ∣ c) : 
-  a ∣ (b + c) :=
+example
+  (divab : a ∣ b)
+  (divac : a ∣ c)
+  : a ∣ (b + c) :=
 begin
   rcases divab with ⟨d, rfl⟩,
   rcases divac with ⟨e, rfl⟩,
-  use (d + e), 
+  use (d + e),
   ring,
 end
 
 -- Su desarrollo es
--- 
+--
 -- a b c : ℕ,
 -- divab : a ∣ b,
 -- divac : a ∣ c
@@ -74,7 +122,7 @@ end
 -- ⊢ a ∣ a * d + c
 --    >> rcases divac with ⟨e, rfl⟩,
 -- ⊢ a ∣ a * d + a * e
---    >> use (d + e), 
+--    >> use (d + e),
 -- ⊢ a * d + a * e = a * (d + e)
 --    >> ring
 -- no goals
