@@ -5,9 +5,9 @@
 -- 3. Declarar x e y como variables sobre α.
 -- ----------------------------------------------------------------------
 
-import tactic                         -- 1
-variables {α : Type*} [comm_ring α]   -- 2
-variables {x y : α}                   -- 3
+import tactic
+variables {α : Type*} [comm_ring α]
+variables {x y : α}
 
 -- ---------------------------------------------------------------------
 -- Ejercicio 2. Definir la función
